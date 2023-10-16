@@ -1,0 +1,14 @@
+{
+    "type": "content",
+    "modid": "maltiezcrossbows",
+    "name": "Crossbows",
+    "authors": [
+        "Maltiez"
+    ],
+    "description": "",
+    "version": "0.0.1",
+    "dependencies": {
+        "game": "1.18.8",
+        "fsmlib": "0.1.4"
+    }
+}
