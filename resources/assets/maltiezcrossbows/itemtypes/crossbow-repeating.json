@@ -1,0 +1,69 @@
+﻿{
+  "code": "crossbow",
+  "class": "Crossbows:MagazineCrossbow",
+  "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
+  "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "material", "states": ["copper"]}],
+  "maxstacksize": 1,
+  "durability": 400,
+  "tool": "crossbow",
+  "rackable": true,
+  "behaviors": [
+    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezcrossbows:crossbows/{drawtype}"}},
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "WallHalves",
+        "wallOffY": 2,
+        "sprintKey": true,
+        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
+      }
+    }
+  ],
+  "attributes": {
+    "toolrackTransform": {"translation": {"x": 0, "y": 0.6, "z": 0.5}, "rotation": {"x": 173, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
+    "groundStorageTransform": {"translation": {"x": 0.7, "y": 1.06, "z": 0.66}, "rotation": {"x": 110, "y": -180, "z": -111}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
+    "inCrossbowWallmountTransform": {"translation": {"x": 0, "y": -0.68, "z": -0.02}, "rotation": {"x": 90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+    "BoltTransform": {"translation": {"x": -5.65, "y": 0.2, "z": -1}, "rotation": {"x": 0, "y": 0, "z": 1}, "scale": 0.75},
+    "BoltDamageMultiplierByType": {"*-repeating-*": 1.5},
+    "BoltDamageStrengthByType": {"*-repeating-*": 1},
+    "BoltVelocityByType": {"*-repeating-*": 1.95},
+    "ProficiencyStat": "crossbowsProficiency",
+    "IdleAnimation": "maltiezcrossbows:crossbow-{drawtype}-ready",
+    "ReadyAnimation": "maltiezcrossbows:crossbow-{drawtype}-ready",
+    "OpenLidAnimation": "maltiezcrossbows:crossbow-{drawtype}-open",
+    "LoadBoltAnimation": "maltiezcrossbows:crossbow-{drawtype}-load",
+    "CloseLidAnimation": "maltiezcrossbows:crossbow-{drawtype}-close",
+    "ShootAnimation": "maltiezcrossbows:crossbow-{drawtype}-shoot",
+    "ReturnAnimation": "maltiezcrossbows:crossbow-{drawtype}-return",
+    "ReloadAnimationSpeed": 1,
+    "MagazineSize": 5,
+    "AimingByType": {
+      "*": {
+        "AimDifficulty": 1,
+        "AccuracyOvertimeSec": 0,
+        "ZeroingAngle": 1,
+        "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
+        "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
+        "AllowSprint": true,
+        "MoveSpeedPenalty": 0.1,
+        "AimDrift": 120,
+        "AimTwitch": 30,
+        "AnimationFollowX": 5.5,
+        "AnimationFollowY": 5.5,
+        "VerticalLimit": 0.25,
+        "VerticalOffset": -0.05
+      }
+    },
+    "DispersionMOA": [90, 90]
+  },
+  "heldLeftTpIdleAnimation": "crossbowsempty",
+  "heldLeftReadyAnimation": "crossbowsempty",
+  "heldRightReadyAnimation": "crossbowsempty",
+  "heldOldTpIdleAnimation": "crossbowsempty",
+  "heldTpUseAnimation": "crossbowsempty",
+  "shape": {"base": "maltiezcrossbows:crossbows/{drawtype}"},
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -52, "y": -41, "z": 180}, "origin": {"x": -0.05, "y": 0.3, "z": -0.25}, "scale": 0.7},
+  "tpHandTransform": {"translation": {"x": -0.2, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0.13, "z": 0}, "rotation": {"x": 1, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+}

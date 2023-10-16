@@ -1,0 +1,129 @@
+[
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-steel"},
+    "pattern": [
+      [
+        "#######___##",
+        "#__________#",
+        "#######____#",
+        "________#_##",
+        "#########__#",
+        "________#__#"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-goatfoot-steel"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-steel"},
+    "pattern": [
+      [
+        "##______#_#__",
+        "_#_____#####_",
+        "_####__#___#_",
+        "____#__#___#_",
+        "____##_______",
+        "__#____#_____",
+        "__######_____",
+        "___####______",
+        "___####______"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-windlass-steel"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze", "steel"]},
+    "pattern": [
+      [
+        "_##########",
+        "_#_________",
+        "_#_#_#_###_",
+        "_#_#_#_###_",
+        "_#_#_#_###_"
+      ],
+      [
+        "___________",
+        "___________",
+        "_______###_",
+        "_______###_",
+        "_______###_"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-{metal}"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-steel"},
+    "pattern": [
+      [
+        "_########_",
+        "_#______#_",
+        "_##____##_",
+        "__#____#__",
+        "__#____#__",
+        "__######__"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-steel"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"]},
+    "pattern": [
+      [
+        "__######__",
+        "__#____#__",
+        "_##____##_",
+        "_##____##_",
+        "__#____#__",
+        "__######__"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-{metal}"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-iron"},
+    "pattern": [
+      [
+        "##_______###",
+        "_#_______###",
+        "_#######_###",
+        "____###__###",
+        "###______###",
+        "###_________",
+        "##____#####_"
+      ],
+      [
+        "_________###",
+        "_________#_#",
+        "_________#_#",
+        "_________###",
+        "###______#_#",
+        "###_________",
+        "##__________"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-latch-iron"}
+  },
+  {
+    "ingredient": {"type": "item", "code": "game:ingot-meteoriciron"},
+    "pattern": [
+      [
+        "##_______###",
+        "_#_______###",
+        "_#######_###",
+        "____###__###",
+        "###______###",
+        "###_________",
+        "##____#####_"
+      ],
+      [
+        "_________###",
+        "_________#_#",
+        "_________#_#",
+        "_________###",
+        "###______#_#",
+        "###_________",
+        "##__________"
+      ]
+    ],
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-latch-meteoriciron"}
+  }
+]

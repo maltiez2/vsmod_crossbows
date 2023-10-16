@@ -1,0 +1,65 @@
+﻿{
+  "code": "bolt",
+  "class": "Item",
+  "tags": ["projectile", "bolt"],
+  "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
+  "maxstacksize": 16,
+  "storageFlags": 513,
+  "shapeByType": {
+    "*-crude": {"base": "bolt-crude"},
+    "*-copper": {"base": "bolt-crude"},
+    "*-meteoriciron": {"base": "bolt-envelop"},
+    "*-steel": {"base": "bolt-envelop"},
+    "*-iron": {"base": "bolt-envelop"},
+    "*": {"base": "bolt-insert"}
+  },
+  "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
+  "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -20, "y": -41, "z": -145}, "origin": {"x": 0.6, "y": -0.44, "z": 0}, "scale": 2.73},
+  "tpHandTransform": {"translation": {"x": 0.3, "y": 0, "z": 0.5}, "rotation": {"x": 0, "y": 2, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": -0.03, "z": 0.5}, "scale": 4},
+  "attributes": {"handbook": {"groupBy": ["bolt-*"]}},
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Stacking",
+        "placeRemoveSound": "game:sounds/block/ceramicplace",
+        "stackingModelByType": {"*-crude": "pile-crude-bolts", "*-copper": "pile-crude-bolts", "*": "pile-bolts"},
+        "modelItemsToStackSizeRatio": 4.2,
+        "stackingCapacity": 160,
+        "upSolid": true,
+        "transferQuantity": 5,
+        "bulkTransferQuantity": 25,
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.03125, "z2": 1},
+        "cbScaleYByLayer": 0.2
+      }
+    },
+    {
+      "name": "CombatOverhaul:Projectile",
+      "properties": {
+        "stats": {
+          "AdditionalDurabilityCost": 0,
+          "CollisionRadius": 0.05,
+          "PenetrationDistance": 0.5,
+          "DamageStatsByType": {
+            "*-crude": {"DamageType": "PiercingAttack", "Damage": 2},
+            "*-copper": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-tinbronze": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-bismuthbronze": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-blackbronze": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-iron": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-meteoriciron": {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-steel": {"DamageType": "PiercingAttack", "Damage": 4}
+          },
+          "DamageTierBonusByType": {"*-crude": -1, "*-copper": -1, "*-tinbronze": 0, "*-bismuthbronze": 0, "*-blackbronze": 0, "*-iron": 1, "*-meteoriciron": 2, "*-steel": 3},
+          "SpeedThreshold": 0.3,
+          "Knockback": 0.2,
+          "EntityCode": "maltiezcrossbows:bolt-{material}",
+          "DurabilityDamage": 0,
+          "DropChanceByType": {"*-crude": 0.7, "*-copper": 0.8, "*-tinbronze": 0.9, "*-bismuthbronze": 0.9, "*-blackbronze": 0.95, "*-iron": 0.98, "*-meteoriciron": 0.99, "*-steel": 0.995}
+        }
+      }
+    }
+  ]
+}
