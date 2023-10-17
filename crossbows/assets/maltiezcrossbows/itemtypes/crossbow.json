@@ -4,11 +4,12 @@
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["hand", "belt", "goatleg", "windlass"]}],
   "maxstacksize": 1,
-  "durability": 700,
-  "damagedby": ["attacking"],
-  "attackRange": 2,
-  "attackpower": 2,
-  "tooltier": 0,
+  "durabilityByType": {
+    "*-hand": 300,
+    "*-belt": 750,
+    "*-goatleg": 1200,
+    "*-windlass": 900
+  },
   "tool": "bow",
   "rackable": true,
   "behaviors": [],
@@ -20,12 +21,7 @@
     "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-initial",
     "alternates": [{"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-drawn"}, {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-loaded"}]
   },
-  	"guiTransform": {
-		"translation": { "x": 0, "y": 0, "z": 0 },
-		"rotation": { "x": -45, "y": 26, "z": 180 },
-		"origin": { "x": 0.4, "y": -0.1, "z": 0 },
-		"scaleXyz": { "x": -2, "y": 2, "z": 2 }
-	},
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -45, "y": 26, "z": 180}, "origin": {"x": 0.4, "y": -0.1, "z": 0}, "scaleXyz": {"x": -2, "y": 2, "z": 2}},
   "fpHandTransform": {"translation": {"x": -0.5, "y": 0.2, "z": -0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
   "tpHandTransform": {"translation": {"x": -0.9, "y": -0.1, "z": 0.5}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": -0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
