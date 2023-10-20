@@ -1,0 +1,14 @@
+﻿{
+  "code": "spanningtool",
+  "class": "Item",
+  "storageFlags": 257,
+  "variantgroups": [{"code": "type", "states": ["goatsfoot", "windlass"]}],
+  "shape": {"base": "maltiezcrossbows:{type}"},
+  "attributes": {},
+  "behaviors": [],
+  "creativeinventory": {"maltiezcrossbows": ["*"]},
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -35, "y": 133, "z": 0}, "origin": {"x": 0.6, "y": 0, "z": 1.6}, "scale": 2.22},
+  "fpHandTransform": {"translation": {"x": 0.9, "y": -0.8, "z": 0.7}, "rotation": {"x": -90, "y": 0, "z": 166}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 2},
+  "tpHandTransform": {"translation": {"x": 0.65, "y": -1.7, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.76},
+  "groundTransform": {"translation": {"x": 0, "y": 0.2, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4}
+}

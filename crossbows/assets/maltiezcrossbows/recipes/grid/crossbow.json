@@ -1,0 +1,51 @@
+﻿[
+  {
+    "ingredientPattern": "NS_,WFS,WS_",
+    "ingredients": {
+      "S": {"type": "item", "code": "game:ingot-steel", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 2},
+      "F": {"type": "item", "code": "game:flaxtwine", "quantity": 16},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-windlass"}
+  },
+  {
+    "ingredientPattern": "NS_,WFS,W__",
+    "ingredients": {
+      "S": {"type": "item", "code": "game:ingot-steel", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-steel", "quantity": 1},
+      "F": {"type": "item", "code": "game:flaxtwine", "quantity": 8},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-goatsfoot"}
+  },
+  {
+    "ingredientPattern": "NNF,WWS,___",
+    "ingredients": {
+      "S": {"type": "item", "code": "game:bow-recurve", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*bronze", "quantity": 1},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "F": {"type": "item", "code": "game:flaxtwine", "quantity": 3}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-stirrup"}
+  }
+  ,
+  {
+    "ingredientPattern": "NNF,WWS,___",
+    "ingredients": {
+      "S": {"type": "item", "code": "game:bow-simple", "quantity": 1},
+      "N": {"type": "item", "code": "game:stick", "quantity": 1},
+      "W": {"type": "item", "code": "game:firewood", "quantity": 1},
+      "F": {"type": "item", "code": "game:rope", "quantity": 3}
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-simple"}
+  }
+]

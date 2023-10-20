@@ -1,0 +1,15 @@
+﻿{
+  "code": "bolt",
+  "class": "EntityProjectile",
+  "hitboxSize": {"x": 0.125, "y": 0.125},
+  "variantgroups": [{"code": "material", "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
+  "client": {
+    "size": 0.5,
+    "renderer": "Shape",
+    "shape": {"base": "bolt"},
+    "texturesByType": {"*-crude": {}, "*-flint": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
+    "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
+  },
+  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.75}, {"code": "despawn", "minSeconds": 600}]},
+  "sounds": {}
+}

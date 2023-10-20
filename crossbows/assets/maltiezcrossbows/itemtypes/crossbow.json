@@ -2,24 +2,267 @@
   "code": "crossbow",
   "class": "NoMelee",
   "creativeinventory": {"maltiezcrossbows": ["*"]},
-  "variantgroups": [{"code": "drawtype", "states": ["hand", "belt", "goatleg", "windlass"]}],
+  "variantgroups": [{"code": "drawtype", "states": ["simple", "stirrup", "goatsfoot", "windlass"]}],
   "maxstacksize": 1,
-  "durabilityByType": {
-    "*-hand": 300,
-    "*-belt": 750,
-    "*-goatleg": 1200,
-    "*-windlass": 900
-  },
+  "durabilityByType": {"*-simple": 300, "*-stirrup": 750, "*-goatsfoot": 1200, "*-windlass": 900},
   "tool": "bow",
   "rackable": true,
-  "behaviors": [],
+  "behaviors": [
+    {
+      "name": "FiniteStateMachine",
+      "properties": {
+        "initialState": "initial",
+        "systems": [
+          {
+            "code": "sound_system",
+            "class": "Sound",
+            "attributes": {
+              "sounds": [
+                {"code": "draw_sound", "volume": 1, "range": 16, "location": "game:sounds/bow-draw"},
+                {"code": "load_sound", "volume": 1, "range": 16, "location": "game:sounds/effect/woodswitch"},
+                {"code": "release_sound", "volume": 1, "range": 64, "location": "game:sounds/bow-release"}
+              ]
+            }
+          },
+          {"code": "reload_system", "class": "Reload", "attributes": {}},
+          {"code": "spanning_system", "class": "Reload", "attributes": {}},
+          {
+            "code": "aiming_system",
+            "class": "Aiming",
+            "attributesByType": {
+              "*-simple": {"duration": 300, "dispersionMin_MOA": 120, "dispersionMax_MOA": 240, "description": ""},
+              "*-stirrup": {"duration": 300, "dispersionMin_MOA": 90, "dispersionMax_MOA": 270, "description": ""},
+              "*-goatsfoot": {"duration": 300, "dispersionMin_MOA": 60, "dispersionMax_MOA": 240, "description": ""},
+              "*-windlass": {"duration": 300, "dispersionMin_MOA": 90, "dispersionMax_MOA": 360, "description": ""}
+            }
+          },
+          {
+            "code": "shooting_system",
+            "class": "Shooting",
+            "attributes": {
+              "description": "",
+              "reloadSystem": "reload_system",
+              "aimingSystem": "aiming_system",
+              "projectileVelocity": {"*-simple": 1.5, "*-stirrup": 2, "*-goatsfoot": 2.5, "*-windlass": 3},
+              "projectileDamageMultiplierByType": {"*-simple": 1, "*-stirrup": 1.5, "*-goatsfoot": 2.2, "*-windlass": 4}
+            }
+          },
+          {
+            "code": "animation_system",
+            "class": "VariantsAnimation",
+            "attributes": {
+              "soundSystem": "sound_system",
+              "animations": [
+                {"code": "draw", "firstVariant": 1, "lastVariant": 4, "durationByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 8000, "*-windlass": 16000}},
+                {"code": "load", "firstVariant": 4, "lastVariant": 5, "duration": 2000},
+                {"code": "undraw", "firstVariant": 1, "lastVariant": 1, "duration": 0},
+                {"code": "unload", "firstVariant": 4, "lastVariant": 4, "duration": 0},
+                {"code": "release", "firstVariant": 1, "lastVariant": 1, "duration": 0}
+              ]
+            }
+          },
+          {
+            "code": "transform_animation_system",
+            "class": "TransformAnimation",
+            "attributes": {
+              "animations": [
+                {
+                  "code": "draw",
+                  "duration": 300,
+                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "load",
+                  "duration": 300,
+                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                },
+                {
+                  "code": "aim",
+                  "duration": 300,
+                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {
+		                "translation": { "x": 1, "y": -0.8, "z": -0.2 },
+		                "rotation": {"x": 105, "y": 90, "z": -90},
+		                "origin": { "x": 0, "y": 0, "z": 0 },
+		                "scale": 1
+	                }
+                }
+              ]
+            }
+          },
+          {"code": "player_stats_system", "class": "PlayerStats", "attributes": {}},
+          {"code": "player_animation_system", "class": "PlayerAnimation", "attributes": {}},
+          {"code": "no_sway_system", "class": "NoSway", "attributes": {}},
+          {"code": "durability_system", "class": "DurabilityDamage", "attributes": {}}
+        ],
+        "operations": [
+          {
+            "code": "draw",
+            "class": "Delayed",
+            "attributes": {
+              "delay_msByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 8000, "*-windlass": 16000},
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "initial", "cancel": "initial", "final": "drawn"}],
+              "systems": {
+                "initial": [
+                  {
+                    "code": "spanning_system",
+                    "attributes": {
+                      "ammoCode": "spanningtool-{drawtype}",
+                      "actionByType": {"*-goatsfoot": "take", "*-windlass": "take", "*": "remove"},
+                      "offHand": true,
+                      "ammoName": "maltiezcrossbows:item-spanningtool-{drawtype}"
+                    }
+                  },
+                  {"code": "animation_system", "attributes": {"code": "draw"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "forward"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "valueByType": {"*-simple": -0.2, "*-stirrup": -1, "*-goatsfoot": -0.4, "*-windlass": -1}}}
+                ],
+                "cancel": [
+                  {"code": "spanning_system", "attributes": {"actionByType": {"*-goatsfoot": "put", "*-windlass": "put", "*": "remove"}, "offHand": true}},
+                  {"code": "animation_system", "attributes": {"code": "undraw"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "backward", "duration": 200}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "spanning_system", "attributes": {"actionByType": {"*-goatsfoot": "put", "*-windlass": "put", "*": "remove"}, "offHand": true}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "backward", "duration": 200}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                  {"code": "sound_system", "attributes": {"code": "load_sound"}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "load",
+            "class": "Delayed",
+            "attributes": {
+              "delay_ms": 2000,
+              "inputsToIntercept": [],
+              "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
+              "states": [{"initial": "drawn", "cancel": "drawn", "final": "loaded"}],
+              "systems": {
+                "initial": [
+                  {"code": "reload_system", "attributes": {"ammoCode": "bolt", "action": "take", "ammoName": "maltiezcrossbows:item-bolt"}},
+                  {"code": "animation_system", "attributes": {"code": "load"}},
+                  {"code": "no_sway_system", "attributes": {"action": "start"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.2}}
+                ],
+                "cancel": [
+                  {"code": "reload_system", "attributes": {"action": "put"}},
+                  {"code": "animation_system", "attributes": {"code": "unload"}},
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
+                ],
+                "final": [
+                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                  {"code": "sound_system", "attributes": {"code": "load_sound"}}
+                ]
+              }
+            }
+          },
+          {
+            "code": "release",
+            "class": "Instant",
+            "attributes": {
+              "input": "mouse_left_down",
+              "inputsToIntercept": [],
+              "states": [{"initial": "loaded", "final": "initial"}],
+              "systems": [
+                {"code": "shooting_system", "attributes": {}},
+                {"code": "animation_system", "attributes": {"code": "release"}},
+                {"code": "durability_system", "attributes": {}},
+                {"code": "sound_system", "attributes": {"code": "release_sound"}}
+              ]
+            }
+          },
+          {
+            "code": "aim",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_down_aim"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "loaded", "final": "loaded"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "forward"}},
+                {"code": "aiming_system", "attributes": {"action": "start"}},
+                {"code": "no_sway_system", "attributes": {"action": "start"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.2}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "start"}}
+              ]
+            }
+          },
+          {
+            "code": "ease",
+            "class": "Instant",
+            "attributes": {
+              "input": ["mouse_right_up_not_handle"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "loaded", "final": "loaded"}, {"initial": "initial", "final": "initial"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
+              ]
+            }
+          },
+          {
+            "code": "unload",
+            "class": "Instant",
+            "attributes": {
+              "input": ["handle_slot_change", "prevent_item_dropped"],
+              "inputsToIntercept": [],
+              "states": [{"initial": "loaded", "final": "drawn"}],
+              "systems": [
+                {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
+                {"code": "aiming_system", "attributes": {"action": "stop"}},
+                {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
+                {"code": "reload_system", "attributes": {"action": "put"}},
+                {"code": "animation_system", "attributes": {"code": "unload"}},
+                {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
+              ]
+            }
+          }
+        ],
+        "inputs": [
+          {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-reload"}},
+          {"code": "mouse_right_down_aim", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-aim"}},
+          {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-range-attack"}},
+          {"code": "mouse_right_up_not_handle", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false, "handle": false}},
+          {"code": "melee_attack", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezcrossbows:weapon-melee-attack"}},
+          {"code": "prevent_item_dropped", "class": "ItemDropped", "attributes": {"handle": true}},
+          {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
+        ]
+      }
+    }
+  ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 1.4, "y": 0.5, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 100, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
   },
   "shape": {
     "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-initial",
-    "alternates": [{"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-drawn"}, {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-loaded"}]
+    "alternates": [
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-start"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-finish"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-drawn"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-loaded"}
+    ]
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -45, "y": 26, "z": 180}, "origin": {"x": 0.4, "y": -0.1, "z": 0}, "scaleXyz": {"x": -2, "y": 2, "z": 2}},
   "fpHandTransform": {"translation": {"x": -0.5, "y": 0.2, "z": -0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},

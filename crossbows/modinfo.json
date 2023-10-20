@@ -1,14 +1,14 @@
 {
     "type": "content",
     "modid": "maltiezcrossbows",
-    "name": "Crossbows",
+    "name": "Crossbows (pre-alpha)",
     "authors": [
         "Maltiez"
     ],
-    "description": "",
+    "description": "Medieval crossbows (early build)",
     "version": "0.0.1",
     "dependencies": {
         "game": "1.18.8",
-        "fsmlib": "0.1.4"
+        "fsmlib": "0.1.6"
     }
 }

@@ -1,0 +1,23 @@
+﻿[
+	{
+		"ingredientPattern": "H,S,P",
+		"ingredients": {
+			"H": { "type": "item", "code": "game:arrowhead-*", "name": "metal" },
+			"S": { "type": "item", "code": "game:stick" },
+			"P": { "type": "item", "code": "game:plank-*" }
+		},
+		"width": 1,
+		"height": 3,
+		"output": { "type": "item", "code": "maltiezcrossbows:bolt-{metal}", "quantity": 1  }
+	},
+	{
+		"ingredientPattern": "H,S,S",
+		"ingredients": {
+			"H": { "type": "item", "code": "game:arrowhead-flint" },
+			"S": { "type": "item", "code": "game:stick" }
+		},
+		"width": 1,
+		"height": 3,
+		"output": { "type": "item", "code": "maltiezcrossbows:bolt-crude", "quantity": 1  }
+	}
+]

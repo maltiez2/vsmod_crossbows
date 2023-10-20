@@ -1,3 +1,19 @@
 {
-    "game:tabname-maltiezcrossbows": "Crossbows"
+    "game:tabname-maltiezcrossbows": "Crossbows",
+    "item-crossbow-simple": "Simple crossbow",
+    "item-crossbow-stirrup": "Stirrup crossbow",
+    "item-crossbow-goatsfoot": "Goat's foot crossbow",
+    "item-crossbow-windlass": "Windlass crossbow",
+    "item-bolt-crude": "Crude bolt",
+    "item-bolt-flint": "Flint bolt",
+    "item-bolt-copper": "Copper bolt",
+    "item-bolt-tinbronze": "Bronze bolt",
+    "item-bolt-bismuthbronze": "Bronze bolt",
+    "item-bolt-blackbronze": "Bronze bolt",
+    "item-bolt-iron": "Iron bolt",
+    "item-bolt-meteoriciron": "Iron bolt",
+    "item-bolt-steel": "Steel bolt",
+    "item-spanningtool-goatsfoot": "Goat's foot",
+    "item-spanningtool-windlass": "Windlass",
+    "prefixandcreature-bolt-*": "Bolt"
 }
