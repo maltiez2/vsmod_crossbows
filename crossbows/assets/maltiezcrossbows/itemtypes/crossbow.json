@@ -43,7 +43,7 @@
               "description": "",
               "reloadSystem": "reload_system",
               "aimingSystem": "aiming_system",
-              "projectileVelocity": {"*-simple": 1.5, "*-stirrup": 2, "*-goatsfoot": 2.5, "*-windlass": 3},
+              "projectileVelocityByType": {"*-simple": 1.5, "*-stirrup": 2, "*-goatsfoot": 2.5, "*-windlass": 3},
               "projectileDamageMultiplierByType": {"*-simple": 1, "*-stirrup": 1.5, "*-goatsfoot": 2.2, "*-windlass": 4}
             }
           },
