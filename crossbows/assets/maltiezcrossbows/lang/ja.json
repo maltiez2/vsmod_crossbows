@@ -1,0 +1,22 @@
+{
+	"comment_version": "Mod Version: v0.0.1",
+	"comment_author": "Translated By: RikeiR",
+
+    "game:tabname-maltiezcrossbows": "Crossbows（クロスボウ）",
+    "item-crossbow-simple": "単純なクロスボウ",
+    "item-crossbow-stirrup": "あぶみ式クロスボウ",
+    "item-crossbow-goatsfoot": "レバー式クロスボウ（ヤギの足）",
+    "item-crossbow-windlass": "巻き上げ式クロスボウ",
+    "item-bolt-crude": "粗雑なボルト",
+    "item-bolt-flint": "火打石のボルト",
+    "item-bolt-copper": "銅のボルト",
+    "item-bolt-tinbronze": "スズ青銅のボルト",
+    "item-bolt-bismuthbronze": "ビスマス青銅のボルト",
+    "item-bolt-blackbronze": "黒青銅のボルト",
+    "item-bolt-iron": "鉄のボルト",
+    "item-bolt-meteoriciron": "隕鉄のボルト",
+    "item-bolt-steel": "鋼鉄のボルト",
+    "item-spanningtool-goatsfoot": "ヤギの足",
+    "item-spanningtool-windlass": "巻き上げ機",
+    "prefixandcreature-bolt-*": "ボルト"
+}

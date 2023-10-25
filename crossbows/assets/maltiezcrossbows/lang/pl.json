@@ -1,0 +1,19 @@
+{
+    "game:tabname-maltiezcrossbows": "Kusze",
+    "item-crossbow-simple": "Prosta kusza",
+    "item-crossbow-stirrup": "Kusza z strzemieniem",
+    "item-crossbow-goatsfoot": "Kusza z kozim stopem",
+    "item-crossbow-windlass": "Kusza z korbą",
+    "item-bolt-crude": "Biała strzała",
+    "item-bolt-flint": "Strzała krzemieniowa",
+    "item-bolt-copper": "Miedziana strzała",
+    "item-bolt-tinbronze": "Strzała z brązu cynkowego",
+    "item-bolt-bismuthbronze": "Strzała z brązu bizmutowego",
+    "item-bolt-blackbronze": "Strzała z brązu czarnego",
+    "item-bolt-iron": "Żelazna strzała",
+    "item-bolt-meteoriciron": "Strzała z meteorytowego żelaza",
+    "item-bolt-steel": "Stalowa strzała",
+    "item-spanningtool-goatsfoot": "Kozie stopo",
+    "item-spanningtool-windlass": "Korba",
+    "prefixandcreature-bolt-*": "Strzała"
+}

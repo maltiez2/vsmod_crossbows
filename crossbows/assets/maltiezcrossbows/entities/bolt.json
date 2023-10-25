@@ -6,7 +6,7 @@
   "client": {
     "size": 0.5,
     "renderer": "Shape",
-    "shape": {"base": "bolt"},
+    "shape": {"base": "bolt-shifted"},
     "texturesByType": {"*-crude": {}, "*-flint": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
     "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
   },

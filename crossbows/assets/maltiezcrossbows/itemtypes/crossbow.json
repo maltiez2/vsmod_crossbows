@@ -9,6 +9,16 @@
   "rackable": true,
   "behaviors": [
     {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "WallHalves",
+        "wallOffY": 2,
+        "sprintKey": true,
+        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
+      }
+    },
+    {
       "name": "FiniteStateMachine",
       "properties": {
         "initialState": "initial",
@@ -28,6 +38,11 @@
           {"code": "spanning_system", "class": "Reload", "attributes": {}},
           {
             "code": "aiming_system",
+            "class": "BullseyeAiming",
+            "attributesByType": {"*-simple": {"duration": 300}, "*-stirrup": {"duration": 300}, "*-goatsfoot": {"duration": 300}, "*-windlass": {"duration": 300}}
+          },
+          {
+            "code": "basic_aiming_system",
             "class": "Aiming",
             "attributesByType": {
               "*-simple": {"duration": 300, "dispersionMin_MOA": 120, "dispersionMax_MOA": 240, "description": ""},
@@ -53,10 +68,10 @@
             "attributes": {
               "soundSystem": "sound_system",
               "animations": [
-                {"code": "draw", "firstVariant": 1, "lastVariant": 4, "durationByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 8000, "*-windlass": 16000}},
-                {"code": "load", "firstVariant": 4, "lastVariant": 5, "duration": 2000},
+                {"code": "draw", "firstVariant": 2, "lastVariant": 7, "durationByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 8000, "*-windlass": 16000}},
+                {"code": "load", "firstVariant": 7, "lastVariant": 8, "duration": 2000},
                 {"code": "undraw", "firstVariant": 1, "lastVariant": 1, "duration": 0},
-                {"code": "unload", "firstVariant": 4, "lastVariant": 4, "duration": 0},
+                {"code": "unload", "firstVariant": 7, "lastVariant": 7, "duration": 0},
                 {"code": "release", "firstVariant": 1, "lastVariant": 1, "duration": 0}
               ]
             }
@@ -69,25 +84,46 @@
                 {
                   "code": "draw",
                   "duration": 300,
-                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "fpTransformByType": {
+                    "*-simple": {"translation": {"x": 0, "y": -0.3, "z": 0.0}, "rotation": {"x": 30, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-stirrup": {"translation": {"x": 0, "y": -1.5, "z": 0}, "rotation": {"x": -60, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-goatsfoot": {"translation": {"x": 0, "y": 0.5, "z": -0.5}, "rotation": {"x": 45, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-windlass": {"translation": {"x": 0, "y": -1.5, "z": 0}, "rotation": {"x": -60, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  },
                   "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
                   "code": "load",
                   "duration": 300,
-                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "fpTransform": {"translation": {"x": 0, "y": 0.0, "z": 0}, "rotation": {"x": 15, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
                   "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
                   "code": "aim",
                   "duration": 300,
-                  "fpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {
-		                "translation": { "x": 1, "y": -0.8, "z": -0.2 },
-		                "rotation": {"x": 105, "y": 90, "z": -90},
-		                "origin": { "x": 0, "y": 0, "z": 0 },
-		                "scale": 1
-	                }
+                  "fpTransform": {"translation": {"x": -0.4, "y": 0.1, "z": -0.3}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                  "tpTransform": {"translation": {"x": 1, "y": -0.8, "z": -0.2}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                }
+              ]
+            }
+          },
+          {
+            "code": "smooth_animation_system",
+            "class": "SmoothAnimation",
+            "attributes": {
+              "parameters": {"animatedShape": "maltiezcrossbows:crossbows/{drawtype}/crossbow-animated", "onlyWhenAnimating": false},
+              "animations": [
+                {"code": "draw_animation", "parameters": {"animation": "Draw", "code": "draw", "animationSpeed": 0.6, "easeOutSpeed": 32, "easeInSpeed": 16}, "attachments": []},
+                {
+                  "code": "load_animation",
+                  "parameters": {"animation": "load", "code": "load", "animationSpeed": 0.8, "easeOutSpeed": 32, "easeInSpeed": 1000},
+                  "attachments": [
+                    {
+                      "attachment": "bolt",
+                      "system": "reload_system",
+                      "transform": {"translation": {"x": 0, "y": 0, "z": 16}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                    }
+                  ]
                 }
               ]
             }
@@ -117,21 +153,20 @@
                       "ammoName": "maltiezcrossbows:item-spanningtool-{drawtype}"
                     }
                   },
+                  {"code": "smooth_animation_system", "attributes": {"action": "start", "code": "draw_animation"}},
                   {"code": "animation_system", "attributes": {"code": "draw"}},
-                  {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "forward"}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "valueByType": {"*-simple": -0.2, "*-stirrup": -1, "*-goatsfoot": -0.4, "*-windlass": -1}}}
                 ],
                 "cancel": [
                   {"code": "spanning_system", "attributes": {"actionByType": {"*-goatsfoot": "put", "*-windlass": "put", "*": "remove"}, "offHand": true}},
                   {"code": "animation_system", "attributes": {"code": "undraw"}},
-                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "smooth_animation_system", "attributes": {"action": "stop", "code": "draw_animation"}},
                   {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
                 "final": [
                   {"code": "spanning_system", "attributes": {"actionByType": {"*-goatsfoot": "put", "*-windlass": "put", "*": "remove"}, "offHand": true}},
-                  {"code": "no_sway_system", "attributes": {"action": "stop"}},
                   {"code": "transform_animation_system", "attributes": {"code": "draw", "mode": "backward", "duration": 200}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                   {"code": "sound_system", "attributes": {"code": "load_sound"}}
@@ -153,12 +188,15 @@
                   {"code": "animation_system", "attributes": {"code": "load"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
-                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.2}}
+                  {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": -0.2}},
+                  {"code": "smooth_animation_system", "attributes": {"action": "start", "code": "load_animation"}}
                 ],
                 "cancel": [
                   {"code": "reload_system", "attributes": {"action": "put"}},
                   {"code": "animation_system", "attributes": {"code": "unload"}},
                   {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                  {"code": "smooth_animation_system", "attributes": {"action": "stop", "code": "load_animation"}},
+                  {"code": "smooth_animation_system", "attributes": {"action": "clear"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "backward", "duration": 100}},
                   {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}}
                 ],
@@ -182,6 +220,9 @@
                 {"code": "shooting_system", "attributes": {}},
                 {"code": "animation_system", "attributes": {"code": "release"}},
                 {"code": "durability_system", "attributes": {}},
+                {"code": "smooth_animation_system", "attributes": {"action": "stop", "code": "load_animation"}},
+                {"code": "smooth_animation_system", "attributes": {"action": "clear", "code": "load_animation"}},
+                {"code": "smooth_animation_system", "attributes": {"action": "stop", "code": "draw_animation"}},
                 {"code": "sound_system", "attributes": {"code": "release_sound"}}
               ]
             }
@@ -229,6 +270,8 @@
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
                 {"code": "no_sway_system", "attributes": {"action": "stop"}},
+                {"code": "smooth_animation_system", "attributes": {"action": "stop", "code": "load_animation"}},
+                {"code": "smooth_animation_system", "attributes": {"action": "clear"}},
                 {"code": "player_stats_system", "attributes": {"code": "walkspeed", "value": 0}},
                 {"code": "reload_system", "attributes": {"action": "put"}},
                 {"code": "animation_system", "attributes": {"code": "unload"}},
@@ -239,7 +282,7 @@
         ],
         "inputs": [
           {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-reload"}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "repeat": true, "alt": false, "name": "maltiezcrossbows:weapon-reload"}},
           {"code": "mouse_right_down_aim", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-aim"}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
           {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-range-attack"}},
@@ -252,20 +295,52 @@
     }
   ],
   "attributes": {
-    "toolrackTransform": {"translation": {"x": 1.4, "y": 0.5, "z": 0.5}, "rotation": {"x": 1, "y": 95, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
-    "groundStorageTransform": {"translation": {"x": 0.55, "y": 0.44, "z": 0.75}, "rotation": {"x": 100, "y": 4, "z": -101}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
+    "toolrackTransform": {"translation": {"x": 1.1, "y": 0.8, "z": 1.2}, "rotation": {"x": 173, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
+    "groundStorageTransform": {
+      "translationByType": {
+        "*-simple": {"x": 0.25, "y": -0.06, "z": 0.85},
+        "*-stirrup": {"x": 0.25, "y": 0.14, "z": 0.85},
+        "*-goatsfoot": {"x": 0.25, "y": -0.06, "z": 0.85},
+        "*-windlass": {"x": 0.25, "y": 0.09, "z": 0.85}
+      },
+      "rotation": {"x": 104, "y": -180, "z": -155},
+      "origin": {"x": 0, "y": 0, "z": 0},
+      "scale": 0.81
+    },
+    "bullseyeWeaponStats": {
+      "ammoType": "arrow",
+      "aimDrift": 130,
+      "aimTwitch": 32,
+      "projectileVelocity": 30,
+      "accuracyOvertimeStart": 8,
+      "accuracyMovePenalty": 1,
+      "projectileSpread": 0.6,
+      "zeroingAngle": 1.5,
+      "aimTexPartChargePath": "bullseye:gui/aimarrowpart.png",
+      "aimTexFullChargePath": "bullseye:gui/aimarrowfull.png",
+      "allowSprint": false,
+      "moveSpeedPenalty": 0.4
+    }
   },
   "shape": {
-    "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-initial",
+    "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-animated",
     "alternates": [
-      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-start"},
-      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-finish"},
-      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-drawn"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-0"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-1"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-2"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-3"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-4"},
+      {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-5"},
       {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-loaded"}
     ]
   },
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -45, "y": 26, "z": 180}, "origin": {"x": 0.4, "y": -0.1, "z": 0}, "scaleXyz": {"x": -2, "y": 2, "z": 2}},
-  "fpHandTransform": {"translation": {"x": -0.5, "y": 0.2, "z": -0.5}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4},
+  "fpHandTransform": {
+		"translation": { "x": 0.5, "y": 0.5, "z": 0.5 },
+		"rotation": { "x": 0, "y": 0, "z": 0 },
+		"origin": { "x": 0, "y": 0, "z": 0 },
+		"scale": 4
+	},
   "tpHandTransform": {"translation": {"x": -0.9, "y": -0.1, "z": 0.5}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": -0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
 }
