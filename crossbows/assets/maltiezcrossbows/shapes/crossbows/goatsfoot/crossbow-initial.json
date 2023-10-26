@@ -9,12 +9,12 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"linen": "game:block/cloth/linen/normal1",
-		"steel": "game:block/metal/plate/steel",
-		"oak": "game:block/wood/debarked/oak",
-		"iron": "game:block/metal/ingot/iron",
-		"silver3": "game:block/metal/sheet/silver3",
-		"birch": "game:block/wood/debarked/birch"
+		"linen": "block/cloth/linen/normal1",
+		"steel": "block/metal/plate/steel",
+		"oak": "block/wood/debarked/oak",
+		"iron": "block/metal/ingot/iron",
+		"silver3": "block/metal/sheet/silver3",
+		"birch": "block/wood/debarked/birch"
 	},
 	"elements": [
 		{
