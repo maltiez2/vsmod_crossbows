@@ -18,5 +18,6 @@
     "item-bolt-steel": "鋼鉄のボルト",
     "item-spanningtool-goatsfoot": "ヤギの足",
     "item-spanningtool-windlass": "巻き上げ機",
-    "prefixandcreature-bolt-*": "ボルト"
+    "prefixandcreature-bolt-*": "ボルト",
+    "requirement-bolt": "ボルト"
 }

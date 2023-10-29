@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Crossbow/Wheel/Cube2,Root/lever_1,Root/Bow/Bow_holder_1,Root/Bow/Bow_right_limb_19,Root/Crossbow/Wheel/Cube3,Root/Crossbow/Wheel,Root/Bow/Bow_right_limb_13,Root/Bow/Bow_right_limb_1,Root/Bow/Bow_holder_4,Root/Stock/Stock_front_1,Root/Crossbow/Stock/Stirrup,Root/Bow/Bow_right_limb_7,Root/String,Root/Crossbow/Stock/Stock_front_1/Stock_front_11,Root/Crossbow/Plate,Root/Plate,Root/Crossbow/Lever,Root/Crossbow/String,Root/Bow_holder_1,Root/Crossbow/Stock/Bow_holder,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Bow_right_limb_1,Root/Cube12,Root/Crossbow/Stock,Root/Bow/Handleish,Root/Crossbow/Wheel/Cube12,Root/Bow/Bow_right_limb_19/Bow_right_limb_7,Root/Cube2,Root/Crossbow/Stock/Stock_front_1,Root/Cube3,Root/Wheel,Root/Crossbow/lever_1",
+		"collapsedPaths": "Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front/Frame_front/Windlass_wheel_front_small,Root/WIndlass_0,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front/Windlass_string_8,Root/lever_1,Root/String_3,Root/Bow/Bow_holder_1,Root/Crossbow/Wheel,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front/Windlass_string_4,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube10/Windlass_handles,Root/Bow,Root/Bow/Bow_holder_4,Root/Bow/Bow_right_limb_1,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_back/Windlass_wheel_2,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube10/Windlass_handles/Cube21,Root/Bow/Bow_right_limb_7,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube10/Windlass_handles/Cube23,Root/Crossbow/Plate,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front,Root/Stock/Stock_back_1/WIndlass_0,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front/Windlass_string,Root/Plate,Root/Crossbow/Lever,Root/Crossbow/String,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube11/Cube26,Root/Bow_holder_1,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube11/Cube25,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube10/Windlass_wheel_2,Root/Bow_right_limb_1,Root/Cube12,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Windlass_front/Frame_front,Root/Crossbow/Bow,Root/Stock/Stock_back_1/WIndlass_0/String_7/String_13,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/String_17,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/String_7,Root/Crossbow/Stock/Stock_front_1,Root/Cube2,Root/Cube3,Root/Wheel,Root/Stock/Stock_back_1/WIndlass_0/String_7/String_6,Root/WIndlass_0/Cube10,Root/Crossbow/Stock/Stock_back_1/WIndlass_0/Cube10",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -9,17 +9,20 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"linen": "block/cloth/linen/normal1",
-		"iron": "block/metal/plate/iron",
-		"steel": "block/metal/plate/steel",
-		"oak": "block/wood/debarked/oak"
+		"linen": "game:block/cloth/linen/normal1",
+		"head": "game:block/metal/ingot/iron",
+		"iron": "game:block/metal/ingot/iron",
+		"steel": "game:block/metal/plate/steel",
+		"bands": "game:block/metal/sheet/silver3",
+		"shaft": "game:block/wood/debarked/birch",
+		"oak": "game:block/wood/debarked/oak"
 	},
 	"elements": [
 		{
 			"name": "Crossbow",
-			"from": [ 7.5, 1.0, 11.0 ],
-			"to": [ 7.5, 1.0, 11.0 ],
-			"rotationOrigin": [ 7.5, 1.0, 11.0 ],
+			"from": [ 0.0, -0.5, 0.0 ],
+			"to": [ 0.0, -0.5, 0.0 ],
+			"rotationOrigin": [ 0.0, -0.5, 0.0 ],
 			"faces": {
 				"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -31,23 +34,23 @@
 			"children": [
 				{
 					"name": "String",
-					"from": [ 0.0, 2.0, -6.0 ],
-					"to": [ 0.5, 2.5, -5.5 ],
-					"rotationOrigin": [ 0.0, 2.0, -5.9 ],
+					"from": [ -0.5, 2.0, -6.0 ],
+					"to": [ 1.0, 2.5, -5.49 ],
+					"rotationOrigin": [ -0.5, 2.0, -5.9 ],
 					"faces": {
-						"north": { "texture": "#linen", "uv": [ 7.0, 3.5, 7.0, 4.5 ], "autoUv": false },
+						"north": { "texture": "#linen", "uv": [ 7.0, 3.5, 9.0, 4.5 ], "autoUv": false },
 						"east": { "texture": "#linen", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"south": { "texture": "#linen", "uv": [ 8.0, 6.5, 8.5, 7.5 ], "autoUv": false },
+						"south": { "texture": "#linen", "uv": [ 8.0, 6.5, 10.0, 7.5 ], "autoUv": false },
 						"west": { "texture": "#linen", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"up": { "texture": "#linen", "uv": [ 9.5, 7.5, 10.0, 8.5 ], "autoUv": false }
+						"up": { "texture": "#linen", "uv": [ 9.5, 7.5, 11.5, 8.5 ], "autoUv": false }
 					},
 					"children": [
 						{
 							"name": "String_2",
-							"from": [ 0.5, 0.0, 0.0 ],
-							"to": [ 10.8, 0.5, 0.5 ],
-							"rotationOrigin": [ 0.5, 0.5, 0.5 ],
-							"rotationZ": -4.5,
+							"from": [ 1.5, 0.0, 0.0 ],
+							"to": [ 11.3, 0.5, 0.5 ],
+							"rotationOrigin": [ 1.5, 0.5, 0.5 ],
+							"rotationZ": -5.0,
 							"faces": {
 								"north": { "texture": "#linen", "uv": [ 0.0, 1.5, 16.0, 2.5 ], "autoUv": false },
 								"east": { "texture": "#linen", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -59,10 +62,10 @@
 						{
 							"name": "String_6",
 							"from": [ 0.0, 0.0, 0.5 ],
-							"to": [ 10.3, 0.5, 1.0 ],
+							"to": [ 9.8, 0.5, 1.0 ],
 							"rotationOrigin": [ 0.0, 0.5, 0.5 ],
 							"rotationY": -180.0,
-							"rotationZ": -4.5,
+							"rotationZ": -5.0,
 							"faces": {
 								"north": { "texture": "#linen", "uv": [ 0.0, 10.0, 16.0, 11.0 ], "autoUv": false },
 								"east": { "texture": "#linen", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -715,7 +718,7 @@
 																			"from": [ 0.4, -0.2, -0.4 ],
 																			"to": [ 1.0, 0.6, 1.2 ],
 																			"rotationOrigin": [ 0.4, -0.2, 0.1 ],
-																			"rotationY": -20.0,
+																			"rotationY": -8.0,
 																			"rotationZ": -1.0,
 																			"faces": {
 																				"north": { "texture": "#linen", "uv": [ 0.0, 0.0, 1.0, 1.5 ], "autoUv": false },
@@ -926,7 +929,7 @@
 																			"from": [ 0.4, -0.2, -0.4 ],
 																			"to": [ 1.0, 0.6, 1.2 ],
 																			"rotationOrigin": [ 0.4, -0.2, 0.1 ],
-																			"rotationY": -20.0,
+																			"rotationY": -8.0,
 																			"rotationZ": -1.0,
 																			"faces": {
 																				"north": { "texture": "#linen", "uv": [ 0.0, 0.0, 1.0, 1.5 ], "autoUv": false },
@@ -954,7 +957,6 @@
 							"from": [ 9.0, 0.3, -0.3 ],
 							"to": [ 9.0, 0.3, -0.3 ],
 							"rotationOrigin": [ 9.0, 0.3, -0.3 ],
-							"rotationX": 0.0,
 							"faces": {
 								"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 								"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1076,19 +1078,254 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Bolt_point",
+					"from": [ 0.25, 2.25, -1.0 ],
+					"to": [ 0.25, 2.25, -1.0 ],
+					"rotationOrigin": [ 0.25, 2.25, -1.0 ],
+					"faces": {
+						"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+					},
+					"attachmentpoints": [
+						{
+							"code": "bolt",
+							"posX": "0.0","posY": "0.0","posZ": "0.0",
+							"rotationX": "0.0","rotationY": "90.0","rotationZ": "0.0"
+						}
+					]
 				}
 			]
+		},
+		{
+			"name": "Cube10",
+			"from": [ 0.0, 0.0, 0.0 ],
+			"to": [ 1.0, 1.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"south": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"west": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"up": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"down": { "texture": "#steel", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+			}
 		}
 	],
 	"animations": [
 		{
 			"name": "draw",
 			"code": "draw",
-			"quantityframes": 30,
+			"quantityframes": 160,
 			"onActivityStopped": "Rewind",
 			"onAnimationEnd": "Hold",
 			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 85,
+					"elements": {
+						"Wheel": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 90,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
 
+					}
+				},
+				{
+					"frame": 110,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 120,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 123,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 133,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 159,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.0 },
+						"String_6": { "rotationX": 4.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 4.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 67.5, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
 			]
 		},
 
@@ -1099,7 +1336,253 @@
 			"onActivityStopped": "Rewind",
 			"onAnimationEnd": "Hold",
 			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 10.0, "offsetZ": 32.0, "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 3.0, "offsetZ": -2.0, "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
 
+		{
+			"name": "release",
+			"code": "release",
+			"quantityframes": 60,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.3 },
+						"String_2": { "rotationX": 2.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 2.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 65.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 6.3 },
+						"String_2": { "rotationX": 2.0, "rotationY": 29.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 2.0, "rotationY": -29.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": -14.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": 65.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0 },
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"Wheel": { "rotationX": -20.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 7,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -6.3 }
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 11,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 17,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": -14.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": -540.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 54,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": -1030.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -256.0 }
+					}
+				},
+				{
+					"frame": 59,
+					"elements": {
+						"String": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"String_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"String_6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lever": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Wheel": { "rotationX": -1085.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bow_right_limb_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Bolt_point": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -256.0 }
+					}
+				}
 			]
 		}
 	]

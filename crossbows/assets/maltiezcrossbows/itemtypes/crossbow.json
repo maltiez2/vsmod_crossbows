@@ -4,7 +4,7 @@
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["simple", "stirrup", "goatsfoot", "windlass"]}],
   "maxstacksize": 1,
-  "durabilityByType": {"*-simple": 300, "*-stirrup": 750, "*-goatsfoot": 1200, "*-windlass": 900},
+  "durabilityByType": {"*-simple": 300, "*-stirrup": 600, "*-goatsfoot": 1600, "*-windlass": 1200},
   "tool": "bow",
   "rackable": true,
   "behaviors": [
@@ -45,10 +45,10 @@
             "code": "basic_aiming_system",
             "class": "Aiming",
             "attributesByType": {
-              "*-simple": {"duration": 300, "dispersionMin_MOA": 120, "dispersionMax_MOA": 900},
-              "*-stirrup": {"duration": 300, "dispersionMin_MOA": 0, "dispersionMax_MOA": 600},
-              "*-goatsfoot": {"duration": 300, "dispersionMin_MOA": 0, "dispersionMax_MOA": 600},
-              "*-windlass": {"duration": 300, "dispersionMin_MOA": 0, "dispersionMax_MOA": 600}
+              "*-simple": {"duration": 250, "dispersionMin_MOA": 120, "dispersionMax_MOA": 220},
+              "*-stirrup": {"duration": 250, "dispersionMin_MOA": 60, "dispersionMax_MOA": 450},
+              "*-goatsfoot": {"duration": 250, "dispersionMin_MOA": 30, "dispersionMax_MOA": 450},
+              "*-windlass": {"duration": 250, "dispersionMin_MOA": 20, "dispersionMax_MOA": 600}
             }
           },
           {
@@ -68,10 +68,10 @@
             "attributes": {
               "soundSystem": "sound_system",
               "animations": [
-                {"code": "draw", "firstVariant": 1, "lastVariant": 1, "durationByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 8000, "*-windlass": 16000}},
-                {"code": "load", "firstVariant": 1, "lastVariant": 1, "duration": 2000},
+                {"code": "draw", "firstVariant": 2, "lastVariant": 7, "durationByType": {"*-simple": 2000, "*-stirrup": 4000, "*-goatsfoot": 6000, "*-windlass": 14000}},
+                {"code": "load", "firstVariant": 7, "lastVariant": 8, "duration": 2000},
                 {"code": "undraw", "firstVariant": 1, "lastVariant": 1, "duration": 0},
-                {"code": "unload", "firstVariant": 1, "lastVariant": 1, "duration": 0},
+                {"code": "unload", "firstVariant": 7, "lastVariant": 7, "duration": 0},
                 {"code": "release", "firstVariant": 1, "lastVariant": 1, "duration": 0}
               ]
             }
@@ -86,23 +86,28 @@
                   "duration": 500,
                   "fpTransformByType": {
                     "*-simple": {"translation": {"x": 0, "y": -0.3, "z": 0.0}, "rotation": {"x": 30, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                    "*-stirrup": {"translation": {"x": 0, "y": -1.5, "z": 0}, "rotation": {"x": -60, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-stirrup": {"translation": {"x": 0, "y": -0.8, "z": -1.3}, "rotation": {"x": -45, "y": 0, "z": -5}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
                     "*-goatsfoot": {"translation": {"x": 0, "y": -0.3, "z": -1.0}, "rotation": {"x": 30, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                    "*-windlass": {"translation": {"x": 0, "y": -1.5, "z": 0}, "rotation": {"x": -60, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                    "*-windlass": {"translation": {"x": 0, "y": -0.8, "z": -1.6}, "rotation": {"x": -60, "y": 0, "z": -10}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                   },
-                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "tpTransformByType": {
+                    "*-simple": {"translation": {"x": -0.5, "y": 0.5, "z": 0.0}, "rotation": {"x": 90, "y": -30, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-stirrup": {"translation": {"x": -0.5, "y": 0.0, "z": 0.3}, "rotation": {"x": 90, "y": 80, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-goatsfoot": {"translation": {"x": -0.5, "y": 0.5, "z": 0.0}, "rotation": {"x": 90, "y": -30, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
+                    "*-windlass": {"translation": {"x": -0.5, "y": 0.0, "z": 0.3}, "rotation": {"x": 90, "y": 80, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  }
                 },
                 {
                   "code": "load",
                   "duration": 300,
                   "fpTransform": {"translation": {"x": 0, "y": -0.2, "z": -0.6}, "rotation": {"x": 15, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "tpTransform":  {"translation": {"x": -0.5, "y": 0.2, "z": 0.0}, "rotation": {"x": 90, "y": -15, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 },
                 {
                   "code": "aim",
                   "duration": 300,
                   "fpTransform": {"translation": {"x": -0.5, "y": 0.0, "z": -0.4}, "rotation": {"x": 0, "y": 4, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
-                  "tpTransform": {"translation": {"x": 1, "y": -0.8, "z": -0.2}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
+                  "tpTransform": {"translation": {"x": 0.1, "y": 0.2, "z": 0.1}, "rotation": {"x": 105, "y": 90, "z": -90}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1}
                 }
               ]
             }
@@ -115,9 +120,9 @@
               "animations": [
                 {"code": "draw_animation", "parametersByType": {
                    "*-simple": {"animation": "Draw", "code": "draw", "animationSpeed": 0.6, "easeOutSpeed": 32, "easeInSpeed": 16},
-                   "*-stirrup": {"animation": "Draw", "code": "draw", "animationSpeed": 0.6, "easeOutSpeed": 32, "easeInSpeed": 16},
+                   "*-stirrup": {"animation": "Draw", "code": "draw", "animationSpeed": 0.4, "easeOutSpeed": 32, "easeInSpeed": 16},
                    "*-goatsfoot": {"animation": "Draw", "code": "draw", "animationSpeed": 0.6, "easeOutSpeed": 32, "easeInSpeed": 16},
-                   "*-windlass": {"animation": "Draw", "code": "draw", "animationSpeed": 0.6, "easeOutSpeed": 32, "easeInSpeed": 16}
+                   "*-windlass": {"animation": "Draw", "code": "draw", "animationSpeed": 0.4, "easeOutSpeed": 32, "easeInSpeed": 16}
                  }, "attachments": []},
                 {
                   "code": "load_animation",
@@ -132,7 +137,12 @@
                 },
                 {
                   "code": "release_animation",
-                  "parameters": {"animation": "release", "code": "release", "animationSpeed": 6.0, "easeOutSpeed": 1000, "easeInSpeed": 1000},
+                  "parametersByType": {
+                   "*-simple": {"animation": "release", "code": "release", "animationSpeed": 12.0, "easeOutSpeed": 1000, "easeInSpeed": 1000},
+                   "*-stirrup": {"animation": "release", "code": "release", "animationSpeed": 6.0, "easeOutSpeed": 1000, "easeInSpeed": 1000},
+                   "*-goatsfoot": {"animation": "release", "code": "release", "animationSpeed": 6.0, "easeOutSpeed": 1000, "easeInSpeed": 1000},
+                   "*-windlass": {"animation": "release", "code": "release", "animationSpeed": 6.0, "easeOutSpeed": 1000, "easeInSpeed": 1000}
+                  } ,
                   "attachments": [
                     {
                       "attachment": "bolt",
@@ -154,7 +164,7 @@
             "code": "draw",
             "class": "Delayed",
             "attributes": {
-              "delay_msByType": {"*-simple": 2000, "*-stirrup": 6000, "*-goatsfoot": 6000, "*-windlass": 16000},
+              "delay_msByType": {"*-simple": 2000, "*-stirrup": 4000, "*-goatsfoot": 6000, "*-windlass": 14000},
               "inputsToIntercept": [],
               "inputsToHandle": {"initial": ["mouse_right_down"], "cancel": ["mouse_right_up", "handle_slot_change", "item_dropped"]},
               "states": [{"initial": "initial", "cancel": "initial", "final": "drawn"}],
@@ -201,7 +211,7 @@
               "states": [{"initial": "drawn", "cancel": "drawn", "final": "loaded"}],
               "systems": {
                 "initial": [
-                  {"code": "reload_system", "attributes": {"ammoCode": "bolt", "action": "take", "ammoName": "maltiezcrossbows:item-bolt"}},
+                  {"code": "reload_system", "attributes": {"ammoCode": "bolt", "action": "take", "ammoName": "maltiezcrossbows:requirement-bolt"}},
                   {"code": "animation_system", "attributes": {"code": "load"}},
                   {"code": "no_sway_system", "attributes": {"action": "start"}},
                   {"code": "transform_animation_system", "attributes": {"code": "load", "mode": "forward"}},
@@ -231,7 +241,7 @@
             "class": "Delayed",
             "attributes": {
               "delay_ms": 100,
-              "inputsToIntercept": ["handle_slot_change", "prevent_item_dropped"],
+              "inputsToIntercept": ["prevent_slot_change", "prevent_item_dropped"],
               "inputsToHandle": {"initial": ["mouse_left_down"], "cancel": []},
               "states": [{"initial": "loaded", "cancel": "initial", "final": "initial"}],
               "systems": {
@@ -260,7 +270,7 @@
             "code": "aim",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_down_aim"],
+              "input": ["mouse_right_down"],
               "inputsToIntercept": [],
               "states": [{"initial": "loaded", "final": "loaded"}],
               "systems": [
@@ -277,9 +287,9 @@
             "code": "ease",
             "class": "Instant",
             "attributes": {
-              "input": ["mouse_right_up_not_handle"],
+              "input": ["mouse_right_up_not_handle", "handle_slot_change", "item_dropped"],
               "inputsToIntercept": [],
-              "states": [{"initial": "loaded", "final": "loaded"}, {"initial": "initial", "final": "initial"}],
+              "states": [{"initial": "loaded", "final": "loaded"}, {"initial": "initial", "final": "initial"}, {"initial": "drawn", "final": "drawn"}],
               "systems": [
                 {"code": "transform_animation_system", "attributes": {"code": "aim", "mode": "backward", "duration": 100}},
                 {"code": "aiming_system", "attributes": {"action": "stop"}},
@@ -294,7 +304,7 @@
             "code": "unload",
             "class": "Instant",
             "attributes": {
-              "input": ["handle_slot_change", "prevent_item_dropped"],
+              "input": ["prevent_slot_change", "prevent_item_dropped", "slot_modified"],
               "inputsToIntercept": [],
               "states": [{"initial": "loaded", "final": "drawn"}],
               "systems": [
@@ -310,16 +320,32 @@
                 {"code": "player_animation_system", "attributes": {"code": "bowaim", "type": "stop"}}
               ]
             }
+          },
+          {
+            "code": "last_animation",
+            "class": "Instant",
+            "attributes": {
+              "input": ["slot_selected"],
+              "inputsToIntercept": [],
+              "states": [
+                {"initial": "loaded", "final": "loaded"},
+                {"initial": "drawn", "final": "drawn"},
+                {"initial": "initial", "final": "initial"}
+              ],
+              "systems": [{"code": "smooth_animation_system", "attributes": {"action": "last"}}]
+            }
           }
         ],
         "inputs": [
+          {"code": "prevent_slot_change", "class": "SlotChange", "attributes": {"type": "prevent"}},
           {"code": "handle_slot_change", "class": "SlotChange", "attributes": {"type": "handle"}},
-          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "repeat": true, "alt": false, "name": "maltiezcrossbows:weapon-reload"}},
-          {"code": "mouse_right_down_aim", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-aim"}},
+          {"code": "slot_modified", "class": "Key", "attributes": {"key": "AltLeft", "slot": "all", "handle": false}},
+          {"code": "slot_selected", "class": "SlotSelected", "attributes": {}},
+          {"code": "mouse_right_down", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "repeat": true, "alt": false, "name": "maltiezcrossbows:input-weapon-reload"}},
+          {"code": "mouse_right_down_aim", "class": "MouseKey", "attributes": {"key": "Right", "type": "pressed", "alt": false}},
           {"code": "mouse_right_up", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false}},
-          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false, "name": "maltiezcrossbows:weapon-range-attack"}},
+          {"code": "mouse_left_down", "class": "MouseKey", "attributes": {"key": "Left", "type": "pressed", "alt": false}},
           {"code": "mouse_right_up_not_handle", "class": "MouseKey", "attributes": {"key": "Right", "type": "released", "alt": false, "handle": false}},
-          {"code": "melee_attack", "class": "Hotkey", "attributes": {"key": "R", "name": "maltiezcrossbows:weapon-melee-attack"}},
           {"code": "prevent_item_dropped", "class": "ItemDropped", "attributes": {"handle": true}},
           {"code": "item_dropped", "class": "ItemDropped", "attributes": {"handle": false}}
         ]
@@ -327,35 +353,60 @@
     }
   ],
   "attributes": {
-    "toolrackTransform": {"translation": {"x": 1.1, "y": 0.8, "z": 1.2}, "rotation": {"x": 173, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
-    "groundStorageTransform": {
-      "translationByType": {
-        "*-simple": {"x": 0.25, "y": -0.06, "z": 0.85},
-        "*-stirrup": {"x": 0.25, "y": 0.14, "z": 0.85},
-        "*-goatsfoot": {"x": 0.25, "y": -0.06, "z": 0.85},
-        "*-windlass": {"x": 0.25, "y": 0.09, "z": 0.85}
-      },
-      "rotation": {"x": 104, "y": -180, "z": -155},
-      "origin": {"x": 0, "y": 0, "z": 0},
-      "scale": 0.81
+    "toolrackTransform": {
+			"translation": { "x": 0, "y": 0.6, "z": 0.5 },
+			"rotation": { "x": 173, "y": -90, "z": 0 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 1.34
+		},
+    "groundStorageTransformByType": {
+      "*-simple": {
+			"translation": { "x": 0.5, "y": 0.76, "z": 0.74 },
+			"rotation": { "x": 104, "y": -180, "z": -155 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 0.81
+		},
+      "*-stirrup": {
+			"translation": { "x": 0.5, "y": 0.70, "z": 0.74 },
+			"rotation": { "x": 110, "y": -180, "z": -155 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 0.81
+		},
+      "*-goatsfoot": {
+			"translation": { "x": 0.5, "y": 0.54, "z": 0.74 },
+			"rotation": { "x": 110, "y": -180, "z": -155 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 0.81
+		},
+      "*-windlass": {
+			"translation": { "x": 0.5, "y": 0.69, "z": 0.74 },
+			"rotation": { "x": 105, "y": -180, "z": -155 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 0.81
+		}
     },
     "bullseyeWeaponStats": {
       "ammoType": "arrow",
-      "aimDrift": 32,
+      "aimDriftByType": {
+        "*-simple": 32,
+        "*-stirrup": 64,
+        "*-goatsfoot": 96,
+        "*-windlass": 128
+      },
       "aimTwitch": 8,
-      "projectileVelocity": 30,
-      "accuracyOvertimeStart": 8,
-      "accuracyMovePenalty": 1,
-      "projectileSpread": 0.6,
-      "zeroingAngle": 1.5,
+      "projectileVelocity": 0,
+      "accuracyOvertimeStart": 0,
+      "accuracyMovePenalty": 0,
+      "projectileSpread": 0,
+      "zeroingAngle": 0,
       "aimTexPartChargePath": "bullseye:gui/aimarrowpart.png",
       "aimTexFullChargePath": "bullseye:gui/aimarrowfull.png",
-      "allowSprint": false,
-      "moveSpeedPenalty": 0.4
+      "allowSprint": true,
+      "moveSpeedPenalty": 0
     }
   },
   "shape": {
-    "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-animated",
+    "base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-initial",
     "alternates": [
       {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-0"},
       {"base": "maltiezcrossbows:crossbows/{drawtype}/crossbow-draw-1"},
@@ -368,9 +419,9 @@
   },
   "guiTransform": {
 		"translation": { "x": 0, "y": 0, "z": 0 },
-		"rotation": { "x": -29, "y": 36, "z": 180 },
-		"origin": { "x": 0, "y": 0, "z": -0.4 },
-		"scaleXyz": { "x": -2.13, "y": 2.13, "z": 2.13 }
+		"rotation": { "x": -41, "y": 40, "z": 180 },
+		"origin": { "x": -0.2, "y": -0.3, "z": -1 },
+		"scaleXyz": { "x": -2.72, "y": 2.72, "z": 2.72 }
 	},
   "fpHandTransform": {
 		"translation": { "x": 0.5, "y": 0.5, "z": 0.5 },
@@ -378,6 +429,16 @@
 		"origin": { "x": 0, "y": 0, "z": 0 },
 		"scale": 4
 	},
-  "tpHandTransform": {"translation": {"x": -0.9, "y": -0.1, "z": 0.5}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-  "groundTransform": {"translation": {"x": 0, "y": -0.05, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+  "tpHandTransform": {
+		"translation": { "x": -0.2, "y": 0, "z": -0 },
+		"rotation": { "x": 0, "y": -90, "z": 0 },
+		"origin": { "x": 0, "y": 0, "z": 0 },
+		"scale": 0.8
+	},
+  "groundTransform": {
+		"translation": { "x": 0, "y": 0.13, "z": 0 },
+		"rotation": { "x": 1, "y": 0, "z": 0 },
+		"origin": { "x": 0, "y": 0, "z": 0 },
+		"scale": 4.8
+	}
 }

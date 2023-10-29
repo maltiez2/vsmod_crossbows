@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Crossbow/Goatleg/origin/Goatleg_33,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_13,Root/Crossbow/Goatleg/origin/Goatleg_13,Root/String_3,Root/lever_1,Root/Bow/Bow_holder_1,Root/Crossbow/Wheel,Root/Bow,Root/Crossbow/Goatleg/Goatleg_13,Root/Bow/Bow_right_limb_1,Root/Bow/Bow_holder_4,Root/Stock/Stock_front_1,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_33,Root/Crossbow/Plate,Root/Crossbow/Goatleg/origin/Goatleg_Handle,Root/Plate,Root/Crossbow/Lever,Root/Crossbow/String,Root/Bow_holder_1,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Bow_right_limb_1,Root/Cube12,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1,Root/Crossbow/Stock,Root/Crossbow/Bow,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_8,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1/Goatleg_2/Goatleg_3/Goatleg_4/Goatleg_5/Goatleg_6,Root/Crossbow/Goatleg/origin/Goatleg_short_3,Root/Cube2,Root/Cube3,Root/Wheel,Root/Stock/Stock_back_1/Goatleg,Root/Crossbow/Goatleg/origin/Goatleg_30",
+		"collapsedPaths": "Root/Crossbow/Goatleg/origin/Goatleg_33,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_13,Root/Crossbow/Goatleg/origin/Goatleg_13,Root/String_3,Root/lever_1,Root/Bow/Bow_holder_1,Root/Crossbow/Wheel,Root/Bow,Root/Crossbow/Goatleg/Goatleg_13,Root/Bow/Bow_right_limb_1,Root/Bow/Bow_holder_4,Root/Stock/Stock_front_1,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_33,Root/Crossbow/Plate,Root/Crossbow/Goatleg/origin/Goatleg_Handle,Root/Plate,Root/Crossbow/Lever,Root/Crossbow/String,Root/Bow_holder_1,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Crossbow/Goatleg/origin/Goatleg_long_2,Root/Bow_right_limb_1,Root/Cube12,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1,Root/Crossbow/Stock,Root/Crossbow/Bow,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_8,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1/Goatleg_2/Goatleg_3/Goatleg_4/Goatleg_5/Goatleg_6,Root/Crossbow/Goatleg/origin/Goatleg_short_3,Root/Cube2,Root/Cube3,Root/Crossbow/Goatleg/origin/Goatleg_short_1,Root/Wheel,Root/Stock/Stock_back_1/Goatleg,Root/Crossbow/Goatleg/origin/Goatleg_long_1,Root/Crossbow/Goatleg/origin/Goatleg_30",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -956,9 +956,9 @@
 				},
 				{
 					"name": "Goatleg",
-					"from": [ -1.0, 16.0, 32.0 ],
-					"to": [ -1.0, 16.0, 32.0 ],
-					"rotationOrigin": [ -1.0, 16.0, 32.0 ],
+					"from": [ -1.0, 1.7, 3.2 ],
+					"to": [ -1.0, 1.7, 3.2 ],
+					"rotationOrigin": [ -1.0, 1.7, 3.2 ],
 					"faces": {
 						"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 						"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -973,6 +973,7 @@
 							"from": [ 0.0, 0.0, 0.0 ],
 							"to": [ 0.0, 0.0, 0.0 ],
 							"rotationOrigin": [ 0.0, 1.15, -6.65 ],
+							"rotationX": 7.0,
 							"faces": {
 								"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 								"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1169,7 +1170,7 @@
 									"from": [ -0.6, 0.9, -6.9 ],
 									"to": [ 3.1, 1.4, -6.4 ],
 									"rotationOrigin": [ -0.6, 1.15, -6.65 ],
-									"rotationX": -90.0,
+									"rotationX": 93.0,
 									"faces": {
 										"north": { "texture": "#iron", "uv": [ 0.0, 0.0, 3.5, 0.5 ] },
 										"east": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1217,7 +1218,7 @@
 									"from": [ -0.5, 0.7, -7.1 ],
 									"to": [ 0.0, 1.6, -6.2 ],
 									"rotationOrigin": [ -0.5, 1.15, -6.65 ],
-									"rotationX": -90.0,
+									"rotationX": -97.0,
 									"faces": {
 										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -1264,7 +1265,7 @@
 									"from": [ 2.5, 0.7, -7.1 ],
 									"to": [ 3.0, 1.6, -6.2 ],
 									"rotationOrigin": [ 2.5, 1.15, -6.65 ],
-									"rotationX": -90.0,
+									"rotationX": -97.0,
 									"faces": {
 										"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },

@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Bands,Root/Bolt,Root/Tail",
+		"collapsedPaths": "Root/Tail,Root/Bands",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -36,9 +36,9 @@
 					"rotationX": -45.0,
 					"faces": {
 						"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 16.0, 15.5 ], "autoUv": false },
-						"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+						"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 9.0, 8.0 ], "autoUv": false },
 						"south": { "texture": "#shaft", "uv": [ 0.0, 7.0, 16.0, 8.0 ], "autoUv": false },
-						"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ], "windMode": [-1,-1,-1,-1] },
+						"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 4.0, 3.0 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
 						"up": { "texture": "#shaft", "uv": [ 0.0, 8.0, 16.0, 9.0 ], "autoUv": false },
 						"down": { "texture": "#shaft", "uv": [ 0.0, 0.5, 16.0, 1.5 ], "autoUv": false }
 					},
@@ -200,34 +200,6 @@
 										"up": { "texture": "#bands", "uv": [ 5.5, 14.5, 6.0, 15.5 ], "autoUv": false },
 										"down": { "texture": "#bands", "uv": [ 6.0, 7.0, 6.5, 8.0 ], "autoUv": false }
 									}
-								},
-								{
-									"name": "Cube16",
-									"from": [ -8.6, 0.0, 0.0 ],
-									"to": [ -8.3, 0.8, 0.8 ],
-									"rotationOrigin": [ -8.6, 0.0, 0.0 ],
-									"faces": {
-										"north": { "texture": "#bands", "uv": [ 2.0, 11.0, 2.5, 12.0 ], "autoUv": false },
-										"east": { "texture": "#bands", "uv": [ 10.5, 8.0, 11.0, 8.5 ] },
-										"south": { "texture": "#bands", "uv": [ 6.0, 7.5, 6.5, 8.5 ], "autoUv": false },
-										"west": { "texture": "#bands", "uv": [ 11.0, 9.0, 11.5, 9.5 ] },
-										"up": { "texture": "#bands", "uv": [ 6.0, 7.5, 6.5, 8.5 ], "autoUv": false },
-										"down": { "texture": "#bands", "uv": [ 8.5, 0.5, 9.0, 1.5 ], "autoUv": false }
-									}
-								},
-								{
-									"name": "Cube17",
-									"from": [ -6.4, 0.0, 0.0 ],
-									"to": [ -6.1, 0.8, 0.8 ],
-									"rotationOrigin": [ -7.4, 0.0, 0.0 ],
-									"faces": {
-										"north": { "texture": "#bands", "uv": [ 8.0, 10.0, 8.5, 11.0 ], "autoUv": false },
-										"east": { "texture": "#bands", "uv": [ 10.5, 10.0, 11.0, 10.5 ] },
-										"south": { "texture": "#bands", "uv": [ 3.5, 10.0, 4.0, 11.0 ], "autoUv": false },
-										"west": { "texture": "#bands", "uv": [ 10.5, 8.0, 11.0, 8.5 ] },
-										"up": { "texture": "#bands", "uv": [ 8.5, 1.0, 9.0, 2.0 ], "autoUv": false },
-										"down": { "texture": "#bands", "uv": [ 6.0, 6.0, 6.5, 7.0 ], "autoUv": false }
-									}
 								}
 							]
 						},
@@ -246,36 +218,103 @@
 							},
 							"children": [
 								{
-									"name": "Stick2",
-									"from": [ -2.0, -0.1, -0.7 ],
-									"to": [ 0.0, 0.11, 0.1 ],
-									"rotationOrigin": [ 0.0, 0.0, 0.1 ],
-									"rotationX": 1.0,
-									"rotationY": 24.0,
+									"name": "Stick3",
+									"from": [ 0.5, -0.1, -0.4 ],
+									"to": [ 2.0, 0.11, 0.3 ],
+									"rotationOrigin": [ 2.0, 0.0, -0.4 ],
+									"rotationY": -30.0,
 									"faces": {
-										"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 2.0, 15.0 ] },
+										"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 1.5, 15.0 ] },
 										"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
-										"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 2.0, 8.0 ] },
-										"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ], "windMode": [-1,-1,-1,-1] },
-										"up": { "texture": "#shaft", "uv": [ 0.0, 6.5, 2.5, 5.5 ], "autoUv": false },
-										"down": { "texture": "#shaft", "uv": [ 0.0, 0.5, 2.5, 1.5 ], "autoUv": false }
-									}
+										"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 1.5, 8.0 ] },
+										"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+										"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 2.4, 0.8 ], "autoUv": false },
+										"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 2.4, 0.8 ], "autoUv": false }
+									},
+									"children": [
+										{
+											"name": "Stick4",
+											"from": [ -2.5, -0.0087, 0.0 ],
+											"to": [ 0.0, 0.2013, 1.0 ],
+											"rotationOrigin": [ 0.0, 0.0913, 0.0 ],
+											"rotationY": 25.0,
+											"faces": {
+												"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 2.5, 15.0 ] },
+												"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 9.0, 7.5 ] },
+												"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 2.5, 8.0 ] },
+												"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 4.0, 2.5 ] },
+												"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 3.7, 1.3 ], "autoUv": false },
+												"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 3.7, 1.3 ], "autoUv": false }
+											},
+											"children": [
+												{
+													"name": "Stick7",
+													"from": [ -1.0, 0.01, 0.0 ],
+													"to": [ 0.0, 0.2, 0.5 ],
+													"rotationOrigin": [ 0.0, 0.1, 0.0 ],
+													"rotationY": 60.0,
+													"faces": {
+														"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 1.0, 15.0 ] },
+														"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+														"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 1.0, 8.0 ] },
+														"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+														"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 1.5, 1.0 ], "autoUv": false },
+														"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 1.5, 1.0 ], "autoUv": false }
+													}
+												}
+											]
+										}
+									]
 								},
 								{
-									"name": "Stick3",
-									"from": [ -2.0, -0.1, -0.5 ],
-									"to": [ 0.0, 0.11, 0.3 ],
-									"rotationOrigin": [ 0.0, 0.0, -0.5 ],
-									"rotationX": 1.0,
-									"rotationY": -23.0,
+									"name": "Stick5",
+									"from": [ 0.5, -0.1, 0.0 ],
+									"to": [ 2.0, 0.11, 0.7 ],
+									"rotationOrigin": [ 2.0, 0.0, 0.0 ],
+									"rotationX": 180.0,
+									"rotationY": -30.0,
 									"faces": {
-										"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 2.0, 15.0 ] },
+										"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 1.5, 15.0 ] },
 										"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
-										"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 2.0, 8.0 ] },
+										"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 1.5, 8.0 ] },
 										"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
-										"up": { "texture": "#shaft", "uv": [ 12.0, 10.5, 14.5, 11.5 ], "autoUv": false },
-										"down": { "texture": "#shaft", "uv": [ 0.0, 0.5, 2.5, 1.5 ], "autoUv": false }
-									}
+										"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 2.4, 0.8 ], "autoUv": false },
+										"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 2.4, 0.8 ], "autoUv": false }
+									},
+									"children": [
+										{
+											"name": "Stick6",
+											"from": [ -2.5, -0.0087, 0.0 ],
+											"to": [ 0.0, 0.2013, 1.0 ],
+											"rotationOrigin": [ 0.0, 0.0913, 0.0 ],
+											"rotationY": 25.0,
+											"faces": {
+												"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 2.5, 15.0 ] },
+												"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 9.0, 7.5 ] },
+												"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 2.5, 8.0 ] },
+												"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 4.0, 2.5 ] },
+												"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 3.7, 1.3 ], "autoUv": false },
+												"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 3.7, 1.3 ], "autoUv": false }
+											},
+											"children": [
+												{
+													"name": "Stick8",
+													"from": [ -1.0, 0.01, 0.0 ],
+													"to": [ 0.0, 0.2, 0.5 ],
+													"rotationOrigin": [ 0.0, 0.1, 0.0 ],
+													"rotationY": 60.0,
+													"faces": {
+														"north": { "texture": "#shaft", "uv": [ 0.0, 14.5, 1.0, 15.0 ] },
+														"east": { "texture": "#shaft", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+														"south": { "texture": "#shaft", "uv": [ 0.0, 7.5, 1.0, 8.0 ] },
+														"west": { "texture": "#shaft", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+														"up": { "texture": "#shaft", "uv": [ 0.0, 0.0, 1.5, 1.0 ], "autoUv": false },
+														"down": { "texture": "#shaft", "uv": [ 0.0, 0.0, 1.5, 1.0 ], "autoUv": false }
+													}
+												}
+											]
+										}
+									]
 								}
 							]
 						}

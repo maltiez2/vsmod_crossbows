@@ -10,7 +10,7 @@
 	},
 	"textures": {
 		"linen": "game:block/cloth/linen/normal1",
-		"iron": "game:block/metal/plate/iron",
+		"iron": "game:block/metal/ingot/iron",
 		"steel": "game:block/metal/plate/steel",
 		"oak": "game:block/wood/debarked/oak"
 	},

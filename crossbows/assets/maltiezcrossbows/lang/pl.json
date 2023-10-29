@@ -15,5 +15,6 @@
     "item-bolt-steel": "Stalowa strzała",
     "item-spanningtool-goatsfoot": "Kozie stopo",
     "item-spanningtool-windlass": "Korba",
-    "prefixandcreature-bolt-*": "Strzała"
+    "prefixandcreature-bolt-*": "Strzała",
+    "requirement-bolt": "Strzała"
 }
