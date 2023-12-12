@@ -6,10 +6,10 @@
         "Maltiez"
     ],
     "description": "Medieval crossbows (Alpha)",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "Translation": ["RikeiR - Japanese", "Kaofan - Polish"],
     "dependencies": {
         "game": "1.18.8",
-        "fsmlib": "0.1.9"
+        "fsmlib": "0.1.10"
     }
 }

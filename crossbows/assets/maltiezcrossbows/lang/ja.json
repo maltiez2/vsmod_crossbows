@@ -1,5 +1,5 @@
 {
-	"comment_version": "Mod Version: v0.0.1",
+	"comment_version": "Mod Version: v0.1.0",
 	"comment_author": "Translated By: RikeiR",
 
     "game:tabname-maltiezcrossbows": "Crossbows（クロスボウ）",
@@ -19,5 +19,6 @@
     "item-spanningtool-goatsfoot": "ヤギの足",
     "item-spanningtool-windlass": "巻き上げ機",
     "prefixandcreature-bolt-*": "ボルト",
-    "requirement-bolt": "ボルト"
+    "requirement-bolt": "ボルト",
+    "input-weapon-reload": "リロードまたは照準 (Altキーを押しながら操作)"
 }
