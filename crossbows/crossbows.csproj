@@ -82,24 +82,24 @@
   <Target Name="ModInfo" AfterTargets="Build">
     <PropertyGroup>
       <ModInfo>
-        {
-        "type": "$(ModType)",
-        "name": "$(ModName)",
-        "modid": "$(ModId)",
-        "version": "$(Version)",
+{
+    "type": "$(ModType)",
+    "name": "$(ModName)",
+    "modid": "$(ModId)",
+    "version": "$(Version)",
 
-        "description": "$(Description)",
-        "authors": [ @(ModInfoAuthors->'"%(Identity)"', ', ') ],
-        "translation": [ @(ModInfoTranslators->'"%(Identity)"', ', ') ],
+    "description": "$(Description)",
+    "authors": [ @(ModInfoAuthors->'"%(Identity)"', ', ') ],
+    "translation": [ @(ModInfoTranslators->'"%(Identity)"', ', ') ],
 
-        "dependencies": {
+    "dependencies": {
         @(Dependencies->'"%(Identity)": "%(Version)"', ', ')
-        },
+    },
 
-        "side" : "$(Side)",
-        "requiredOnClient": $(RequiredOnClient),
-        "requiredOnServer": $(RequiredOnServer)
-        }
+    "side" : "$(Side)",
+    "requiredOnClient": $(RequiredOnClient),
+    "requiredOnServer": $(RequiredOnServer)
+}
       </ModInfo>
     </PropertyGroup>
     <Message Text="Generating modinfo.json" Importance="high" />
@@ -123,6 +123,13 @@
 
   <!-- Archives output directory into zip and puts it into Releases folder -->
   <Target Name="ZipFiles" AfterTargets="CopyFilesToOutput" Condition=" '$(Configuration)' == 'Release' ">
+    <!-- Content mod does not need empty dll, but csproj is required to build one, so we just delete it -->
+    <ItemGroup>
+      <ExtraFiles Include="$(OutputPath)\*.dll" />
+      <ExtraFiles Include="$(OutputPath)\*.pdb" />
+      <ExtraFiles Include="$(OutputPath)\*.deps.json" />
+    </ItemGroup>
+    <Delete Files="@(ExtraFiles)" />
     <Message Text="Pachaging into '$(ReleaseFile)'" Importance="high" />
     <MakeDir Directories="$(ReleasesDir)" />
     <Delete Files="$(ReleasePath)" />
