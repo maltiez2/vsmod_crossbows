@@ -4,7 +4,7 @@
   "hitboxSize": {"x": 0.125, "y": 0.125},
   "variantgroups": [{"code": "material", "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "client": {
-    "size": 1.0,
+    "size": 1,
     "renderer": "Shape",
     "shape": {"base": "bolt-shifted"},
     "texturesByType": {"*-crude": {}, "*-flint": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},

@@ -17,5 +17,6 @@
     "item-spanningtool-windlass": "Windlass",
     "prefixandcreature-bolt-*": "Bolt",
     "requirement-bolt": "Bolt",
-    "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)"
+    "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)",
+    "empty-offhand": "Offhand should be empty"
 }

@@ -16,19 +16,21 @@
     "breakChanceOnImpactByType": {"*-crude": 0.3, "*-copper": 0.15, "*-tinbronze": 0.125, "*-bismuthbronze": 0.125, "*-blackbronze": 0.1, "*-iron": 0.1, "*-meteoriciron": 0.1, "*-steel": 0.03},
     "handbook": {"groupBy": ["bolt-*"]}
   },
-  "behaviors": [{
-		"name": "GroundStorable",
-		"properties": {
-			"layout": "Stacking",
-			"placeRemoveSound": "sounds/block/ceramicplace",
-			"stackingModel": "bolt-simplified-pile",
-			"modelItemsToStackSizeRatio": 8,
-			"stackingCapacity": 64,
-      "upSolid": true,
-			"transferQuantity": 1,
-			"bulkTransferQuantity": 16,
-			"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.05, "z2": 1 },
-			"cbScaleYByLayer": 0.1
-		}
-	}]
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Stacking",
+        "placeRemoveSound": "sounds/block/ceramicplace",
+        "stackingModel": "bolt-simplified-pile",
+        "modelItemsToStackSizeRatio": 8,
+        "stackingCapacity": 64,
+        "upSolid": true,
+        "transferQuantity": 1,
+        "bulkTransferQuantity": 16,
+        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.05, "z2": 1},
+        "cbScaleYByLayer": 0.1
+      }
+    }
+  ]
 }
