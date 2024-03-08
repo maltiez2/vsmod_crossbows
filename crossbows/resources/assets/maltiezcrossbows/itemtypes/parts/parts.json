@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["goatfoot", "windlass", "lock", "stirrup"]}, {"code": "material", "states": ["steel", "tinbronze"]}],
   "allowedVariants": ["*-goatfoot-steel", "*-windlass-steel", "*-lock-steel", "*-lock-tinbronze", "*-stirrup-steel", "*-stirrup-tinbronze"],
   "shape": {"base": "maltiezcrossbows:parts/parts-{type}-{material}"},
-  "attributes": {"groundStorageTransform": {"translation": {"x": 0.1, "y": 0.09, "z": 0.4}, "rotation": {"x": 1, "y": -114, "z": 169}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}},
+  "attributes": {"groundStorageTransform": {"translation": {"x": 0.5, "y": 0, "z": 0.5}, "rotation": {"x": 1, "y": 7, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.01}},
   "behaviors": [
     {
       "name": "GroundStorable",
@@ -18,6 +18,6 @@
   ],
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 148, "y": 32, "z": 0}, "origin": {"x": 0, "y": 0.05, "z": 0.1}, "scale": 2.6},
-  "tpHandTransform": {"translation": {"x": 0.5, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -91, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-  "groundTransform": {"translation": {"x": 0, "y": 0.06, "z": 0}, "rotation": {"x": -2, "y": 0, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+  "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0.03}, "rotation": {"x": -90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
 }

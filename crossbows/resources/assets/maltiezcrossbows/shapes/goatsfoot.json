@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_13,Root/String_3,Root/lever_1,Root/Bow/Bow_holder_1,Root/Bow,Root/Stock,Root/Bow/Bow_right_limb_1,Root/Bow/Bow_holder_4,Root/Stock/Stock_front_1,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_33,Root/Plate,Root/Bow_holder_1,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Bow_right_limb_1,Root/Cube12,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_8,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1/Goatleg_2/Goatleg_3/Goatleg_4/Goatleg_5/Goatleg_6,Root/Cube2,Root/Cube3,Root/Wheel",
+		"collapsedPaths": "Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_13,Root/String_3,Root/lever_1,Root/Bow/Bow_holder_1,Root/Bow,Root/Stock,Root/Bow/Bow_right_limb_1,Root/Bow/Bow_holder_4,Root/Stock/Stock_front_1,Root/Stock/Stock_back_1/Goatleg_point2/Goatleg_33,Root/Plate,Root/Bow_holder_1,Root/Bow_holder_4,Root/Bow_right_limb_7,Root/Bow_right_limb_1,Root/Cube12,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_8,Root/Stock/Stock_back_1/Goatleg_point/Goatleg_1/Goatleg_2/Goatleg_3/Goatleg_4/Goatleg_5/Goatleg_6,Root/Cube2,Root/Cube3,Root/Goatleg,Root/Wheel",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -9,18 +9,16 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"linen": "game:block/cloth/linen/normal1",
 		"iron": "game:block/metal/plate/iron",
-		"steel": "game:block/metal/plate/steel",
-		"oak": "game:block/wood/debarked/oak"
+		"steel": "game:block/metal/plate/steel"
 	},
 	"elements": [
 		{
 			"name": "Goatleg",
-			"from": [ 10.51, 0.02, 20.92 ],
-			"to": [ 10.51, 0.02, 20.92 ],
-			"rotationOrigin": [ 10.51, 0.0163, 20.9178 ],
-			"rotationY": 180.0,
+			"from": [ -1.4, 0.2, 6.7 ],
+			"to": [ -1.4, 0.2, 6.7 ],
+			"rotationOrigin": [ -0.1, 0.2, -0.3 ],
+			"rotationX": -5.0,
 			"faces": {
 				"north": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#steel", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },

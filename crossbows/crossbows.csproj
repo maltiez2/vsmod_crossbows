@@ -4,7 +4,7 @@
     <ModName>Crossbows</ModName>
     <ModType>content</ModType>
     <GameVersion>1.19.4</GameVersion>
-    <Version>0.2.0-dev.1</Version>
+    <Version>0.2.0-dev.2</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>

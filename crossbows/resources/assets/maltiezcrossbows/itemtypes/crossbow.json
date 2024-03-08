@@ -3,7 +3,7 @@
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["simple", "stirrup", "goatsfoot", "windlass"]}, {"code": "type", "states": ["plain"]}],
   "maxstacksize": 1,
-  "durabilityByType": {"*-simple-*": 300, "*-stirrup-*": 600, "*-goatsfoot-*": 1600, "*-windlass-*": 1200},
+  "durabilityByType": {"*-simple-*": 450, "*-stirrup-*": 900, "*-goatsfoot-*": 1600, "*-windlass-*": 1200},
   "tool": "bow",
   "rackable": true,
   "behaviors": [
@@ -129,8 +129,23 @@
             },
             "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}
           },
-          "projectile": {"class": "Projectiles", "stackSystem": "ammo-bolt", "amount": 1, "speed": 3, "aimingSystem": "aiming", "description": "maltiezcrossbows:weapon-projectile-stats"},
-          "aiming": {"class": "Aiming", "duration": 400, "dispersionMin_MOA": 130, "dispersionMax_MOA": 260, "description": "maltiezcrossbows:system-desctiption-aim"}
+          "projectile": {
+            "class": "Projectiles",
+            "stackSystem": "ammo-bolt",
+            "amount": 1,
+            "selectorRequirement": "maltiezcrossbows:bolt-*",
+            "speedByType": {"*-simple-*": 1, "*-stirrup-*": 1.5, "*-goatsfoot-*": 2, "*-windlass-*": 2.5},
+            "aimingSystem": "aiming",
+            "description": "maltiezcrossbows:weapon-projectile-stats",
+            "damageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 1.5, "*-goatsfoot-*": 2.2, "*-windlass-*": 4}
+          },
+          "aiming": {
+            "class": "Aiming",
+            "duration": 400,
+            "dispersionMin_MOAByType": {"*-simple-*": 120, "*-stirrup-*": 60, "*-goatsfoot-*": 60, "*-windlass-*": 90},
+            "dispersionMax_MOAByType": {"*-simple-*": 300, "*-stirrup-*": 300, "*-goatsfoot-*": 300, "*-windlass-*": 300},
+            "description": "maltiezcrossbows:system-desctiption-aim"
+          }
         },
         "operations": {
           "draw": {
@@ -144,7 +159,7 @@
                 {"code": "item-animation", "action": "start", "animation": "draw", "category": "main"},
                 {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "valueByType": {"*-simple-*": 1, "*-stirrup-*": 0, "*-goatsfoot-*": 1, "*-windlass-*": 0}},
                 {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "valueByType": {"*-simple": -0.2, "*-stirrup": -1, "*-goatsfoot": -0.4, "*-windlass": -1}},
+                {"code": "stats", "stat": "walkspeed", "valueByType": {"*-simple-*": -0.2, "*-stirrup-*": -1, "*-goatsfoot-*": -0.4, "*-windlass-*": -1}},
                 {"code": "load-equipment", "action": "take", "requirement": "load-aid"},
                 {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"}
               ],

@@ -1,9 +1,10 @@
 {
     "game:tabname-maltiezcrossbows": "Crossbows",
-    "item-crossbow-simple": "Simple crossbow",
-    "item-crossbow-stirrup": "Stirrup crossbow",
-    "item-crossbow-goatsfoot": "Goat's foot crossbow",
-    "item-crossbow-windlass": "Windlass crossbow",
+    
+    "item-crossbow-simple-*": "Simple crossbow",
+    "item-crossbow-stirrup-*": "Stirrup crossbow",
+    "item-crossbow-goatsfoot-*": "Goat's foot crossbow",
+    "item-crossbow-windlass-*": "Windlass crossbow",
     "item-bolt-crude": "Crude bolt",
     "item-bolt-flint": "Flint bolt",
     "item-bolt-copper": "Copper bolt",
@@ -11,17 +12,29 @@
     "item-bolt-bismuthbronze": "Bronze bolt",
     "item-bolt-blackbronze": "Bronze bolt",
     "item-bolt-iron": "Iron bolt",
-    "item-bolt-meteoriciron": "Iron bolt",
+    "item-bolt-meteoriciron": "Meteoric iron bolt",
     "item-bolt-steel": "Steel bolt",
+    
     "item-spanningtool-goatsfoot": "Goat's foot",
     "item-spanningtool-windlass": "Windlass",
-    "prefixandcreature-bolt-*": "Bolt",
-    "requirement-bolt": "Bolt",
-    "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)",
-    "empty-offhand": "Offhand should be empty",
+
+    "item-bow-composite-heavy": "Composite crossbow bow",
+    "item-bow-steel-light": "Steel crossbow bow",
+    "item-bow-steel-heavy": "Steel heavy crossbow bow",
+    "item-parts-goatfoot-steel": "Goat's foot parts",
+    "item-parts-windlass-steel": "Windlass parts",
+    "item-parts-lock-steel": "Steel crossbow lock parts",
+    "item-parts-stirrup-steel": "Steel crossbow stirrup",
+    "item-parts-lock-tinbronze": "Bronze crossbow lock parts",
+    "item-parts-stirrup-tinbronze": "Bronze crossbow stirrup",
 
 
     "requirement-empty-offhnad": "Offhand should be empty",
     "weapon-projectile-stats": "Range damage multiplier: {2}\nProjectile velocity: {0}\n",
-    "system-desctiption-aim": "Disperssion: {1} MOA\n"
+    "system-desctiption-aim": "Disperssion: {1} MOA\n",
+
+    "prefixandcreature-bolt-*": "Bolt",
+    "requirement-bolt": "Bolt",
+    "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)",
+    "empty-offhand": "Offhand should be empty"
 }
