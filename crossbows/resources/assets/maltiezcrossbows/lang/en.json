@@ -18,5 +18,10 @@
     "prefixandcreature-bolt-*": "Bolt",
     "requirement-bolt": "Bolt",
     "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)",
-    "empty-offhand": "Offhand should be empty"
+    "empty-offhand": "Offhand should be empty",
+
+
+    "requirement-empty-offhnad": "Offhand should be empty",
+    "weapon-projectile-stats": "Range damage multiplier: {2}\nProjectile velocity: {0}\n",
+    "system-desctiption-aim": "Disperssion: {1} MOA\n"
 }

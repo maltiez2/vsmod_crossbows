@@ -1,0 +1,16 @@
+{
+  "release": {
+    "location": "game:sounds/bow-release",
+    "range": 64.0,
+    "volume": 1.0,
+    "randomizePitch": true
+  },
+  "load": {
+    "location": "game:sounds/effect/woodswitch",
+    "randomizePitch": true
+  },
+  "draw": {
+    "location": "game:sounds/bow-draw",
+    "randomizePitch": true
+  }
+}
