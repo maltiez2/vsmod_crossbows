@@ -4,7 +4,7 @@
     <ModName>Crossbows</ModName>
     <ModType>content</ModType>
     <GameVersion>1.19.4</GameVersion>
-    <Version>0.2.0-dev.2</Version>
+    <Version>0.2.0-dev.3</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
@@ -66,6 +66,9 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\itemtypes" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\patches" />
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\assets\maltiezcrossbows\sounds\" />
   </ItemGroup>
 
   <!-- Startup settings -->

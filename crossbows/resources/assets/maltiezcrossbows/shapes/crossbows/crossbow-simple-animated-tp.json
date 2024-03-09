@@ -909,7 +909,7 @@
 					}
 				},
 				{
-					"frame": 10,
+					"frame": 15,
 					"elements": {
 						"Lever": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Bow_right_limb_13": { "rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0 },

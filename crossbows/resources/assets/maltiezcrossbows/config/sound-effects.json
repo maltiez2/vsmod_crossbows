@@ -12,5 +12,71 @@
   "draw": {
     "location": "game:sounds/bow-draw",
     "randomizePitch": true
+  },
+  "spinning-lock": {
+    "location": "maltiezcrossbows:sounds/release/lock-spinning-4",
+    "range": 12.0,
+    "volume": 0.2,
+    "randomizePitch": false,
+    "time": 20
+  },
+  "release-simple": {
+    "location": [
+      "maltiezcrossbows:sounds/release/simple-0",
+      "maltiezcrossbows:sounds/release/simple-1",
+      "maltiezcrossbows:sounds/release/simple-2",
+      "maltiezcrossbows:sounds/release/simple-3"
+    ],
+    "range": 64.0,
+    "volume": 0.5,
+    "randomizePitch": false,
+    "time": 20
+  },
+  "release-stirrup": {
+    "location": [
+      "maltiezcrossbows:sounds/release/stirrup-0",
+      "maltiezcrossbows:sounds/release/stirrup-1",
+      "maltiezcrossbows:sounds/release/stirrup-2",
+      "maltiezcrossbows:sounds/release/stirrup-3",
+      "maltiezcrossbows:sounds/release/stirrup-4",
+      "maltiezcrossbows:sounds/release/stirrup-5",
+      "maltiezcrossbows:sounds/release/stirrup-6"
+    ],
+    "range": 64.0,
+    "volume": 0.6,
+    "randomizePitch": false,
+    "time": 20
+  },
+  "release-goatsfoot": {
+    "location": [
+      "maltiezcrossbows:sounds/release/goatsfoot-0",
+      "maltiezcrossbows:sounds/release/goatsfoot-2",
+      "maltiezcrossbows:sounds/release/goatsfoot-3",
+      "maltiezcrossbows:sounds/release/goatsfoot-4",
+      "maltiezcrossbows:sounds/release/goatsfoot-5",
+      "maltiezcrossbows:sounds/release/goatsfoot-6",
+      "maltiezcrossbows:sounds/release/goatsfoot-7",
+      "maltiezcrossbows:sounds/release/goatsfoot-9",
+      "maltiezcrossbows:sounds/release/goatsfoot-10",
+      "maltiezcrossbows:sounds/release/goatsfoot-11"
+    ],
+    "range": 64.0,
+    "volume": 0.8,
+    "randomizePitch": false
+  },
+  "release-windlass": {
+    "location": [
+      "maltiezcrossbows:sounds/release/windlass-0",
+      "maltiezcrossbows:sounds/release/windlass-2",
+      "maltiezcrossbows:sounds/release/windlass-3",
+      "maltiezcrossbows:sounds/release/windlass-4",
+      "maltiezcrossbows:sounds/release/windlass-6",
+      "maltiezcrossbows:sounds/release/windlass-7",
+      "maltiezcrossbows:sounds/release/windlass-8",
+      "maltiezcrossbows:sounds/release/windlass-9"
+    ],
+    "range": 64.0,
+    "volume": 1.0,
+    "randomizePitch": false
   }
 }

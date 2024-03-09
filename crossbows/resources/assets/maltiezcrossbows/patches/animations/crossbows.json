@@ -157,11 +157,11 @@
         {
           "frame": 3,
           "elements": {
-            "UpperArmR": {"rotationX": -7, "rotationY": 10, "rotationZ": -61, "offsetX": 5.07, "offsetY": 2.78, "offsetZ": -0.38},
-            "LowerArmR": {"rotationX": 0, "rotationY": 0, "rotationZ": -1},
-            "ItemAnchor": {"rotationX": 13, "rotationY": -4, "rotationZ": 143, "offsetX": -7.46, "offsetY": 1.93, "offsetZ": 0.76},
-            "UpperArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 13, "offsetX": 2.05, "offsetY": 2.01, "offsetZ": 1.9},
-            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
+            "UpperArmR": {"rotationX": -7, "rotationY": 10, "rotationZ": -9, "offsetX": -0.02, "offsetY": 2, "offsetZ": -3},
+            "LowerArmR": {"rotationX": -40, "rotationY": 0, "rotationZ": 0},
+            "ItemAnchor": {"rotationX": 47, "rotationY": -5, "rotationZ": 70, "offsetX": -2, "offsetY": 2.99, "offsetZ": 1.19},
+            "UpperArmL": {"rotationX": 7, "rotationY": 0, "rotationZ": -15, "offsetX": 0, "offsetY": 0, "offsetZ": 3.65},
+            "LowerArmL": {"rotationX": 7, "rotationY": 0, "rotationZ": 3}
           }
         },
         {
