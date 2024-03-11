@@ -4,6 +4,7 @@
   "variantgroups": [{"code": "type", "states": ["goatfoot", "windlass", "lock", "stirrup"]}, {"code": "material", "states": ["steel", "tinbronze"]}],
   "allowedVariants": ["*-goatfoot-steel", "*-windlass-steel", "*-lock-steel", "*-lock-tinbronze", "*-stirrup-steel", "*-stirrup-tinbronze"],
   "shape": {"base": "maltiezcrossbows:parts/parts-{type}-{material}"},
+  "maxstacksize": 4,
   "attributes": {"groundStorageTransform": {"translation": {"x": 0.5, "y": 0, "z": 0.5}, "rotation": {"x": 1, "y": 7, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.01}},
   "behaviors": [
     {

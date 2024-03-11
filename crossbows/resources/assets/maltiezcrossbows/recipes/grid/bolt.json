@@ -2,7 +2,7 @@
 	{
 		"ingredientPattern": "H,S,P",
 		"ingredients": {
-			"H": { "type": "item", "code": "game:arrowhead-*", "name": "metal" },
+			"H": { "type": "item", "code": "game:arrowhead-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"] },
 			"S": { "type": "item", "code": "game:stick" },
 			"P": { "type": "item", "code": "game:plank-*" }
 		},

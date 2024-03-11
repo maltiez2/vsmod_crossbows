@@ -4,6 +4,7 @@
   "variantgroups": [{"code": "material", "states": ["composite", "steel"]}, {"code": "type", "states": ["heavy", "light"]}],
   "allowedVariants": ["*-composite-heavy", "*-steel-heavy", "*-steel-light"],
   "shape": {"base": "maltiezcrossbows:parts/bow-{material}-{type}"},
+  "maxstacksize": 1,
   "attributes": {
     "groundStorageTransformByType": {
       "*-composite-heavy": {"translation": {"x": 0.5, "y": 0.7, "z": 0.75}, "rotation": {"x": -162, "y": 124, "z": 90}, "origin": {"x": 0, "y": 0, "z": 0}},

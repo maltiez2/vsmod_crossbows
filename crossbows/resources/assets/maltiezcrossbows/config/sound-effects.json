@@ -5,7 +5,7 @@
     "volume": 1.0,
     "randomizePitch": true
   },
-  "load": {
+  "ready": {
     "location": "game:sounds/effect/woodswitch",
     "randomizePitch": true
   },
@@ -13,10 +13,30 @@
     "location": "game:sounds/bow-draw",
     "randomizePitch": true
   },
+  "ready-simple": {
+    "location": "maltiezcrossbows:sounds/loading/wooden-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
+  "ready-stirrup": {
+    "location": "maltiezcrossbows:sounds/loading/wooden-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
+  "ready-goatsfoot": {
+    "location": "maltiezcrossbows:sounds/loading/metalic-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
+  "ready-windlass": {
+    "location": "maltiezcrossbows:sounds/loading/metalic-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
   "spinning-lock": {
     "location": "maltiezcrossbows:sounds/release/lock-spinning-4",
     "range": 12.0,
-    "volume": 0.2,
+    "volume": 0.8,
     "randomizePitch": false,
     "time": 20
   },
@@ -28,7 +48,7 @@
       "maltiezcrossbows:sounds/release/simple-3"
     ],
     "range": 64.0,
-    "volume": 0.5,
+    "volume": 0.8,
     "randomizePitch": false,
     "time": 20
   },
@@ -43,37 +63,27 @@
       "maltiezcrossbows:sounds/release/stirrup-6"
     ],
     "range": 64.0,
-    "volume": 0.6,
+    "volume": 0.8,
     "randomizePitch": false,
     "time": 20
   },
   "release-goatsfoot": {
     "location": [
       "maltiezcrossbows:sounds/release/goatsfoot-0",
+      "maltiezcrossbows:sounds/release/goatsfoot-1",
       "maltiezcrossbows:sounds/release/goatsfoot-2",
-      "maltiezcrossbows:sounds/release/goatsfoot-3",
-      "maltiezcrossbows:sounds/release/goatsfoot-4",
-      "maltiezcrossbows:sounds/release/goatsfoot-5",
-      "maltiezcrossbows:sounds/release/goatsfoot-6",
-      "maltiezcrossbows:sounds/release/goatsfoot-7",
-      "maltiezcrossbows:sounds/release/goatsfoot-9",
-      "maltiezcrossbows:sounds/release/goatsfoot-10",
-      "maltiezcrossbows:sounds/release/goatsfoot-11"
+      "maltiezcrossbows:sounds/release/goatsfoot-3"
     ],
     "range": 64.0,
-    "volume": 0.8,
+    "volume": 1.0,
     "randomizePitch": false
   },
   "release-windlass": {
     "location": [
       "maltiezcrossbows:sounds/release/windlass-0",
+      "maltiezcrossbows:sounds/release/windlass-1",
       "maltiezcrossbows:sounds/release/windlass-2",
-      "maltiezcrossbows:sounds/release/windlass-3",
-      "maltiezcrossbows:sounds/release/windlass-4",
-      "maltiezcrossbows:sounds/release/windlass-6",
-      "maltiezcrossbows:sounds/release/windlass-7",
-      "maltiezcrossbows:sounds/release/windlass-8",
-      "maltiezcrossbows:sounds/release/windlass-9"
+      "maltiezcrossbows:sounds/release/windlass-3"
     ],
     "range": 64.0,
     "volume": 1.0,

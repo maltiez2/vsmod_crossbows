@@ -28,13 +28,44 @@
     "item-parts-lock-tinbronze": "Bronze crossbow lock parts",
     "item-parts-stirrup-tinbronze": "Bronze crossbow stirrup",
 
+    "itemdesc-crossbow-simple-*": "Crude crossbow made from simple bow. Stock is carved out of some firewood. Trigger mechanism is made from bone.<br>",
+    "itemdesc-crossbow-stirrup-*": "Crossbow with composite bow and stirrup to help draw it. The stirrup doubles the weight you can draw with your hands, but requires putting the foot into the stirrup and stay still.<br>",
+    "itemdesc-crossbow-goatsfoot-*": "Crossbow with steel bow and mounting points for goat's foot lever that doubles draw weight compared to stirrup by providing mechanical advantage around 5 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so a significant part of energy spend on just moving limbs themselves.<br>",
+    "itemdesc-crossbow-windlass-*": "Crossbow with steel bow and mounting point for windlass. It can triple available draw weight compared to goat's foot by providing mechanical advantage of more than 50 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so significant part of energy spend on just moving limbs themselves.<br>",
+    "itemdesc-bolt-crude": "Crude bolt made of flint<br>",
+    "itemdesc-bolt-*": "Wooden fletching is less efficient and more prone to cracking, but it is sturdier in storage and easier to handle.<br>",
+
+    "itemdesc-spanningtool-goatsfoot": "Lever for drawing crossbow with appropriate mounting point. Provides mechanical advantage in average around 5 to 1.<br>",
+    "itemdesc-spanningtool-windlass": "System of pulleys for drawing crossbow with appropriate mounting point. Provides more than 50 to 1 mechanical advantage.",
+
+    "itemdesc-bow-composite-heavy": "Made from wood, sinew and horns. Horn tissue serve as spring in compression, sinew in tension. It requires special skills to produce, otherwise it can fail catastrophically and injure or even kill the user.<br>",
+    "itemdesc-bow-steel-light": "Being quite inefficient and heavy, it is much easier to make it reliable and safe than composite bow.<br>",
+    "itemdesc-bow-steel-heavy": "Thick steel bow with high draw weight.<br>",
+    "itemdesc-parts-goatfoot-steel": "Set of levers for goat's foot.<br>",
+    "itemdesc-parts-windlass-steel": "Handle and pulley holders for windlass.<br>",
+    "itemdesc-parts-lock-*": "Lever, rotating latch and shafts for crossbow lock.<br>",
+    "itemdesc-parts-stirrup-steel": "Stirrup attached to the front of a crossbow for holding it with foot while drawing.<br>",
+
+    "setting-damage": "Damage multiplier",
+    "setting-dispersion": "Dispersion",
+    "setting-tier-crude": "Crude bolts tier",
+    "setting-tier-copper": "Copper bolts tier",
+    "setting-tier-bronze": "Bronze bolts tier",
+    "setting-tier-iron": "Iron bolts tier",
+    "setting-tier-meteoric": "Meteoric iron bolts tier",
+    "setting-tier-steel": "Steel bolts tier",
+    "setting-trait": "Trait requriement",
+    "setting-ready-sound-wood": "Ready sound (wooden bows)",
+    "setting-ready-sound-metal": "Ready sound (steel bows)",
+    "setting-lock-sound": "Lock rotation sound level",
 
     "requirement-empty-offhnad": "Offhand should be empty",
     "weapon-projectile-stats": "Range damage multiplier: {2}\nProjectile velocity: {0}\n",
     "system-desctiption-aim": "Disperssion: {1} MOA\n",
-
+    "weapon-reload": "Reload (hold 'Alt' to interact instead)",
+    "weapon-aim": "Aim (hold 'Alt' to interact instead)",
+    "weapon-range-attack": "Shoot",
     "prefixandcreature-bolt-*": "Bolt",
     "requirement-bolt": "Bolt",
-    "input-weapon-reload": "Reload or aim (hold 'Alt' to interact instead)",
     "empty-offhand": "Offhand should be empty"
 }

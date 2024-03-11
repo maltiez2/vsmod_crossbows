@@ -2,6 +2,7 @@
   "code": "spanningtool",
   "class": "Item",
   "storageFlags": 257,
+  "maxstacksize": 1,
   "variantgroups": [{"code": "type", "states": ["goatsfoot", "windlass"]}],
   "shape": {"base": "maltiezcrossbows:{type}"},
   "attributes": {

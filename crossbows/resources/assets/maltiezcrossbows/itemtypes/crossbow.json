@@ -28,7 +28,7 @@
     {
       "name": "FiniteStateMachine",
       "properties": {
-        "initialState": "drawn",
+        "initialState": "unloaded",
         "systems": {
           "camera": {"class": "CameraSettings"},
           "durability": {"Class": "Durability"},
@@ -42,12 +42,12 @@
             "class": "ProceduralPlayerAnimation",
             "categories": {"hands": {"blending": "Average", "weight": 1024}, "empty": {"blending": "Average", "weight": 16}},
             "animations": {
-              "idle": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 700, "dynamic": "CosShifted", "frame": 4, "separateFp": true}],
+              "idle": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 4, "separateFp": true}],
               "draw": [
                 {
                   "action": "EaseIn",
                   "animation": "crossbowskeyframes",
-                  "duration_ms": 700,
+                  "duration_msByType": {"*-simple-*": 500, "*-stirrup-*": 700, "*-goatsfoot-*": 800, "*-windlass-*": 900},
                   "dynamic": "CosShifted",
                   "frameByType": {"*-simple-*": 2, "*-stirrup-*": 6, "*-goatsfoot-*": 2, "*-windlass-*": 3},
                   "separateFp": true
@@ -55,7 +55,7 @@
                 {
                   "action": "EaseIn",
                   "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-simple-*": 1300, "*-stirrup-*": 3300, "*-goatsfoot-*": 5800, "*-windlass-*": 12300},
+                  "duration_msByType": {"*-simple-*": 1500, "*-stirrup-*": 1800, "*-goatsfoot-*": 6700, "*-windlass-*": 11600},
                   "dynamic": "CosShifted",
                   "frameByType": {"*-simple-*": 2, "*-stirrup-*": 6, "*-goatsfoot-*": 2, "*-windlass-*": 3},
                   "separateFp": true
@@ -63,14 +63,32 @@
                 {
                   "action": "EaseIn",
                   "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-simple-*": 100, "*-stirrup-*": 1000, "*-goatsfoot-*": 100, "*-windlass-*": 1000},
+                  "duration_msByType": {"*-simple-*": 0, "*-stirrup-*": 1000, "*-goatsfoot-*": 0, "*-windlass-*": 1000},
                   "dynamic": "CosShifted",
-                  "frameByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-goatsfoot-*": 2, "*-windlass-*": 4},
+                  "frame": 5,
                   "separateFp": true
                 }
               ],
-              "load": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 700, "dynamic": "CosShifted", "frame": 5, "separateFp": true}],
-              "aim": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 450, "dynamic": "SinQuadratic", "frame": 1, "separateFp": true}],
+              "load": [
+                {
+                  "action": "EaseIn",
+                  "animation": "crossbowskeyframes",
+                  "duration_msByType": {"*-simple-*": 500, "*-stirrup-*": 700, "*-goatsfoot-*": 800, "*-windlass-*": 900},
+                  "dynamic": "CosShifted",
+                  "frame": 5,
+                  "separateFp": true
+                }
+              ],
+              "aim": [
+                {
+                  "action": "EaseIn",
+                  "animation": "crossbowskeyframes",
+                  "duration_msByType": {"*-simple-*": 500, "*-stirrup-*": 500, "*-goatsfoot-*": 650, "*-windlass-*": 650},
+                  "dynamic": "SinQuadratic",
+                  "frame": 1,
+                  "separateFp": true
+                }
+              ],
               "ease": [{"action": "EaseOut", "animation": "crossbowskeyframes", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
               "empty": [{"action": "EaseIn", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
               "empty-stop": [{"action": "EaseOut", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}]
@@ -86,12 +104,12 @@
               "loaded": [{"action": "Set", "animation": "release", "frame": 0}],
               "draw": [
                 {"action": "Set", "animation": "draw", "frame": 0},
-                {"action": "EaseIn", "animation": "draw", "duration_msByType": {"*-simple-*": 500, "*-stirrup-*": 1000, "*-goatsfoot-*": 500, "*-windlass-*": 1500}, "dynamic": "Linear", "frame": 0},
+                {"action": "EaseIn", "animation": "draw", "duration_msByType": {"*-simple-*": 500, "*-stirrup-*": 1000, "*-goatsfoot-*": 1000, "*-windlass-*": 1000}, "dynamic": "Linear", "frame": 0},
                 {
                   "action": "Play",
                   "animation": "draw",
-                  "duration_msByType": {"*-simple-*": 1500, "*-stirrup-*": 3000, "*-goatsfoot-*": 6000, "*-windlass-*": 12000},
-                  "dynamic": "Quadratic",
+                  "duration_msByType": {"*-simple-*": 1000, "*-stirrup-*": 2000, "*-goatsfoot-*": 6500, "*-windlass-*": 12000},
+                  "dynamic": {"*-simple-*": "Quadratic", "*-stirrup-*": "Quadratic", "*-goatsfoot-*": "Linear", "*-windlass-*": "Linear"},
                   "startFrame": 0,
                   "endFrameByType": {"*-simple-*": 29, "*-stirrup-*": 25, "*-goatsfoot-*": 119, "*-windlass-*": 133}
                 }
@@ -99,7 +117,7 @@
               "load": [
                 {"action": "Set", "animation": "load", "frame": 0},
                 {"action": "EaseIn", "animation": "load", "duration_ms": 750, "dynamic": "Linear", "frame": 0},
-                {"action": "Play", "animation": "load", "duration_ms": 1750, "dynamic": "Quadratic", "startFrame": 0, "endFrame": 29}
+                {"action": "Play", "animation": "load", "duration_ms": 1750, "dynamic": "CosShifted", "startFrame": 0, "endFrame": 29}
               ],
               "releaseByType": {
                 "*-simple-*": [
@@ -149,16 +167,16 @@
           },
           "aiming": {
             "class": "Aiming",
-            "duration": 400,
+            "durationByType": {"*-simple-*": 400, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 600},
             "dispersionMin_MOAByType": {"*-simple-*": 120, "*-stirrup-*": 60, "*-goatsfoot-*": 60, "*-windlass-*": 90},
-            "dispersionMax_MOAByType": {"*-simple-*": 300, "*-stirrup-*": 300, "*-goatsfoot-*": 300, "*-windlass-*": 300},
+            "dispersionMax_MOAByType": {"*-simple-*": 300, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 900},
             "description": "maltiezcrossbows:system-desctiption-aim"
           }
         },
         "operations": {
           "draw": {
             "class": "Delayed",
-            "timeoutBytype": {"*-simple-*": 2000, "*-stirrup-*": 5000, "*-goatsfoot-*": 6500, "*-windlass-*": 14000},
+            "timeoutBytype": {"*-simple-*": 2000, "*-stirrup-*": 4000, "*-goatsfoot-*": 7500, "*-windlass-*": 13500},
             "states": {"initial": "unloaded", "timeout": "drawn", "transitional": "draw", "final": "unloaded"},
             "inputs": {"initial": "mouse-right-down-reload", "unloaded": ["mouse-right-up", "item-dropped", "slot-deselected", "item-dropped"]},
             "systems": {
@@ -174,18 +192,19 @@
               "unloaded": [
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
                 {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
+                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "stats", "stat": "walkspeed", "value": 0},
                 {"code": "load-equipment", "action": "put", "requirement": "load-aid"},
                 {"code": "load-equipment", "action": "put"}
               ],
               "timeout": [
                 {"code": "load-equipment", "action": "put"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
+                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "load-equipment", "action": "put", "requirement": "load-aid"},
-                {"code": "stats", "stat": "walkspeed", "value": 0}
+                {"code": "stats", "stat": "walkspeed", "value": 0},
+                {"code": "sound", "action": "play", "sound": "ready-{drawtype}"}
               ]
             }
           },
@@ -200,7 +219,7 @@
           },
           "load": {
             "class": "Delayed",
-            "timeout": 2500,
+            "timeoutBytype": {"*-simple-*": 2000, "*-stirrup-*": 2000, "*-goatsfoot-*": 2500, "*-windlass-*": 2500},
             "states": [{"initial": "drawn", "timeout": "loaded", "transitional": "load", "final": "drawn"}],
             "inputs": {"initial": ["mouse-right-down-reload", "drawing-finished"], "drawn": ["mouse-right-up", "item-dropped", "slot-deselected"]},
             "systems": {
@@ -216,7 +235,8 @@
               "timeout": [
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
                 {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0}
+                {"code": "stats", "stat": "walkspeed", "value": 0},
+                {"code": "sound", "action": "play", "sound": "ready-{drawtype}"}
               ],
               "drawn": [
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
@@ -245,7 +265,7 @@
             "class": "Delayed",
             "timeoutBytype": {"*-simple-*": 200, "*": 100},
             "inputs": {"initial": ["mouse-left-down-release", "drawing-finished"], "drawn": ["item-dropped", "slot-deselected"]},
-            "states": [{"initial": "aimed", "timeout": "drawn", "final": "drawn"}],
+            "states": [{"initial": "aimed", "timeout": "unloaded", "final": "unloaded"}],
             "systems": {
               "initialByType": {
                 "*-simple-*": [
