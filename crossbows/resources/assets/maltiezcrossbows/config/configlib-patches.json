@@ -1,0 +1,201 @@
+{
+  "version": 2,
+  "patches": {
+    "float": {
+      "maltiezcrossbows:itemtypes/crossbow.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-simple-*": "DAMAGE * 1.0",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-stirrup-*": "DAMAGE * 1.5",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-goatsfoot-*": "DAMAGE * 2.2",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-windlass-*": "DAMAGE * 4.0",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-simple-*": "DISPERSION * 120",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-simple-*": "DISPERSION * 300",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-stirrup-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-stirrup-*": "DISPERSION * 400",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-goatsfoot-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-goatsfoot-*": "DISPERSION * 600",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-windlass-*": "DISPERSION * 90",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-windlass-*": "DISPERSION * 900"
+      },
+      "maltiezcrossbows:config/sound-effects.json": {
+        "spinning-lock/volume": "SOUND_LOCK"
+      }
+    },
+    "integer": {
+      "maltiezcrossbows:itemtypes/bolt.json": {
+        "behaviors/1/properties/damageTypesByType/*-crude/0/tier": "BOLT_TIER_CRUDE",
+        "behaviors/1/properties/damageTypesByType/*-copper/0/tier": "BOLT_TIER_COPPER",
+        "behaviors/1/properties/damageTypesByType/*-tinbronze/0/tier": "BOLT_TIER_BRONZE",
+        "behaviors/1/properties/damageTypesByType/*-bismuthbronze/0/tier": "BOLT_TIER_BRONZE",
+        "behaviors/1/properties/damageTypesByType/*-blackbronze/0/tier": "BOLT_TIER_BRONZE",
+        "behaviors/1/properties/damageTypesByType/*-iron/0/tier": "BOLT_TIER_IRON",
+        "behaviors/1/properties/damageTypesByType/*-meteoriciron/0/tier": "BOLT_TIER_METEORIC",
+        "behaviors/1/properties/damageTypesByType/*-steel/0/tier": "BOLT_TIER_STEEL"
+      }
+    },
+    "other": {
+      "maltiezcrossbows:recipes/grid/bow.json": {
+        "0/requiresTrait": "TRAIT_REQUIREMENT"
+      },
+      "maltiezcrossbows:config/sound-effects.json": {
+        "ready-simple/location": "READY_SOUND_WOOD",
+        "ready-stirrup/location": "READY_SOUND_WOOD",
+        "ready-goatsfoot/location": "READY_SOUND_METAL",
+        "ready-windlass/location": "READY_SOUND_METAL"
+      }
+    }
+  },
+  "settings": {
+    "float": {
+      "DAMAGE": {
+        "name": "damage-multiplier",
+        "ingui": "maltiezcrossbows:setting-damage",
+        "weight": 1.1,
+        "comment": "Multiplies damage caused by crossbows projectiles. It is recommended to leave in on 1.0. Default damages are balanced with considiration to vanilla animals and mobs hp values.",
+        "default": 1.0,
+        "range": {
+          "min": 0.5,
+          "max": 2.0
+        }
+      },
+      "DISPERSION": {
+        "name": "dispersion-multiplier",
+        "ingui": "maltiezcrossbows:setting-dispersion",
+        "weight": 1.2,
+        "comment": "Lower values correspond to higher accuracy",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 3.0
+        }
+      },
+      "SOUND_LOCK": {
+        "name": "lock-rotation-sound",
+        "ingui": "maltiezcrossbows:setting-lock-sound",
+        "weight": 1.7,
+        "comment": "Loudness of sound of rotating crossbow locks after shots.",
+        "default": 0.8,
+        "range": {
+          "min": 0.0,
+          "max": 1.0
+        }
+      }
+    },
+    "integer": {
+      "BOLT_TIER_CRUDE": {
+        "name": "crude-bolts-tier",
+        "ingui": "maltiezcrossbows:setting-tier-crude",
+        "weight": 1.31,
+        "comment": "Bolt damage tier",
+        "default": 1,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "BOLT_TIER_COPPER": {
+        "name": "copper-bolts-tier",
+        "ingui": "maltiezcrossbows:setting-tier-copper",
+        "weight": 1.32,
+        "comment": "Bolt damage tier",
+        "default": 2,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "BOLT_TIER_BRONZE": {
+        "name": "bronze-bolts-tier",
+        "ingui": "maltiezcrossbows:setting-tier-bronze",
+        "weight": 1.33,
+        "comment": "Bolt damage tier",
+        "default": 3,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "BOLT_TIER_IRON": {
+        "name": "iron-bolts-tier",
+        "ingui": "maltiezcrossbows:setting-tier-iron",
+        "weight": 1.34,
+        "comment": "Bolt damage tier",
+        "default": 3,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "BOLT_TIER_METEORIC": {
+        "name": "iron-bolts-meteoric",
+        "ingui": "maltiezcrossbows:setting-tier-meteoric",
+        "weight": 1.35,
+        "comment": "Bolt damage tier",
+        "default": 4,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "BOLT_TIER_STEEL": {
+        "name": "steel-bolts-tier",
+        "ingui": "maltiezcrossbows:setting-tier-steel",
+        "weight": 1.36,
+        "comment": "Bolt damage tier",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 15
+        }
+      }
+    },
+    "other": {
+      "TRAIT_REQUIREMENT": {
+        "name": "recipes-locked-to-bowyer",
+        "ingui": "maltiezcrossbows:setting-trait",
+        "comment": "Weahter composite bow recipe require 'bowyer' trait",
+        "default": "Required",
+        "weight": 1.4,
+        "mapping": {
+          "Required": "bowyer",
+          "Not Required": null
+        }
+      },
+      "READY_SOUND_WOOD": {
+        "name": "ready-sound-wooden-crossbows",
+        "ingui": "maltiezcrossbows:setting-ready-sound-wood",
+        "comment": "Sound played right after drawing and loading complete for simple and stirrup crossbows.",
+        "default": "Wooden",
+        "weight": 1.5,
+        "mapping": {
+          "None": "bowyer",
+          "Wooden": "maltiezcrossbows:sounds/loading/wooden-click",
+          "Metal": "maltiezcrossbows:sounds/loading/metalic-click",
+          "Switch": "game:sounds/effect/woodswitch"
+        }
+      },
+      "READY_SOUND_METAL": {
+        "name": "ready-sound-steel-crossbows",
+        "ingui": "maltiezcrossbows:setting-ready-sound-metal",
+        "comment": "Sound played right after drawing and loading complete for goat's foot and windlas crossbows.",
+        "default": "Metal",
+        "weight": 1.6,
+        "mapping": {
+          "None": "bowyer",
+          "Wooden": "maltiezcrossbows:sounds/loading/wooden-click",
+          "Metal": "maltiezcrossbows:sounds/loading/metalic-click",
+          "Switch": "game:sounds/effect/woodswitch"
+        }
+      }
+    }
+  },
+  "formatting": [
+    {
+      "type": "separator",
+      "weight": 1.29
+    },
+    {
+      "type": "separator",
+      "weight": 1.39
+    }
+  ]
+}

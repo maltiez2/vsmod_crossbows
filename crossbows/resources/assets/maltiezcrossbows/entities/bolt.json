@@ -1,6 +1,6 @@
 ﻿{
   "code": "bolt",
-  "class": "EntityProjectile",
+  "class": "AdvancedEntityProjectile",
   "hitboxSize": {"x": 0.125, "y": 0.125},
   "variantgroups": [{"code": "material", "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "client": {

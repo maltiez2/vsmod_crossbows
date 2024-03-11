@@ -9,9 +9,9 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"head": "game:block/metal/ingot/iron",
-		"bands": "game:block/metal/sheet/silver3",
-		"shaft": "game:block/wood/debarked/birch"
+		"head": "block/metal/ingot/iron",
+		"bands": "block/metal/sheet/silver3",
+		"shaft": "block/wood/debarked/birch"
 	},
 	"elements": [
 		{
