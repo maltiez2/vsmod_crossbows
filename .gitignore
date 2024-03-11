@@ -7,6 +7,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+*.ogg
+
 # User-specific files
 *.rsuser
 *.suo
@@ -673,3 +675,26 @@ fabric.properties
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,visualstudiocode,rider
+/crossbows/resources/assets/maltiezcrossbows/sounds/loading/metalic-click.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/loading/silence.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/loading/wooden-click.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/goatsfoot-0.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/goatsfoot-1.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/goatsfoot-2.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/goatsfoot-3.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/lock-spinning.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/simple-0.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/simple-1.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/simple-2.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/simple-3.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-0.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-1.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-2.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-3.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-4.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-5.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/stirrup-6.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/windlass-0.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/windlass-1.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/windlass-2.ogg
+/crossbows/resources/assets/maltiezcrossbows/sounds/release/windlass-3.ogg
