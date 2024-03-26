@@ -7,13 +7,13 @@
         "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-stirrup-*": "DAMAGE * 1.5",
         "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-goatsfoot-*": "DAMAGE * 2.2",
         "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-windlass-*": "DAMAGE * 4.0",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-simple-*": "DISPERSION * 120",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-simple-*": "DISPERSION * 90",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-simple-*": "DISPERSION * 300",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-stirrup-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-stirrup-*": "DISPERSION * 45",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-stirrup-*": "DISPERSION * 400",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-goatsfoot-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-goatsfoot-*": "DISPERSION * 45",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-goatsfoot-*": "DISPERSION * 600",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-windlass-*": "DISPERSION * 90",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-windlass-*": "DISPERSION * 60",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-windlass-*": "DISPERSION * 900"
       },
       "maltiezcrossbows:config/sound-effects.json": {
@@ -165,6 +165,7 @@
         "ingui": "maltiezcrossbows:setting-ready-sound-wood",
         "comment": "Sound played right after drawing and loading complete for simple and stirrup crossbows.",
         "default": "Wooden",
+        "clientSide": true,
         "weight": 1.5,
         "mapping": {
           "None": "bowyer",
@@ -178,6 +179,7 @@
         "ingui": "maltiezcrossbows:setting-ready-sound-metal",
         "comment": "Sound played right after drawing and loading complete for goat's foot and windlas crossbows.",
         "default": "Metal",
+        "clientSide": true,
         "weight": 1.6,
         "mapping": {
           "None": "bowyer",

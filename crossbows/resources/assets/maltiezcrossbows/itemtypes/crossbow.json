@@ -168,7 +168,7 @@
           "aiming": {
             "class": "Aiming",
             "durationByType": {"*-simple-*": 400, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 600},
-            "dispersionMin_MOAByType": {"*-simple-*": 120, "*-stirrup-*": 60, "*-goatsfoot-*": 60, "*-windlass-*": 90},
+            "dispersionMin_MOAByType": {"*-simple-*": 90, "*-stirrup-*": 45, "*-goatsfoot-*": 45, "*-windlass-*": 60},
             "dispersionMax_MOAByType": {"*-simple-*": 300, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 900},
             "description": "maltiezcrossbows:system-desctiption-aim"
           }
@@ -204,7 +204,7 @@
                 {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "load-equipment", "action": "put", "requirement": "load-aid"},
                 {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "sound", "action": "play", "sound": "ready-{drawtype}"}
+                {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}
               ]
             }
           },
@@ -236,7 +236,7 @@
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
                 {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
                 {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "sound", "action": "play", "sound": "ready-{drawtype}"}
+                {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}
               ],
               "drawn": [
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
