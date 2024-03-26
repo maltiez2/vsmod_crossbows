@@ -4,7 +4,7 @@
   "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "maxstacksize": 64,
   "storageFlags": 513,
-  "shape": {"base": "bolt"},
+  "shapeByType": {"*-crude": {"base": "crude-bolt"}, "*-copper": {"base": "crude-bolt"}, "*": {"base": "bolt"}},
   "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -44, "y": -52, "z": 0}, "origin": {"x": 1.4, "y": -0.05, "z": 0.05}, "scale": 3.18},
