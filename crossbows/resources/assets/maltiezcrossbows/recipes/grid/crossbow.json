@@ -31,6 +31,21 @@
     "output": {"type": "item", "code": "maltiezcrossbows:crossbow-goatsfoot-plain"}
   },
   {
+    "ingredientPattern": "ANF,LB_,WWK",
+    "ingredients": {
+      "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
+      "L": {"type": "item", "code": "maltiezcrossbows:parts-latch-iron", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
+      "A": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
+      "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
+      "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
+      "K": { "type": "item", "code": "game:saw-*", "isTool": true  }
+    },
+    "width": 3,
+    "height": 3,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-latch-plain"}
+  },
+  {
     "ingredientPattern": "ANF,LBS,WWK",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
@@ -45,6 +60,19 @@
     "width": 3,
     "height": 3,
     "output": {"type": "item", "code": "maltiezcrossbows:crossbow-stirrup-plain"}
+  },
+  {
+    "ingredientPattern": "SMP,PFB",
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bow-simple", "quantity": 1},
+      "M": {"type": "item", "code": "game:metalnailsandstrips-copper", "quantity": 1},
+      "P": {"type": "item", "code": "game:plank-*", "quantity": 2},
+      "F": {"type": "item", "code": "game:rope", "quantity": 1},
+      "S": { "type": "item", "code": "game:saw-*", "isTool": true }
+    },
+    "width": 3,
+    "height": 2,
+    "output": {"type": "item", "code": "maltiezcrossbows:crossbow-repeating-plain"}
   },
   {
     "ingredientPattern": "KNF,WWS",
