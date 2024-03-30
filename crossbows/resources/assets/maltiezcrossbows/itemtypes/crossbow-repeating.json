@@ -3,15 +3,15 @@
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "type", "states": ["plain"]}],
   "maxstacksize": 1,
-  "durabilityByType": {"*-repeating-*": 1200},
+  "durability": 600,
   "tool": "bow",
   "rackable": true,
   "behaviors": [
     {
       "name": "AnimatableProcedural",
       "properties": {
-        "animated-shape": "maltiezcrossbows:crossbows/crossbow-{drawtype}-animated",
-        "animated-shape-fp": "maltiezcrossbows:crossbows/crossbow-{drawtype}-animated",
+        "animated-shape": "maltiezcrossbows:crossbows/crossbow-repeating-animated",
+        "animated-shape-fp": "maltiezcrossbows:crossbows/crossbow-repeating-animated",
         "only-when-animating": false
       }
     },
@@ -28,7 +28,7 @@
     {
       "name": "FiniteStateMachine",
       "properties": {
-        "initialState": "unloaded",
+        "initialState": "idle",
         "systems": {
           "camera": {"class": "CameraSettings"},
           "durability": {"Class": "Durability"},
@@ -43,52 +43,9 @@
             "categories": {"hands": {"blending": "Average", "weight": 1024}, "empty": {"blending": "Average", "weight": 16}},
             "animations": {
               "idle": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 4, "separateFp": true}],
-              "draw": [
-                {
-                  "action": "EaseIn",
-                  "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-repeating-*": 500, "*-stirrup-*": 700, "*-goatsfoot-*": 800, "*-windlass-*": 900},
-                  "dynamic": "CosShifted",
-                  "frameByType": {"*-repeating-*": 2, "*-stirrup-*": 6, "*-goatsfoot-*": 2, "*-windlass-*": 3},
-                  "separateFp": true
-                },
-                {
-                  "action": "EaseIn",
-                  "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-repeating-*": 1500, "*-stirrup-*": 1800, "*-goatsfoot-*": 6700, "*-windlass-*": 11600},
-                  "dynamic": "CosShifted",
-                  "frameByType": {"*-repeating-*": 2, "*-stirrup-*": 6, "*-goatsfoot-*": 2, "*-windlass-*": 3},
-                  "separateFp": true
-                },
-                {
-                  "action": "EaseIn",
-                  "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-repeating-*": 0, "*-stirrup-*": 1000, "*-goatsfoot-*": 0, "*-windlass-*": 1000},
-                  "dynamic": "CosShifted",
-                  "frame": 5,
-                  "separateFp": true
-                }
-              ],
-              "load": [
-                {
-                  "action": "EaseIn",
-                  "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-repeating-*": 500, "*-stirrup-*": 700, "*-goatsfoot-*": 800, "*-windlass-*": 900},
-                  "dynamic": "CosShifted",
-                  "frame": 5,
-                  "separateFp": true
-                }
-              ],
-              "aim": [
-                {
-                  "action": "EaseIn",
-                  "animation": "crossbowskeyframes",
-                  "duration_msByType": {"*-repeating-*": 500, "*-stirrup-*": 500, "*-goatsfoot-*": 650, "*-windlass-*": 650},
-                  "dynamic": "SinQuadratic",
-                  "frame": 1,
-                  "separateFp": true
-                }
-              ],
+              "draw": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 2, "separateFp": true}],
+              "load": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 5, "separateFp": true}],
+              "aim": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "SinQuadratic", "frame": 8, "separateFp": true}],
               "ease": [{"action": "EaseOut", "animation": "crossbowskeyframes", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
               "empty": [{"action": "EaseIn", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
               "empty-stop": [{"action": "EaseOut", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}]
@@ -99,228 +56,178 @@
             "class": "ProceduralItemAnimation",
             "categories": {"main": {"blending": "AddAverage", "weight": 1}},
             "animations": {
-              "unloaded": [{"action": "Set", "animation": "draw", "frame": 0}],
-              "drawn": [{"action": "Set", "animation": "load", "frame": 0}],
-              "loaded": [{"action": "Set", "animation": "release", "frame": 0}],
-              "draw": [
-                {"action": "Set", "animation": "draw", "frame": 0},
-                {
-                  "action": "EaseIn",
-                  "animation": "draw",
-                  "duration_msByType": {"*-repeating-*": 500, "*-stirrup-*": 1000, "*-goatsfoot-*": 1000, "*-windlass-*": 1000},
-                  "dynamic": "Linear",
-                  "frame": 0
-                },
-                {
-                  "action": "Play",
-                  "animation": "draw",
-                  "duration_msByType": {"*-repeating-*": 1000, "*-stirrup-*": 2000, "*-goatsfoot-*": 6500, "*-windlass-*": 12000},
-                  "dynamic": {"*-repeating-*": "Quadratic", "*-stirrup-*": "Quadratic", "*-goatsfoot-*": "Linear", "*-windlass-*": "Linear"},
-                  "startFrame": 0,
-                  "endFrameByType": {"*-repeating-*": 29, "*-stirrup-*": 25, "*-goatsfoot-*": 119, "*-windlass-*": 133}
-                }
+              "start-loading": [{"action": "EaseIn", "animation": "load", "duration_ms": 500, "dynamic": "Bounce", "frame": 15}],
+              "stop-loading": [{"action": "EaseOut", "animation": "load", "duration_ms": 500, "dynamic": "Bounce"}],
+              "shoot": [
+                {"action": "Play", "animation": "draw", "duration_ms": 700, "dynamic": "Linear", "startFrame": 0, "endFrame": 20},
+                {"action": "Play", "animation": "draw", "duration_ms": 100, "dynamic": "Quintic", "startFrame": 20, "endFrame": 30}
               ],
-              "load": [
-                {"action": "Set", "animation": "load", "frame": 0},
-                {"action": "EaseIn", "animation": "load", "duration_ms": 750, "dynamic": "Linear", "frame": 0},
-                {"action": "Play", "animation": "load", "duration_ms": 1750, "dynamic": "CosShifted", "startFrame": 0, "endFrame": 29}
-              ],
-              "releaseByType": {
-                "*-repeating-*": [
-                  {"action": "Play", "animation": "release", "duration_ms": 100, "dynamic": "Linear", "startFrame": 0, "endFrame": 15},
-                  {"action": "Play", "animation": "release", "duration_ms": 100, "dynamic": "Quintic", "startFrame": 15, "endFrame": 29}
-                ],
-                "*": [
-                  {
-                    "action": "Play",
-                    "animation": "release",
-                    "duration_ms": 150,
-                    "dynamicByType": {"*-stirrup-*": "Quadratic", "*-goatsfoot-*": "Cubic", "*-windlass-*": "Quintic"},
-                    "startFrame": 0,
-                    "endFrame": 22
-                  },
-                  {"action": "Play", "animation": "release", "duration_ms": 740, "dynamic": "Sqrt", "startFrame": 0, "endFrame": 106},
-                  {"action": "Stop", "animation": "release"}
-                ]
-              }
+              "cycle": [{"action": "Play", "animation": "draw", "duration_ms": 600, "dynamic": "CosShifted", "startFrame": 30, "endFrame": 50}],
+              "idle": [{"action": "EaseOut", "animation": "load", "duration_ms": 500, "dynamic": "CosShifted"}],
+              "unloaded": [{"action": "Set", "animation": "draw", "frame": 30}]
             }
           },
           "ammo-bolt": {
             "class": "Requirements",
             "selectorRequirement": "bolt",
-            "bolt": {"requirements": [{"amount": 1, "location": "maltiezcrossbows:bolt-*", "description": "maltiezcrossbows:requirement-bolt"}]}
-          },
-          "load-equipment": {
-            "class": "Requirements",
-            "load-aid": {
-              "requirementsByType": {
-                "*-repeating-*": [],
-                "*-stirrup-*": [],
-                "*": [{"amount": 1, "location": "maltiezcrossbows:spanningtool-{drawtype}", "description": "maltiezcrossbows:item-spanningtool-{drawtype}"}]
-              }
-            },
-            "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}
+            "bolt": {"requirements": [{"amount": 1, "location": "maltiezcrossbows:@bolt-(copper|crude)", "description": "maltiezcrossbows:requirement-bolt"}]}
           },
           "projectile": {
             "class": "Projectiles",
             "stackSystem": "ammo-bolt",
             "amount": 1,
-            "selectorRequirement": "maltiezcrossbows:bolt-*",
-            "speedByType": {"*-repeating-*": 1, "*-stirrup-*": 1.5, "*-goatsfoot-*": 2, "*-windlass-*": 2.5},
+            "selectorRequirement": "maltiezcrossbows:@bolt-(copper|crude)",
+            "speed": 1,
             "aimingSystem": "aiming",
             "description": "maltiezcrossbows:weapon-projectile-stats",
-            "damageMultiplierByType": {"*-repeating-*": 1, "*-stirrup-*": 1.5, "*-goatsfoot-*": 2.2, "*-windlass-*": 4}
+            "damageMultiplier": 1
           },
-          "aiming": {
-            "class": "Aiming",
-            "durationByType": {"*-repeating-*": 400, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 600},
-            "dispersionMin_MOAByType": {"*-repeating-*": 90, "*-stirrup-*": 45, "*-goatsfoot-*": 45, "*-windlass-*": 60},
-            "dispersionMax_MOAByType": {"*-repeating-*": 300, "*-stirrup-*": 400, "*-goatsfoot-*": 600, "*-windlass-*": 900},
-            "description": "maltiezcrossbows:system-desctiption-aim"
-          }
+          "aiming": {"class": "Aiming", "duration": 400, "dispersionMin_MOA": 110, "dispersionMax_MOA": 300, "description": "maltiezcrossbows:system-desctiption-aim"},
+          "load-equipment": {"class": "Requirements", "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}}
         },
         "operations": {
-          "draw": {
+          "empty": {
+            "class": "Instant",
+            "inputs": ["mouse-left-down"],
+            "states": [{"initial": "idle", "final": "idle"}],
+            "systems": [
+              {"code": "ammo-bolt", "action": "empty"},
+              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
+              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
+              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
+              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
+              {"code": "stats", "stat": "walkspeed", "value": 0},
+              {"code": "sound", "action": "play", "sound": "empty-repeating"}
+            ]
+          },
+          "shoot": {
             "class": "Delayed",
-            "timeoutBytype": {"*-repeating-*": 2000, "*-stirrup-*": 4000, "*-goatsfoot-*": 7500, "*-windlass-*": 13500},
-            "states": {"initial": "unloaded", "timeout": "drawn", "transitional": "draw", "final": "unloaded"},
-            "inputs": {"initial": "mouse-right-down-reload", "unloaded": ["mouse-right-up", "item-dropped", "slot-deselected", "item-dropped"]},
+            "timeout": 750,
+            "states": {"initial": "idle", "timeout": "unloaded", "transitional": "shooting", "final": "idle"},
+            "inputs": {"initial": ["mouse-left-down"], "idle": ["item-dropped", "slot-deselected"]},
             "systems": {
               "initial": [
-                {"code": "player-animation", "action": "start", "animation": "draw", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "draw", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "valueByType": {"*-repeating-*": 1, "*-stirrup-*": 0, "*-goatsfoot-*": 1, "*-windlass-*": 0}},
+                {"code": "ammo-bolt", "action": "notempty"},
+                {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
+                {"code": "item-animation", "action": "start", "animation": "shoot", "category": "main"},
+                {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1},
                 {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "valueByType": {"*-repeating-*": -0.2, "*-stirrup-*": -1, "*-goatsfoot-*": -0.4, "*-windlass-*": -1}},
-                {"code": "load-equipment", "action": "take", "requirement": "load-aid"},
+                {"code": "stats", "stat": "walkspeed", "value": -0.4},
+                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"},
+                {"code": "aiming", "action": "start"}
+              ],
+              "idle": [
+                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
+                {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
+                {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
+                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
+                {"code": "stats", "stat": "walkspeed", "value": 0}
+              ],
+              "timeout": [
+                {"code": "sound", "action": "play", "sound": "release-repeating"},
+                {"code": "durability", "action": "change", "amount": -1, "destroy": true},
+                {"code": "attachments", "action": "remove", "point": "bolt", "transform": "default"},
+                {"code": "projectile"}
+              ]
+            }
+          },
+          "cycle": {
+            "class": "Delayed",
+            "timeout": 550,
+            "states": {"initial": "unloaded", "timeout": "idle", "transitional": "cycling", "final": "unloaded"},
+            "inputs": {"initial": ["mouse-left-down", "mouse-right-down"], "unloaded": ["item-dropped", "slot-deselected"]},
+            "systems": {
+              "initial": [
+                {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
+                {"code": "item-animation", "action": "start", "animation": "cycle", "category": "main"},
+                {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1},
+                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
+                {"code": "stats", "stat": "walkspeed", "value": -0.4},
                 {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"}
               ],
-              "unloaded": [
+              "idle": [
                 {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
                 {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
                 {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
                 {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "load-equipment", "action": "put", "requirement": "load-aid"},
-                {"code": "load-equipment", "action": "put"}
+                {"code": "stats", "stat": "walkspeed", "value": 0}
               ],
-              "timeout": [
-                {"code": "load-equipment", "action": "put"},
-                {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "load-equipment", "action": "put", "requirement": "load-aid"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}
-              ]
+              "timeout": [{"code": "attachments", "action": "add", "point": "bolt", "transform": "default"}, {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}]
             }
           },
-          "failload": {
+          "stop-load": {
             "class": "Instant",
             "inputs": ["mouse-right-up"],
-            "states": {"initial": "drawn", "final": "drawn"},
+            "states": [{"initial": "loading", "final": "idle"}, {"initial": "idle", "final": "idle"}],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"}
-            ]
-          },
-          "load": {
-            "class": "Delayed",
-            "timeoutBytype": {"*-repeating-*": 2000, "*-stirrup-*": 2000, "*-goatsfoot-*": 2500, "*-windlass-*": 2500},
-            "states": [{"initial": "drawn", "timeout": "loaded", "transitional": "load", "final": "drawn"}],
-            "inputs": {"initial": ["mouse-right-down-reload", "drawing-finished"], "drawn": ["mouse-right-up", "item-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "player-animation", "action": "start", "animation": "load", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "load", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "value": -0.2},
-                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"},
-                {"code": "ammo-bolt", "action": "take", "requirement": "bolt"},
-                {"code": "attachments", "action": "add", "point": "bolt", "transform": "default"}
-              ],
-              "timeout": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}
-              ],
-              "drawn": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "drawn", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "ammo-bolt", "action": "put", "requirement": "bolt"},
-                {"code": "attachments", "action": "remove", "point": "bolt", "transform": "default"}
-              ]
-            }
-          },
-          "aim": {
-            "class": "Instant",
-            "inputs": ["mouse-right-down-aim", "loading-finished"],
-            "states": [{"initial": "loaded", "final": "aimed"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty", "category": "empty"},
-              {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1.25},
-              {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.65},
-              {"code": "stats", "stat": "walkspeed", "value": -0.3},
-              {"code": "aiming", "action": "start"}
-            ]
-          },
-          "release": {
-            "class": "Delayed",
-            "timeoutBytype": {"*-repeating-*": 200, "*": 100},
-            "inputs": {"initial": ["mouse-left-down-release", "drawing-finished"], "drawn": ["item-dropped", "slot-deselected"]},
-            "states": [{"initial": "aimed", "timeout": "unloaded", "final": "unloaded"}],
-            "systems": {
-              "initialByType": {
-                "*-repeating-*": [
-                  {"code": "item-animation", "action": "start", "animation": "release", "category": "main"},
-                  {"code": "sound", "action": "play", "sound": "release-simple"},
-                  {"code": "durability", "action": "change", "amount": -1, "destroy": true}
-                ],
-                "*": [
-                  {"code": "item-animation", "action": "start", "animation": "release", "category": "main"},
-                  {"code": "sound", "action": "play", "sound": "release-{drawtype}"},
-                  {"code": "sound", "action": "play", "sound": "spinning-lock"},
-                  {"code": "durability", "action": "change", "amount": -1, "destroy": true}
-                ]
-              },
-              "timeout": [{"code": "attachments", "action": "remove", "point": "bolt", "transform": "default"}, {"code": "projectile"}, {"code": "ammo-bolt", "action": "clear"}],
-              "unloaded": []
-            }
-          },
-          "ease": {
-            "class": "Instant",
-            "inputs": "mouse-right-up",
-            "states": [{"initial": "aimed", "final": "loaded"}, {"initial": "unloaded", "final": "unloaded"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
+              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
               {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
               {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
               {"code": "stats", "stat": "walkspeed", "value": 0}
             ]
           },
+          "start-load": {
+            "class": "Delayed",
+            "timeout": 100,
+            "states": [{"initial": "idle", "timeout": "loading", "transitional": "starting", "final": "idle"}],
+            "inputs": {"initial": ["mouse-right-down-reload"], "idle": ["mouse-right-up", "item-dropped", "slot-deselected"]},
+            "systems": {
+              "initial": [],
+              "timeout": [
+                {"code": "player-animation", "action": "start", "animation": "load", "category": "hands"},
+                {"code": "item-animation", "action": "start", "animation": "start-loading", "category": "main"}
+              ],
+              "idle": []
+            }
+          },
+          "load": {
+            "class": "Delayed",
+            "timeout": 1000,
+            "states": [{"initial": "loading", "timeout": "loading", "transitional": "load", "final": "idle"}],
+            "inputs": {"initial": ["start-load-finished", "loading-finished"], "idle": ["mouse-right-up", "item-dropped", "slot-deselected"]},
+            "systems": {
+              "initial": [
+                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
+                {"code": "stats", "stat": "walkspeed", "value": -0.4},
+                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"},
+                {"code": "ammo-bolt", "action": "add", "requirement": "bolt", "max": 5}
+              ],
+              "timeout": [{"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}, {"code": "attachments", "action": "add", "point": "bolt", "transform": "default"}],
+              "idle": [
+                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
+                {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
+                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
+                {"code": "stats", "stat": "walkspeed", "value": 0},
+                {"code": "ammo-bolt", "action": "amount", "requirement": "bolt", "amount": 1, "put": true}
+              ]
+            }
+          },
           "deselected": {
             "class": "Instant",
             "inputs": ["item-dropped", "slot-deselected"],
-            "states": [{"initial": "aimed", "final": "drawn"}, {"initial": "loaded", "final": "drawn"}, {"initial": "unloaded", "final": "unloaded"}, {"initial": "drawn", "final": "drawn"}],
+            "states": [
+              {"initial": "unloaded", "final": "unloaded"},
+              {"initial": "cycling", "final": "unloaded"},
+              {"initial": "loading", "final": "idle"},
+              {"initial": "idle", "final": "idle"},
+              {"initial": "load", "final": "idle"},
+              {"initial": "shooting", "final": "idle"}
+            ],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "ease", "category": "hands"},
               {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
-              {"code": "item-animation", "action": "stop", "category": "main"},
+              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
               {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
               {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
               {"code": "stats", "stat": "walkspeed", "value": 0},
-              {"code": "ammo-bolt", "action": "put"},
               {"code": "aiming", "action": "stop"}
             ]
           },
           "selected-unloaded": {
             "class": "Instant",
             "inputs": ["slot-selected", "slot-modified"],
-            "states": [{"initial": "unloaded", "final": "unloaded"}, {"initial": "draw", "final": "unloaded"}],
+            "states": [{"initial": "unloaded", "final": "unloaded"}, {"initial": "cycling", "final": "unloaded"}],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
               {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
@@ -330,42 +237,33 @@
               {"code": "stats", "stat": "walkspeed", "value": 0}
             ]
           },
-          "selected-drawn": {
+          "selected-idle": {
             "class": "Instant",
             "inputs": ["slot-selected", "slot-modified"],
-            "states": [{"initial": "drawn", "final": "drawn"}, {"initial": "load", "final": "drawn"}],
+            "states": [{"initial": "loading", "final": "idle"}, {"initial": "idle", "final": "idle"}, {"initial": "load", "final": "idle"}, {"initial": "shooting", "final": "idle"}],
             "systems": [
               {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "item-animation", "action": "start", "animation": "drawn", "category": "main"},
+              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
               {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
               {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "attachments", "action": "refresh", "point": "bolt", "transform": "default"},
-              {"code": "stats", "stat": "walkspeed", "value": 0}
-            ]
-          },
-          "selected-loaded": {
-            "class": "Instant",
-            "inputs": ["slot-selected", "slot-modified"],
-            "states": [{"initial": "loaded", "final": "drawn"}, {"initial": "aimed", "final": "drawn"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "attachments", "action": "refresh", "point": "bolt", "transform": "default"},
-              {"code": "ammo-bolt", "action": "put"},
+              {"code": "attachments", "action": "add", "point": "bolt", "transform": "default"},
               {"code": "stats", "stat": "walkspeed", "value": 0}
             ]
           }
         },
         "inputs": {
           "mouse-right-down-reload": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-reload"},
-          "mouse-right-down-aim": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-aim"},
+          "mouse-right-down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed"},
           "mouse-right-up": {"class": "Mouse", "key": "Right", "alt": false, "type": "released", "handle": false},
+          "mouse-left-down": {"class": "Mouse", "key": "Left", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-reload"},
+          "mouse-left-up": {"class": "Mouse", "key": "Left", "alt": false, "type": "released", "handle": false},
           "mouse-left-down-release": {"class": "Mouse", "key": "Left", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-range-attack"},
           "slot-deselected": {"class": "SlotChange"},
           "slot-selected": {"class": "SlotSelected"},
-          "drawing-finished": {"class": "OperationFinished", "operation": "draw"},
+          "shooting-finished": {"class": "OperationFinished", "operation": "shoot"},
+          "cycling-finished": {"class": "OperationFinished", "operation": "cycle"},
           "loading-finished": {"class": "OperationFinished", "operation": "load"},
+          "start-load-finished": {"class": "OperationFinished", "operation": "start-load"},
           "item-dropped": {"class": "SlotContent", "type": "AllTaken"},
           "slot-modified": {"class": "SlotContent", "type": "AfterModified"}
         }

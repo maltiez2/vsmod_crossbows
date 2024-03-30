@@ -32,7 +32,7 @@
     "item-parts-latch-iron": "Iron latch parts",
 
     "itemdesc-crossbow-simple-*": "Crude crossbow made from simple bow. Stock is carved out of some firewood. Trigger mechanism is made from bone.<br>",
-    "itemdesc-crossbow-repeating-*": "Crossbow with magazine for bolts and lever that is used to cycle it and shoot. Can only use bolts without fletching.<br>",
+    "itemdesc-crossbow-repeating-*": "Crossbow with magazine for 5 bolts and lever that is used to cycle it and shoot. Can only use bolts without fletching (crude and copper).<br>",
     "itemdesc-crossbow-stirrup-*": "Crossbow with composite prod and stirrup to help draw it. The stirrup doubles the weight you can draw with your hands, but requires putting the foot into the stirrup and stay still.<br>",
     "itemdesc-crossbow-latch-*": "Crossbow with composite prod and lever with latch mechanism. It has shorter power stroke compared to stirrup crossbow, hense bolts having lower speed when shot. In return lever with latch makes reload much faster.<br>",
     "itemdesc-crossbow-goatsfoot-*": "Crossbow with steel prod and mounting points for goat's foot lever that doubles draw weight compared to stirrup by providing mechanical advantage around 5 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so a significant part of energy spend on just moving limbs themselves.<br>",

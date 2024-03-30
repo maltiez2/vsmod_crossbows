@@ -13,12 +13,27 @@
     "location": "game:sounds/bow-draw",
     "randomizePitch": true
   },
+  "empty-repeating": {
+    "location": "maltiezcrossbows:sounds/loading/metalic-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
   "ready-simple": {
     "location": "maltiezcrossbows:sounds/loading/wooden-click",
     "range": 1.0,
     "volume": 0.4
   },
+  "ready-repeating": {
+    "location": "maltiezcrossbows:sounds/loading/wooden-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
   "ready-stirrup": {
+    "location": "maltiezcrossbows:sounds/loading/wooden-click",
+    "range": 1.0,
+    "volume": 0.4
+  },
+  "ready-latch": {
     "location": "maltiezcrossbows:sounds/loading/wooden-click",
     "range": 1.0,
     "volume": 0.4
@@ -52,7 +67,34 @@
     "randomizePitch": false,
     "time": 20
   },
+  "release-repeating": {
+    "location": [
+      "maltiezcrossbows:sounds/release/simple-0",
+      "maltiezcrossbows:sounds/release/simple-1",
+      "maltiezcrossbows:sounds/release/simple-2",
+      "maltiezcrossbows:sounds/release/simple-3"
+    ],
+    "range": 64.0,
+    "volume": 0.8,
+    "randomizePitch": false,
+    "time": 0
+  },
   "release-stirrup": {
+    "location": [
+      "maltiezcrossbows:sounds/release/stirrup-0",
+      "maltiezcrossbows:sounds/release/stirrup-1",
+      "maltiezcrossbows:sounds/release/stirrup-2",
+      "maltiezcrossbows:sounds/release/stirrup-3",
+      "maltiezcrossbows:sounds/release/stirrup-4",
+      "maltiezcrossbows:sounds/release/stirrup-5",
+      "maltiezcrossbows:sounds/release/stirrup-6"
+    ],
+    "range": 64.0,
+    "volume": 0.8,
+    "randomizePitch": false,
+    "time": 20
+  },
+  "release-latch": {
     "location": [
       "maltiezcrossbows:sounds/release/stirrup-0",
       "maltiezcrossbows:sounds/release/stirrup-1",

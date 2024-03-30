@@ -6,7 +6,7 @@
       "B": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
       "C": {"type": "item", "code": "game:flaxtwine", "quantity": 16},
       "P": {"type": "item", "code": "game:plank-*", "quantity": 1},
-      "H": {"type": "item", "code": "game:hammer-*", "quantity": 1}
+      "H": {"type": "item", "code": "game:hammer-*", "quantity": 1, "isTool": true}
     },
     "width": 3,
     "height": 2,
@@ -17,7 +17,7 @@
     "ingredients": {
       "A": {"type": "item", "code": "maltiezcrossbows:parts-goatfoot-steel", "quantity": 1},
       "B": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
-      "H": {"type": "item", "code": "game:hammer-*", "quantity": 1}
+      "H": {"type": "item", "code": "game:hammer-*", "quantity": 1, "isTool": true}
     },
     "width": 3,
     "height": 1,
