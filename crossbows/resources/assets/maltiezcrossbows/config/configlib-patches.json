@@ -4,17 +4,25 @@
     "float": {
       "maltiezcrossbows:itemtypes/crossbow.json": {
         "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-simple-*": "DAMAGE * 1.0",
-        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-stirrup-*": "DAMAGE * 1.5",
-        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-goatsfoot-*": "DAMAGE * 2.2",
-        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-windlass-*": "DAMAGE * 4.0",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-simple-*": "DISPERSION * 120",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-stirrup-*": "DAMAGE * 2",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-latch-*": "DAMAGE * 1.5",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-goatsfoot-*": "DAMAGE * 2.5",
+        "behaviors/2/properties/systems/projectile/damageMultiplierByType/*-windlass-*": "DAMAGE * 4.3",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-simple-*": "DISPERSION * 90",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-simple-*": "DISPERSION * 300",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-stirrup-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-stirrup-*": "DISPERSION * 45",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-stirrup-*": "DISPERSION * 400",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-goatsfoot-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-latch-*": "DISPERSION * 60",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-latch-*": "DISPERSION * 400",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-goatsfoot-*": "DISPERSION * 45",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-goatsfoot-*": "DISPERSION * 600",
-        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-windlass-*": "DISPERSION * 90",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOAByType/*-windlass-*": "DISPERSION * 60",
         "behaviors/2/properties/systems/aiming/dispersionMax_MOAByType/*-windlass-*": "DISPERSION * 900"
+      },
+      "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
+        "behaviors/2/properties/systems/projectile/damageMultiplier": "DAMAGE * 1.0",
+        "behaviors/2/properties/systems/aiming/dispersionMin_MOA": "DISPERSION * 110",
+        "behaviors/2/properties/systems/aiming/dispersionMax_MOA": "DISPERSION * 300"
       },
       "maltiezcrossbows:config/sound-effects.json": {
         "spinning-lock/volume": "SOUND_LOCK"
@@ -38,7 +46,9 @@
       },
       "maltiezcrossbows:config/sound-effects.json": {
         "ready-simple/location": "READY_SOUND_WOOD",
+        "ready-repeater/location": "READY_SOUND_WOOD",
         "ready-stirrup/location": "READY_SOUND_WOOD",
+        "ready-latch/location": "READY_SOUND_WOOD",
         "ready-goatsfoot/location": "READY_SOUND_METAL",
         "ready-windlass/location": "READY_SOUND_METAL"
       }
@@ -165,6 +175,7 @@
         "ingui": "maltiezcrossbows:setting-ready-sound-wood",
         "comment": "Sound played right after drawing and loading complete for simple and stirrup crossbows.",
         "default": "Wooden",
+        "clientSide": true,
         "weight": 1.5,
         "mapping": {
           "None": "bowyer",
@@ -178,6 +189,7 @@
         "ingui": "maltiezcrossbows:setting-ready-sound-metal",
         "comment": "Sound played right after drawing and loading complete for goat's foot and windlas crossbows.",
         "default": "Metal",
+        "clientSide": true,
         "weight": 1.6,
         "mapping": {
           "None": "bowyer",

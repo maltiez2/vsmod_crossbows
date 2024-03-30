@@ -14,7 +14,7 @@
       "code": "crossbowskeyframes",
       "easeInSpeed": 1,
       "easeOutSpeed": 1,
-      "quantityframes": 7,
+      "quantityframes": 9,
       "onActivityStopped": "EaseOut",
       "onAnimationEnd": "Hold",
       "keyframes": [
@@ -101,6 +101,18 @@
             "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
             "Neck": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
           }
+        },
+        {
+          "frame": 8,
+          "elements": {
+            "UpperTorso": {"rotationX": 0, "rotationY": -20, "rotationZ": 10},
+            "UpperArmR": {"rotationX": 0, "rotationY": -8, "rotationZ": -84, "offsetX": 0, "offsetY": 0, "offsetZ": 0},
+            "LowerArmR": {"rotationX": -70, "rotationY": 0, "rotationZ": -15},
+            "ItemAnchor": {"rotationX": 48, "rotationY": 13, "rotationZ": 84, "offsetX": -0.53, "offsetY": 1.06, "offsetZ": 0.45},
+            "UpperArmL": {"rotationX": 0, "rotationY": 10, "rotationZ": -95, "offsetX": 0.8, "offsetY": -1, "offsetZ": 0},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0},
+            "Neck": {"rotationX": 0, "rotationY": 20, "rotationZ": -10}
+          }
         }
       ]
     }
@@ -120,7 +132,7 @@
       "code": "crossbowskeyframes-fp",
       "easeInSpeed": 1,
       "easeOutSpeed": 1,
-      "quantityframes": 7,
+      "quantityframes": 9,
       "onActivityStopped": "EaseOut",
       "onAnimationEnd": "Hold",
       "keyframes": [
@@ -202,6 +214,16 @@
             "ItemAnchor": {"rotationX": 47, "rotationY": -5, "rotationZ": 70, "offsetX": -2, "offsetY": 2.99, "offsetZ": 1.19},
             "UpperArmL": {"rotationX": 7, "rotationY": 0, "rotationZ": -15, "offsetX": 0, "offsetY": 0, "offsetZ": 3.65},
             "LowerArmL": {"rotationX": 7, "rotationY": 0, "rotationZ": 3}
+          }
+        },
+        {
+          "frame": 8,
+          "elements": {
+            "UpperArmR": {"rotationX": 0, "rotationY": -9, "rotationZ": -55, "offsetX": 2.99, "offsetY": -1, "offsetZ": -4},
+            "LowerArmR": {"rotationX": -23, "rotationY": 11, "rotationZ": -46},
+            "ItemAnchor": {"rotationX": 24, "rotationY": 8, "rotationZ": 105, "offsetX": -2.59, "offsetY": 1.15, "offsetZ": -0.13},
+            "UpperArmL": {"rotationX": 0, "rotationY": -41, "rotationZ": -95, "offsetX": 3.73, "offsetY": -0.99, "offsetZ": 1},
+            "LowerArmL": {"rotationX": 0, "rotationY": 0, "rotationZ": 0}
           }
         }
       ]
