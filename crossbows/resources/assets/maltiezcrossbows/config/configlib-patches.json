@@ -162,7 +162,7 @@
       "TRAIT_REQUIREMENT": {
         "name": "recipes-locked-to-bowyer",
         "ingui": "maltiezcrossbows:setting-trait",
-        "comment": "Weahter composite bow recipe require 'bowyer' trait",
+        "comment": "Whether composite bow recipe require 'bowyer' trait",
         "default": "Required",
         "weight": 1.4,
         "mapping": {

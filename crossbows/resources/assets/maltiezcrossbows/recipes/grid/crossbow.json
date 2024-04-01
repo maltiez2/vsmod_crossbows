@@ -31,12 +31,11 @@
     "output": {"type": "item", "code": "maltiezcrossbows:crossbow-goatsfoot-plain"}
   },
   {
-    "ingredientPattern": "ANF,LB_,WWK",
+    "ingredientPattern": "_NF,LB_,WWK",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-latch-iron", "quantity": 1},
       "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
-      "A": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
       "K": { "type": "item", "code": "game:saw-*", "isTool": true  }
