@@ -3,13 +3,13 @@
   <PropertyGroup>
     <ModName>Crossbows</ModName>
     <ModType>content</ModType>
-    <GameVersion>1.19.4</GameVersion>
-    <Version>0.3.1</Version>
+    <GameVersion>1.20.0-pre.5</GameVersion>
+    <Version>0.4.2</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
     <RequiredOnClient>true</RequiredOnClient>
-    <RequiredOnServer>false</RequiredOnServer>
+    <RequiredOnServer>true</RequiredOnServer>
   </PropertyGroup>
 
   <!-- Authors -->
@@ -21,6 +21,7 @@
   <ItemGroup>
     <ModInfoTranslators Include="Kaofan - Polish" />
     <ModInfoTranslators Include="RikeiR - Japanese" />
+    <ModInfoTranslators Include="rodolfo_de_jesus_berthely_ - Spanish (Latin America)" />
   </ItemGroup>
 
   <!-- Dependencies -->
@@ -28,11 +29,8 @@
     <Dependencies Include="game">
       <Version>$(GameVersion)</Version>
     </Dependencies>
-    <Dependencies Include="fsmlib">
-      <Version>0.4.0</Version>
-    </Dependencies>
-    <Dependencies Include="configlib">
-      <Version>1.1.0</Version>
+    <Dependencies Include="combatoverhaul">
+      <Version>0.0.11</Version>
     </Dependencies>
   </ItemGroup>
 
@@ -68,6 +66,7 @@
     <AssetsToFormat Include="$(AssetsDir)\$(ModId)\entities" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="resources\assets\maltiezcrossbows\config\animations\" />
     <Folder Include="resources\assets\maltiezcrossbows\sounds\loading\" />
   </ItemGroup>
 

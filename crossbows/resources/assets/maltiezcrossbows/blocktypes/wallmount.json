@@ -1,5 +1,7 @@
 ﻿{
   "code": "wallmount",
+  "class": "CombatOverhaul:GenericDisplayBlock",
+  "entityClass": "CombatOverhaul:GenericDisplayBlockEntity",
   "behaviors": [{"name": "HorizontalOrientable", "properties": {"dropBlockFace": "east"}}],
   "variantgroups": [{"code": "type", "states": ["iron", "tinbronze", "copper", "steel", "brass", "rusty", "tarnished"]}, {"code": "side", "loadFromProperties": "abstract/horizontalorientation"}],
   "attributes": {
@@ -7,8 +9,6 @@
     "inventoryTransformAttribute": "inCrossbowWallmountTransform",
     "rotateByType": {"*-north": {"y": 0}, "*-east": {"y": 270}, "*-west": {"y": 90}, "*-south": {"y": 180}}
   },
-  "class": "FSMlib:GenericDisplayBlock",
-  "entityClass": "FSMlib:GenericDisplayBlockEntity",
   "creativeinventory": {"maltiezcrossbows": ["*-east"]},
   "shapeByType": {
     "*-north": {"base": "blocks/wallmount", "rotateY": 0},

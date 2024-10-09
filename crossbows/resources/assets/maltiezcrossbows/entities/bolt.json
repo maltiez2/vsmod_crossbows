@@ -1,15 +1,22 @@
 ﻿{
   "code": "bolt",
-  "class": "AdvancedEntityProjectile",
+  "class": "CombatOverhaul:Projectile",
   "hitboxSize": {"x": 0.125, "y": 0.125},
   "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "client": {
     "size": 1,
     "renderer": "Shape",
-    "shapeByType": {"*-crude": {"base": "crude-bolt-shifted"}, "*-copper": {"base": "crude-bolt-shifted"}, "*": {"base": "bolt-shifted"}},
+    "shapeByType": {
+      "*-crude": {"base": "bolt-crude"},
+      "*-copper": {"base": "bolt-crude"},
+      "*-meteoriciron": {"base": "bolt-envelop"},
+      "*-steel": {"base": "bolt-envelop"},
+      "*-iron": {"base": "bolt-envelop"},
+      "*": {"base": "bolt-insert"}
+    },
     "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
     "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.75}, {"code": "interpolateposition"}]
   },
-  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.1, "gravityFactor": 0.75}, {"code": "despawn", "minSeconds": 600}]},
+  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.75}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }

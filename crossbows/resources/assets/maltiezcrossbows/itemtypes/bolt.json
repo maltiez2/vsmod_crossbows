@@ -1,20 +1,23 @@
 ﻿{
   "code": "bolt",
-  "class": "ItemArrow",
+  "class": "Item",
   "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "maxstacksize": 64,
   "storageFlags": 513,
-  "shapeByType": {"*-crude": {"base": "crude-bolt"}, "*-copper": {"base": "crude-bolt"}, "*": {"base": "bolt"}},
+  "shapeByType": {
+    "*-crude": {"base": "bolt-crude"},
+    "*-copper": {"base": "bolt-crude"},
+    "*-meteoriciron": {"base": "bolt-envelop"},
+    "*-steel": {"base": "bolt-envelop"},
+    "*-iron": {"base": "bolt-envelop"},
+    "*": {"base": "bolt-insert"}
+  },
   "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
   "creativeinventory": {"maltiezcrossbows": ["*"]},
-  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -44, "y": -52, "z": 0}, "origin": {"x": 1.4, "y": -0.05, "z": 0.05}, "scale": 3.18},
-  "tpHandTransform": {"translation": {"x": 1.3, "y": -0.05, "z": -0.05}, "rotation": {"x": 0, "y": 2, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+  "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -20, "y": -41, "z": -145}, "origin": {"x": 0.6, "y": -0.44, "z": 0}, "scale": 2.73},
+  "tpHandTransform": {"translation": {"x": 0.3, "y": 0, "z": 0.5}, "rotation": {"x": 0, "y": 2, "z": 3}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0.5, "y": -0.03, "z": 0.5}, "scale": 4},
-  "attributes": {
-    "breakChanceOnImpactByType": {"*-crude": 0.3, "*-copper": 0.15, "*-tinbronze": 0.125, "*-bismuthbronze": 0.125, "*-blackbronze": 0.1, "*-iron": 0.1, "*-meteoriciron": 0.1, "*-steel": 0.03},
-    "handbook": {"groupBy": ["bolt-*"]},
-    "projectile": "maltiezcrossbows:bolt-{material}"
-  },
+  "attributes": {"handbook": {"groupBy": ["bolt-*"]}},
   "behaviors": [
     {
       "name": "GroundStorable",
@@ -32,17 +35,26 @@
       }
     },
     {
-      "name": "FSMAdvancedProjectile",
+      "name": "CombatOverhaul:Projectile",
       "properties": {
-        "damageTypesByType": {
-          "*-crude": [{"damage": 5, "knockback": 0.3, "type": "PiercingAttack", "tier": 1}],
-          "*-copper": [{"damage": 6, "knockback": 0.2, "type": "PiercingAttack", "tier": 2}],
-          "*-tinbronze": [{"damage": 7, "knockback": 0.2, "type": "PiercingAttack", "tier": 3}],
-          "*-bismuthbronze": [{"damage": 7, "knockback": 0.2, "type": "PiercingAttack", "tier": 3}],
-          "*-blackbronze": [{"damage": 7, "knockback": 0.2, "type": "PiercingAttack", "tier": 3}],
-          "*-iron": [{"damage": 7, "knockback": 0.2, "type": "PiercingAttack", "tier": 3}],
-          "*-meteoriciron": [{"damage": 7, "knockback": 0.2, "type": "PiercingAttack", "tier": 4}],
-          "*-steel": [{"damage": 9, "knockback": 0.2, "type": "PiercingAttack", "tier": 5}]
+        "stats": {
+          "AdditionalDurabilityCost": 0,
+          "CollisionRadius": 0.05,
+          "DamageStatsByType": {
+            "*-crude": {"DamageType": "PiercingAttack", "Damage": 5},
+            "*-copper": {"DamageType": "PiercingAttack", "Damage": 6},
+            "*-tinbronze": {"DamageType": "PiercingAttack", "Damage": 7},
+            "*-bismuthbronze": {"DamageType": "PiercingAttack", "Damage": 7},
+            "*-blackbronze": {"DamageType": "PiercingAttack", "Damage": 7},
+            "*-iron": {"DamageType": "PiercingAttack", "Damage": 7},
+            "*-meteoriciron": {"DamageType": "PiercingAttack", "Damage": 7},
+            "*-steel": {"DamageType": "PiercingAttack", "Damage": 9}
+          },
+          "SpeedThreshold": 0.3,
+          "Knockback": 0.2,
+          "EntityCode": "maltiezcrossbows:bolt-{material}",
+          "DurabilityDamage": 0,
+          "DropChanceByType": {"*-crude": 0.75, "*-copper": 0.9, "*-tinbronze": 0.95, "*-bismuthbronze": 0.95, "*-blackbronze": 0.95, "*-iron": 0.98, "*-meteoriciron": 0.98, "*-steel": 0.995}
         }
       }
     }

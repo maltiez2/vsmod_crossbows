@@ -1,5 +1,6 @@
 ﻿{
   "code": "crossbow",
+  "class": "CombatOverhaul:MagazineCrossbow",
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "type", "states": ["plain"]}],
   "maxstacksize": 1,
@@ -7,14 +8,7 @@
   "tool": "bow",
   "rackable": true,
   "behaviors": [
-    {
-      "name": "AnimatableProcedural",
-      "properties": {
-        "animated-shape": "maltiezcrossbows:crossbows/crossbow-repeating-animated",
-        "animated-shape-fp": "maltiezcrossbows:crossbows/crossbow-repeating-animated",
-        "only-when-animating": false
-      }
-    },
+    {"name": "CombatOverhaul:AnimatableAttachable", "properties": {"animated-shape": "maltiezcrossbows:crossbows/{drawtype}"}},
     {
       "name": "GroundStorable",
       "properties": {
@@ -24,262 +18,48 @@
         "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
         "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
       }
-    },
-    {
-      "name": "FiniteStateMachine",
-      "properties": {
-        "initialState": "idle",
-        "systems": {
-          "camera": {"class": "CameraSettings"},
-          "durability": {"Class": "Durability"},
-          "sound": {"class": "Sounds", "domain": "maltiezcrossbows"},
-          "attachments": {
-            "class": "Attachments",
-            "stackSystem": "ammo-bolt",
-            "transforms": {"default": {"translation": {"x": 0, "y": 0, "z": 13}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}}
-          },
-          "player-animation": {
-            "class": "ProceduralPlayerAnimation",
-            "categories": {"hands": {"blending": "Average", "weight": 1024}, "empty": {"blending": "Average", "weight": 16}},
-            "animations": {
-              "idle": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 4, "separateFp": true}],
-              "draw": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 2, "separateFp": true}],
-              "load": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "CosShifted", "frame": 5, "separateFp": true}],
-              "aim": [{"action": "EaseIn", "animation": "crossbowskeyframes", "duration_ms": 500, "dynamic": "SinQuadratic", "frame": 8, "separateFp": true}],
-              "ease": [{"action": "EaseOut", "animation": "crossbowskeyframes", "duration_ms": 300, "dynamic": "CosShifted", "frame": 0, "separateFp": true}],
-              "empty": [{"action": "EaseIn", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}],
-              "empty-stop": [{"action": "EaseOut", "animation": "crossbowsempty", "duration_ms": 200, "dynamic": "Linear", "frame": 0, "separateFp": true}]
-            }
-          },
-          "stats": {"class": "Stats"},
-          "item-animation": {
-            "class": "ProceduralItemAnimation",
-            "categories": {"main": {"blending": "AddAverage", "weight": 1}},
-            "animations": {
-              "start-loading": [{"action": "EaseIn", "animation": "load", "duration_ms": 500, "dynamic": "Bounce", "frame": 15}],
-              "stop-loading": [{"action": "EaseOut", "animation": "load", "duration_ms": 500, "dynamic": "Bounce"}],
-              "shoot": [
-                {"action": "Play", "animation": "draw", "duration_ms": 700, "dynamic": "Linear", "startFrame": 0, "endFrame": 20},
-                {"action": "Play", "animation": "draw", "duration_ms": 100, "dynamic": "Quintic", "startFrame": 20, "endFrame": 30}
-              ],
-              "cycle": [{"action": "Play", "animation": "draw", "duration_ms": 600, "dynamic": "CosShifted", "startFrame": 30, "endFrame": 50}],
-              "idle": [{"action": "EaseOut", "animation": "load", "duration_ms": 500, "dynamic": "CosShifted"}],
-              "unloaded": [{"action": "Set", "animation": "draw", "frame": 30}]
-            }
-          },
-          "ammo-bolt": {
-            "class": "Requirements",
-            "selectorRequirement": "bolt",
-            "bolt": {"requirements": [{"amount": 1, "location": "maltiezcrossbows:@bolt-(copper|crude)", "description": "maltiezcrossbows:requirement-bolt"}]}
-          },
-          "projectile": {
-            "class": "Projectiles",
-            "stackSystem": "ammo-bolt",
-            "amount": 1,
-            "selectorRequirement": "maltiezcrossbows:@bolt-(copper|crude)",
-            "speed": 1,
-            "aimingSystem": "aiming",
-            "description": "maltiezcrossbows:weapon-projectile-stats",
-            "damageMultiplier": 1
-          },
-          "aiming": {"class": "Aiming", "duration": 400, "dispersionMin_MOA": 110, "dispersionMax_MOA": 300, "description": "maltiezcrossbows:system-desctiption-aim"},
-          "load-equipment": {"class": "Requirements", "empty-offhand": {"slot": "OffHand", "search": "Blacklist"}}
-        },
-        "operations": {
-          "empty": {
-            "class": "Instant",
-            "inputs": ["mouse-left-down"],
-            "states": [{"initial": "idle", "final": "idle"}],
-            "systems": [
-              {"code": "ammo-bolt", "action": "empty"},
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "stats", "stat": "walkspeed", "value": 0},
-              {"code": "sound", "action": "play", "sound": "empty-repeating"}
-            ]
-          },
-          "shoot": {
-            "class": "Delayed",
-            "timeout": 750,
-            "states": {"initial": "idle", "timeout": "unloaded", "transitional": "shooting", "final": "idle"},
-            "inputs": {"initial": ["mouse-left-down"], "idle": ["item-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "ammo-bolt", "action": "notempty"},
-                {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "shoot", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1},
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "value": -0.4},
-                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"},
-                {"code": "aiming", "action": "start"}
-              ],
-              "idle": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0}
-              ],
-              "timeout": [
-                {"code": "sound", "action": "play", "sound": "release-repeating"},
-                {"code": "durability", "action": "change", "amount": -1, "destroy": true},
-                {"code": "attachments", "action": "remove", "point": "bolt", "transform": "default"},
-                {"code": "projectile"}
-              ]
-            }
-          },
-          "cycle": {
-            "class": "Delayed",
-            "timeout": 550,
-            "states": {"initial": "unloaded", "timeout": "idle", "transitional": "cycling", "final": "unloaded"},
-            "inputs": {"initial": ["mouse-left-down", "mouse-right-down"], "unloaded": ["item-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "player-animation", "action": "start", "animation": "aim", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "cycle", "category": "main"},
-                {"code": "camera", "action": "set", "setting": "FirstPersonHandsPitch", "value": 1},
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "value": -0.4},
-                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"}
-              ],
-              "idle": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0}
-              ],
-              "timeout": [{"code": "attachments", "action": "add", "point": "bolt", "transform": "default"}, {"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}]
-            }
-          },
-          "stop-load": {
-            "class": "Instant",
-            "inputs": ["mouse-right-up"],
-            "states": [{"initial": "loading", "final": "idle"}, {"initial": "idle", "final": "idle"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "stats", "stat": "walkspeed", "value": 0}
-            ]
-          },
-          "start-load": {
-            "class": "Delayed",
-            "timeout": 100,
-            "states": [{"initial": "idle", "timeout": "loading", "transitional": "starting", "final": "idle"}],
-            "inputs": {"initial": ["mouse-right-down-reload"], "idle": ["mouse-right-up", "item-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [],
-              "timeout": [
-                {"code": "player-animation", "action": "start", "animation": "load", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "start-loading", "category": "main"}
-              ],
-              "idle": []
-            }
-          },
-          "load": {
-            "class": "Delayed",
-            "timeout": 1000,
-            "states": [{"initial": "loading", "timeout": "loading", "transitional": "load", "final": "idle"}],
-            "inputs": {"initial": ["start-load-finished", "loading-finished"], "idle": ["mouse-right-up", "item-dropped", "slot-deselected"]},
-            "systems": {
-              "initial": [
-                {"code": "camera", "action": "set", "setting": "WalkBobbingAmplitude", "value": 0.67},
-                {"code": "stats", "stat": "walkspeed", "value": -0.4},
-                {"code": "load-equipment", "action": "check", "requirement": "empty-offhand"},
-                {"code": "ammo-bolt", "action": "add", "requirement": "bolt", "max": 5}
-              ],
-              "timeout": [{"code": "sound", "action": "play", "sound": "ready-{drawtype}", "clientSide": true}, {"code": "attachments", "action": "add", "point": "bolt", "transform": "default"}],
-              "idle": [
-                {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-                {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-                {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-                {"code": "stats", "stat": "walkspeed", "value": 0},
-                {"code": "ammo-bolt", "action": "amount", "requirement": "bolt", "amount": 1, "put": true}
-              ]
-            }
-          },
-          "deselected": {
-            "class": "Instant",
-            "inputs": ["item-dropped", "slot-deselected"],
-            "states": [
-              {"initial": "unloaded", "final": "unloaded"},
-              {"initial": "cycling", "final": "unloaded"},
-              {"initial": "loading", "final": "idle"},
-              {"initial": "idle", "final": "idle"},
-              {"initial": "load", "final": "idle"},
-              {"initial": "shooting", "final": "idle"}
-            ],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "ease", "category": "hands"},
-              {"code": "player-animation", "action": "start", "animation": "empty-stop", "category": "empty"},
-              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "stats", "stat": "walkspeed", "value": 0},
-              {"code": "aiming", "action": "stop"}
-            ]
-          },
-          "selected-unloaded": {
-            "class": "Instant",
-            "inputs": ["slot-selected", "slot-modified"],
-            "states": [{"initial": "unloaded", "final": "unloaded"}, {"initial": "cycling", "final": "unloaded"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "item-animation", "action": "start", "animation": "unloaded", "category": "main"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "attachments", "action": "refresh", "point": "bolt", "transform": "default"},
-              {"code": "stats", "stat": "walkspeed", "value": 0}
-            ]
-          },
-          "selected-idle": {
-            "class": "Instant",
-            "inputs": ["slot-selected", "slot-modified"],
-            "states": [{"initial": "loading", "final": "idle"}, {"initial": "idle", "final": "idle"}, {"initial": "load", "final": "idle"}, {"initial": "shooting", "final": "idle"}],
-            "systems": [
-              {"code": "player-animation", "action": "start", "animation": "idle", "category": "hands"},
-              {"code": "item-animation", "action": "start", "animation": "idle", "category": "main"},
-              {"code": "camera", "action": "reset", "setting": "FirstPersonHandsPitch"},
-              {"code": "camera", "action": "reset", "setting": "WalkBobbingAmplitude"},
-              {"code": "attachments", "action": "add", "point": "bolt", "transform": "default"},
-              {"code": "stats", "stat": "walkspeed", "value": 0}
-            ]
-          }
-        },
-        "inputs": {
-          "mouse-right-down-reload": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-reload"},
-          "mouse-right-down": {"class": "Mouse", "key": "Right", "alt": false, "type": "pressed"},
-          "mouse-right-up": {"class": "Mouse", "key": "Right", "alt": false, "type": "released", "handle": false},
-          "mouse-left-down": {"class": "Mouse", "key": "Left", "alt": false, "type": "pressed", "name": "maltiezcrossbows:weapon-range-attack-repeater"},
-          "mouse-left-up": {"class": "Mouse", "key": "Left", "alt": false, "type": "released", "handle": false},
-          "slot-deselected": {"class": "SlotChange"},
-          "slot-selected": {"class": "SlotSelected"},
-          "shooting-finished": {"class": "OperationFinished", "operation": "shoot"},
-          "cycling-finished": {"class": "OperationFinished", "operation": "cycle"},
-          "loading-finished": {"class": "OperationFinished", "operation": "load"},
-          "start-load-finished": {"class": "OperationFinished", "operation": "start-load"},
-          "item-dropped": {"class": "SlotContent", "type": "AllTaken"},
-          "slot-modified": {"class": "SlotContent", "type": "AfterModified"}
-        }
-      }
     }
   ],
   "attributes": {
     "toolrackTransform": {"translation": {"x": 0, "y": 0.6, "z": 0.5}, "rotation": {"x": 173, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
     "groundStorageTransform": {"translation": {"x": 0.7, "y": 1.06, "z": 0.66}, "rotation": {"x": 110, "y": -180, "z": -111}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-    "inCrossbowWallmountTransform": {"translation": {"x": 0, "y": -0.68, "z": -0.02}, "rotation": {"x": 90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
+    "inCrossbowWallmountTransform": {"translation": {"x": 0, "y": -0.68, "z": -0.02}, "rotation": {"x": 90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
+    "BoltTransform": {"translation": {"x": -5.65, "y": 0.2, "z": -1}, "rotation": {"x": 0, "y": 0, "z": 1}, "scale": 0.75},
+    "BoltDamageMultiplier": 1,
+    "BoltDamageStrength": 1,
+    "BoltVelocity": 1.3,
+    "ProficiencyStat": "crossbowsProficiency",
+    "IdleAnimation": "maltiezcrossbows:crossbow-{drawtype}-ready",
+    "ReadyAnimation": "maltiezcrossbows:crossbow-{drawtype}-ready",
+    "OpenLidAnimation": "maltiezcrossbows:crossbow-{drawtype}-open",
+    "LoadBoltAnimation": "maltiezcrossbows:crossbow-{drawtype}-load",
+    "CloseLidAnimation": "maltiezcrossbows:crossbow-{drawtype}-close",
+    "ShootAnimation": "maltiezcrossbows:crossbow-{drawtype}-shoot",
+    "ReturnAnimation": "maltiezcrossbows:crossbow-{drawtype}-return",
+    "MagazineSize": 5,
+    "Aiming": {
+      "AimDifficulty": 1,
+      "CursorType": "Fixed",
+      "AccuracyOvertimeSec": 0,
+      "ZeroingAngle": 1,
+      "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
+      "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
+      "AllowSprint": true,
+      "MoveSpeedPenalty": 0.1,
+      "AimDrift": 240,
+      "AimTwitch": 0,
+      "AnimationFollowX": 5.5,
+      "AnimationFollowY": 5.5,
+      "VerticalLimit": 0.25,
+      "VerticalOffset": -0.05
+    }
   },
   "heldLeftTpIdleAnimation": "crossbowsempty",
   "heldLeftReadyAnimation": "crossbowsempty",
   "heldRightReadyAnimation": "crossbowsempty",
   "heldOldTpIdleAnimation": "crossbowsempty",
   "heldTpUseAnimation": "crossbowsempty",
-  "shape": {"base": "maltiezcrossbows:crossbows/crossbow-{drawtype}-animated"},
+  "shape": {"base": "maltiezcrossbows:crossbows/{drawtype}"},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -52, "y": -41, "z": 180}, "origin": {"x": -0.05, "y": 0.3, "z": -0.25}, "scale": 0.7},
   "tpHandTransform": {"translation": {"x": -0.2, "y": 0, "z": 0}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
   "groundTransform": {"translation": {"x": 0, "y": 0.13, "z": 0}, "rotation": {"x": 1, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
