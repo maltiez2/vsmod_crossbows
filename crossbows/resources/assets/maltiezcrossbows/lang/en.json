@@ -64,17 +64,8 @@
     "itemdesc-parts-stirrup-*": "Stirrup attached to the front of a crossbow for holding it with foot while drawing.<br>",
 
     "setting-damage": "Damage multiplier",
-    "setting-dispersion": "Dispersion",
-    "setting-tier-crude": "Crude bolts tier",
-    "setting-tier-copper": "Copper bolts tier",
-    "setting-tier-bronze": "Bronze bolts tier",
-    "setting-tier-iron": "Iron bolts tier",
-    "setting-tier-meteoric": "Meteoric iron bolts tier",
-    "setting-tier-steel": "Steel bolts tier",
     "setting-trait": "Trait requirement",
-    "setting-ready-sound-wood": "Ready sound (wooden bows)",
-    "setting-ready-sound-metal": "Ready sound (steel bows)",
-    "setting-lock-sound": "Lock nut rotation sound level",
+    "setting-cursortype": "Aiming type",
 
     "requirement-empty-offhnad": "Offhand should be empty",
     "weapon-projectile-stats": "Range damage multiplier: {2}\nProjectile velocity: {0}\n",

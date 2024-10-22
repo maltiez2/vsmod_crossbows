@@ -1,7 +1,6 @@
 ﻿{
   "code": "crossbow",
   "class": "Item",
-  "creativeinventory": {"maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["simple", "stirrup", "latch", "goatsfoot", "windlass"]}, {"code": "type", "states": ["plain"]}],
   "maxstacksize": 1,
   "durabilityByType": {"*-simple-*": 450, "*-stirrup-*": 900, "*-latch-*": 900, "*-goatsfoot-*": 1600, "*-windlass-*": 1200},

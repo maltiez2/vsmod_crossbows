@@ -2,9 +2,9 @@
   <!-- Mod info -->
   <PropertyGroup>
     <ModName>Crossbows</ModName>
-    <ModType>content</ModType>
+    <ModType>code</ModType>
     <GameVersion>1.20.0-pre.5</GameVersion>
-    <Version>0.4.2</Version>
+    <Version>0.5.0</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
@@ -40,6 +40,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <!-- Paths -->
@@ -81,6 +82,18 @@
     <ModDir>$(ProjectDir)\$(OutputDir)</ModDir>
   </PropertyGroup>
 
+  <!-- References to libraries that are being used in project -->
+  <ItemGroup>
+    <PackageReference Include="VSImGui" Version="0.0.6" />
+    <Reference Include="$(GameDirectory)/**/*.dll" Private="false" />
+    <Reference Include="$(ProjectDir)/../../CombatOverhaul/bin/Release/Mods/combatoverhaul/CombatOverhaul.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- Forces rebuild -->
+  <Target Name="ForceRebuild" BeforeTargets="BeforeBuild">
+    <Touch Files="@(Compile)" AlwaysCreate="true" />
+  </Target>
+
   <!-- Creates/updates modinfo.json file in build directory -->
   <Target Name="ModInfo" AfterTargets="Build">
     <PropertyGroup>
@@ -110,12 +123,12 @@
   </Target>
 
   <!-- Formats asssets files -->
-  <Target Name="Format" AfterTargets="ModInfo">
+  <Target Name="Format" AfterTargets="ModInfo" BeforeTargets="CopyFilesToOutput">
     <Exec Command="python $(Formatter) -a -d %(AssetsToFormat.Identity)" />
   </Target>
 
   <!-- Copies modicon and assets if it exists into output directory -->
-  <Target Name="CopyFilesToOutput" AfterTargets="Format">
+  <Target Name="CopyFilesToOutput" AfterTargets="Format" BeforeTargets="BeforeBuild">
     <ItemGroup>
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
@@ -125,14 +138,7 @@
   </Target>
 
   <!-- Archives output directory into zip and puts it into Releases folder -->
-  <Target Name="ZipFiles" AfterTargets="CopyFilesToOutput" Condition=" '$(Configuration)' == 'Release' ">
-    <!-- Content mod does not need empty dll, but csproj is required to build one, so we just delete it -->
-    <ItemGroup>
-      <ExtraFiles Include="$(OutputPath)\*.dll" />
-      <ExtraFiles Include="$(OutputPath)\*.pdb" />
-      <ExtraFiles Include="$(OutputPath)\*.deps.json" />
-    </ItemGroup>
-    <Delete Files="@(ExtraFiles)" />
+  <Target Name="ZipFiles" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' ">
     <Message Text="Pachaging into '$(ReleaseFile)'" Importance="high" />
     <MakeDir Directories="$(ReleasesDir)" />
     <Delete Files="$(ReleasePath)" />
