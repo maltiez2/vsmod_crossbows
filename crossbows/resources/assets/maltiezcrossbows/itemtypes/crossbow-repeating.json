@@ -2,7 +2,7 @@
   "code": "crossbow",
   "class": "CombatOverhaul:MagazineCrossbow",
   "creativeinventory": {"maltiezcrossbows": ["*"]},
-  "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "type", "states": ["plain"]}],
+  "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "material", "states": ["plain", "copper"]}],
   "maxstacksize": 1,
   "durability": 600,
   "tool": "bow",

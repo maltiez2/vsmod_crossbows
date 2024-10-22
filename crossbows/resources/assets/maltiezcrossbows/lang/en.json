@@ -1,6 +1,12 @@
 {
     "game:tabname-maltiezcrossbows": "Crossbows",
     
+    "item-crossbow-simple-plain": "Simple crossbow (OLD - craft it into new)",
+    "item-crossbow-repeating-plain": "Repeating crossbow (OLD - craft it into new)",
+    "item-crossbow-stirrup-plain": "Stirrup crossbow (OLD - craft it into new)",
+    "item-crossbow-latch-plain": "Latch crossbow (OLD - craft it into new)",
+    "item-crossbow-goatsfoot-plain": "Goat's foot crossbow (OLD - craft it into new)",
+    "item-crossbow-windlass-plain": "Windlass crossbow (OLD - craft it into new)",
     "item-crossbow-simple-*": "Simple crossbow",
     "item-crossbow-repeating-*": "Repeating crossbow",
     "item-crossbow-stirrup-*": "Stirrup crossbow",
@@ -27,9 +33,9 @@
     "item-parts-windlass-steel": "Windlass parts",
     "item-parts-lock-steel": "Steel crossbow lock parts",
     "item-parts-stirrup-steel": "Steel crossbow stirrup",
-    "item-parts-lock-tinbronze": "Bronze crossbow lock parts",
-    "item-parts-stirrup-tinbronze": "Bronze crossbow stirrup",
-    "item-parts-latch-iron": "Iron latch parts",
+    "item-parts-lock-*bronze": "Bronze crossbow lock parts",
+    "item-parts-stirrup-*bronze": "Bronze crossbow stirrup",
+    "item-parts-latch-*iron": "Iron latch parts",
 
     "block-wallmount-rusty-*": "Crossbow wallmount (rusty)",
     "block-wallmount-tarnished-*": "Crossbow wallmount (tarnished)",

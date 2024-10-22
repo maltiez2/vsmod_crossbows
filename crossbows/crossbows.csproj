@@ -22,6 +22,7 @@
     <ModInfoTranslators Include="Kaofan - Polish" />
     <ModInfoTranslators Include="RikeiR - Japanese" />
     <ModInfoTranslators Include="rodolfo_de_jesus_berthely_ - Spanish (Latin America)" />
+    <ModInfoTranslators Include="DrLulu - French" />
   </ItemGroup>
 
   <!-- Dependencies -->
