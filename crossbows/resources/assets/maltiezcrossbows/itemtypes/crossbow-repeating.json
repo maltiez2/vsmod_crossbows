@@ -54,7 +54,8 @@
         "VerticalLimit": 0.25,
         "VerticalOffset": -0.05
       }
-    }
+    },
+    "DispersionMOA": [90, 90]
   },
   "heldLeftTpIdleAnimation": "crossbowsempty",
   "heldLeftReadyAnimation": "crossbowsempty",

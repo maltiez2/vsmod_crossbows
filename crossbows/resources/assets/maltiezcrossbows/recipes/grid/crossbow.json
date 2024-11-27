@@ -35,7 +35,7 @@
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-latch-iron", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-iron", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*iron", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
       "K": { "type": "item", "code": "game:saw-*", "isTool": true  }
@@ -49,7 +49,7 @@
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-latch-meteoriciron", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-meteoriciron", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*iron", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
       "W": {"type": "item", "code": "game:plank-*", "quantity": 1},
       "K": { "type": "item", "code": "game:saw-*", "isTool": true  }
@@ -62,8 +62,8 @@
     "ingredientPattern": "ANF,LBS,WWK",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
-      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-tinbronze", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-tinbronze", "quantity": 1},
+      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-*bronze", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*bronze", "quantity": 1},
       "A": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-lock-tinbronze", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
@@ -78,8 +78,8 @@
     "ingredientPattern": "ANF,LBS,WWK",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
-      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-bismuthbronze", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-bismuthbronze", "quantity": 1},
+      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-*bronze", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*bronze", "quantity": 1},
       "A": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-lock-bismuthbronze", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},
@@ -94,8 +94,8 @@
     "ingredientPattern": "ANF,LBS,WWK",
     "ingredients": {
       "B": {"type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1},
-      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-blackbronze", "quantity": 1},
-      "N": {"type": "item", "code": "game:metalnailsandstrips-blackbronze", "quantity": 1},
+      "S": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-*bronze", "quantity": 1},
+      "N": {"type": "item", "code": "game:metalnailsandstrips-*bronze", "quantity": 1},
       "A": {"type": "item", "code": "game:metalplate-brass", "quantity": 1},
       "L": {"type": "item", "code": "maltiezcrossbows:parts-lock-blackbronze", "quantity": 1},
       "F": {"type": "item", "code": "game:flaxtwine", "quantity": 4},

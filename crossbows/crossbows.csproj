@@ -3,8 +3,7 @@
   <PropertyGroup>
     <ModName>Crossbows</ModName>
     <ModType>code</ModType>
-    <GameVersion>1.20.0-pre.5</GameVersion>
-    <Version>0.5.0</Version>
+    <Version>0.5.7</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
@@ -27,11 +26,8 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="game">
-      <Version>$(GameVersion)</Version>
-    </Dependencies>
     <Dependencies Include="combatoverhaul">
-      <Version>0.0.11</Version>
+      <Version>*</Version>
     </Dependencies>
   </ItemGroup>
 

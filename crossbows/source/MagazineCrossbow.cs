@@ -108,6 +108,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool OpenLid(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (!CheckState(state, MagazineCrossbowState.Unloaded, MagazineCrossbowState.Ready)) return false;
+        if (!CheckOffhandEmpty(player)) return false;
         if (eventData.AltPressed) return false;
 
         Inventory.Read(slot, InventoryId);
@@ -135,6 +136,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool LoadBolt(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (state != (int)MagazineCrossbowState.ReadyToLoad || eventData.AltPressed) return false;
+        if (!CheckOffhandEmpty(player)) return false;
 
         Inventory.Read(slot, InventoryId);
         if (Inventory.Items.Count >= Stats.MagazineSize)
@@ -177,7 +179,11 @@ public class MagazineCrossbowClient : RangeWeaponClient
             });
         }
 
-        if (ammoSlot == null) return false;
+        if (ammoSlot == null)
+        {
+            Api.TriggerIngameError(this, "noBoltsAvailable", Lang.Get("maltiezcrossbows:requirement-ammo"));
+            return false;
+        }
 
         Attachable.SetAttachment(player.EntityId, "bolt", ammoSlot.Itemstack, BoltTransform);
 
@@ -236,6 +242,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool Shoot(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (state != (int)MagazineCrossbowState.Ready || eventData.AltPressed) return false;
+        if (!CheckOffhandEmpty(player)) return false;
 
         Inventory.Read(slot, InventoryId);
         if (Inventory.Items.Count == 0)
@@ -269,6 +276,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool Return(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
         if (state != (int)MagazineCrossbowState.Shot || eventData.AltPressed) return false;
+        if (!CheckOffhandEmpty(player)) return false;
 
         AnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: ReturnCallback);
         state = (int)MagazineCrossbowState.Return;
@@ -278,6 +286,16 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool ReturnCallback()
     {
         PlayerBehavior?.SetState((int)MagazineCrossbowState.Ready, mainHand: true);
+        return true;
+    }
+
+    protected virtual bool CheckOffhandEmpty(EntityPlayer player)
+    {
+        if (!player.LeftHandItemSlot.Empty)
+        {
+            Api.TriggerIngameError(this, "offhandMustBeEmpty", Lang.Get("maltiezcrossbows:requirement-empty-offhand"));
+            return false;
+        }
         return true;
     }
 }
@@ -336,7 +354,7 @@ public class MagazineCrossbowServer : RangeWeaponServer
             Velocity = GetDirectionWithDispersion(packet.Velocity, _stats.DispersionMOA) * _stats.BoltVelocity
         };
 
-        _projectileSystem.Spawn(packet.ProjectileId, stats, spawnStats, ammo, shooter);
+        _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, ammo, shooter);
 
         slot.Itemstack.Item.DamageItem(player.Entity.World, player.Entity, slot, 1 + stats.AdditionalDurabilityCost);
         slot.MarkDirty();
@@ -396,14 +414,11 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
     {
         WorldInteraction[] interactions = base.GetHeldInteractionHelp(inSlot);
 
-        WorldInteraction ammoSelection = new()
-        {
-            ActionLangCode = Lang.Get("combatoverhaul:interaction-ammoselection"),
-            HotKeyCodes = new string[1] { "toolmodeselect" },
-            MouseButton = EnumMouseButton.None
-        };
-
-        return interactions.Append(ammoSelection).ToArray();
+        return interactions
+            .Append(_ammoSelectionInteraction)
+            .Append(_aimAndLoadInteraction)
+            .Append(_shootInteraction)
+            .ToArray();
     }
 
     public override int GetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection)
@@ -435,4 +450,20 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
     private AmmoSelector? _ammoSelector;
     private ICoreClientAPI? _clientApi;
     private MagazineCrossbowStats? _stats;
+    private static readonly WorldInteraction _ammoSelectionInteraction = new()
+    {
+        ActionLangCode = Lang.Get("combatoverhaul:interaction-ammoselection"),
+        HotKeyCodes = new string[1] { "toolmodeselect" },
+        MouseButton = EnumMouseButton.None
+    };
+    private static readonly WorldInteraction _aimAndLoadInteraction = new()
+    {
+        ActionLangCode = Lang.Get("maltiezcrossbows:interaction-load"),
+        MouseButton = EnumMouseButton.Right,
+    };
+    private static readonly WorldInteraction _shootInteraction = new()
+    {
+        ActionLangCode = Lang.Get("maltiezcrossbows:interaction-shoot-and-cycle"),
+        MouseButton = EnumMouseButton.Left,
+    };
 }

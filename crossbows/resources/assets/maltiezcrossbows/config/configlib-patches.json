@@ -3,10 +3,21 @@
   "patches": {
     "float": {
       "maltiezcrossbows:itemtypes/crossbow.json": {
-        "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier"
+        "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier",
+        "attributes/AimingByType/@@*/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOAByType/@@*/0": "dispersion * value",
+        "attributes/DispersionMOAByType/@@*/1": "dispersion * value"
       },
       "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
-        "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier"
+        "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier",
+        "attributes/AimingByType/@@*/AimDifficulty": "aiming_difficulty",
+        "attributes/DispersionMOA/0": "dispersion * value",
+        "attributes/DispersionMOA/1": "dispersion * value"
+      }
+    },
+    "integer": {
+      "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
+        "attributes/MagazineSize": "magazine_size"
       }
     },
     "string": {
@@ -55,6 +66,32 @@
         "Fixed",
         "Moving"
       ]
+    },
+    {
+      "code": "aiming_difficulty",
+      "type": "float",
+      "ingui": "maltiezcrossbows:setting-aiming_difficulty",
+      "default": 1.0,
+      "range": {
+        "min": 0.0,
+        "max": 2.0
+      }
+    },
+    {
+      "code": "dispersion",
+      "type": "float",
+      "ingui": "maltiezcrossbows:setting-dispersion",
+      "default": 1.0,
+      "range": {
+        "min": 0.0,
+        "max": 5.0
+      }
+    },
+    {
+      "code": "magazine_size",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-magazine_size",
+      "default": 5
     }
   ]
 }

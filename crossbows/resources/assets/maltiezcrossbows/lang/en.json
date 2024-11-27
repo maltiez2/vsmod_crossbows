@@ -22,7 +22,8 @@
     "item-bolt-iron": "Iron bolt",
     "item-bolt-meteoriciron": "Meteoric iron bolt",
     "item-bolt-steel": "Steel bolt",
-    
+
+    "item-quiver-waist-plain": "Crossbow quiver",
     "item-spanningtool-goatsfoot": "Goat's foot",
     "item-spanningtool-windlass": "Windlass",
 
@@ -50,6 +51,7 @@
     "itemdesc-bolt-crude": "Crude bolt without fletching made of flint<br>",
     "itemdesc-bolt-copper": "Crude bolt without fletching made of copper<br>",
     "itemdesc-bolt-*": "Wooden fletching is less efficient and more prone to cracking, but it is sturdier in storage and easier to handle.<br>",
+    "itemdesc-quiver-waist-plain": "Can hold bolts, also has hook for spanning tools (like goat's foot or windlass).'",
 
     "itemdesc-spanningtool-goatsfoot": "Lever for drawing crossbow with appropriate mounting point. Provides mechanical advantage in average around 5 to 1.<br>",
     "itemdesc-spanningtool-windlass": "System of pulleys for drawing crossbow with appropriate mounting point. Provides more than 50 to 1 mechanical advantage.",
@@ -63,18 +65,30 @@
     "itemdesc-parts-latch-iron": "Lever and latch parts for latch crossbow lock and drawing mechanism.<br>",
     "itemdesc-parts-stirrup-*": "Stirrup attached to the front of a crossbow for holding it with foot while drawing.<br>",
 
-    "setting-damage": "Damage multiplier",
-    "setting-trait": "Trait requirement",
-    "setting-cursortype": "Aiming type",
+    "item-creature-bolt-*": "Bolt",
+    "prefixandcreature-bolt-*": "Bolt",
 
-    "requirement-empty-offhnad": "Offhand should be empty",
+    "setting-damage": "Damage multiplier",
+    "setting-trait": "Recipes trait requirement",
+    "setting-cursortype": "Aiming type",
+    "setting-aiming_difficulty": "Aiming difficulty",
+    "setting-dispersion": "Dispersion (MOA)",
+    "setting-magazine_size": "Repeater magazine size",
+
+    "requirement-empty-offhand": "Offhand should be empty",
+    "requirement-spanning-tool": "Missing spanning tool",
+    "requirement-ammo": "No bolts available",
+    "interaction-load": "Hold to load crossbow",
+    "interaction-load-and-aim": "Hold to reload or aim crossbow",
+    "interaction-shoot": "Click to shoot crossbow while aimed",
+    "interaction-shoot-and-cycle": "Click to shoot or cycle crossbow",
+    
     "weapon-projectile-stats": "Range damage multiplier: {2}\nProjectile velocity: {0}\n",
     "system-desctiption-aim": "Dispersion: {1} MOA\n",
     "weapon-reload": "Hold to reload (hold 'Alt' to interact instead)",
     "weapon-aim": "Hold to aim (hold 'Alt' to interact instead)",
     "weapon-range-attack": "Shoot",
     "weapon-range-attack-repeater": "Click to shoot/cycle",
-    "prefixandcreature-bolt-*": "Bolt",
     "requirement-bolt": "Bolt",
     "empty-offhand": "Offhand should be empty"
 }
