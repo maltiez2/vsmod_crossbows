@@ -40,6 +40,7 @@
         "stats": {
           "AdditionalDurabilityCost": 0,
           "CollisionRadius": 0.05,
+          "PenetrationDistance": 0.5,
           "DamageStatsByType": {
             "*-crude": {"DamageType": "PiercingAttack", "Damage": 5},
             "*-copper": {"DamageType": "PiercingAttack", "Damage": 6},

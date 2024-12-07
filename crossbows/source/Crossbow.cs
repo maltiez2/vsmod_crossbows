@@ -12,6 +12,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 
 namespace Crossbows;
 
@@ -22,7 +23,9 @@ public enum CrossbowState
     Drawn,
     Load,
     Loaded,
-    Aimed
+    Aimed,
+    Shooting,
+    AimedEmpty
 }
 
 public class CrossbowStats : WeaponStats
@@ -76,6 +79,8 @@ public class CrossbowClient : RangeWeaponClient
         {
             state = (int)CrossbowState.Unloaded;
         }
+
+        BoltLoaded = false;
     }
     public override void OnDeselected(EntityPlayer player, bool mainHand, ref int state)
     {
@@ -83,7 +88,7 @@ public class CrossbowClient : RangeWeaponClient
         AimingAnimationController?.Stop(mainHand);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         AimingSystem.StopAiming();
-        BoltSlot = null;
+        BoltLoaded = false;
     }
     public override void OnRegistered(ActionsManagerPlayerBehavior behavior, ICoreClientAPI api)
     {
@@ -98,7 +103,7 @@ public class CrossbowClient : RangeWeaponClient
     protected readonly CrossbowStats Stats;
     protected readonly AimingStats AimingStats;
     protected readonly AmmoSelector AmmoSelector;
-    protected ItemSlot? BoltSlot;
+    protected bool BoltLoaded = false;
 
     protected const string PlayerStatsMainHandCategory = "CombatOverhaul:held-item-mainhand";
     protected const string PlayerStatsOffHandCategory = "CombatOverhaul:held-item-offhand";
@@ -125,44 +130,17 @@ public class CrossbowClient : RangeWeaponClient
     {
         if (state != (int)CrossbowState.Drawn || eventData.AltPressed) return false;
 
-        player.WalkInventory(slot =>
-        {
-            if (slot?.Itemstack?.Item == null) return true;
+        ItemSlot? boltSlot = GetBoltSlot(player);
 
-            if (slot.Itemstack.Item.HasBehavior<ProjectileBehavior>() && WildcardUtil.Match(AmmoSelector.SelectedAmmo, slot.Itemstack.Item.Code.ToString()))
-            {
-                BoltSlot = slot;
-                return false;
-            }
-
-            return true;
-        });
-
-        if (BoltSlot == null)
-        {
-            player.WalkInventory(slot =>
-            {
-                if (slot?.Itemstack?.Item == null) return true;
-
-                if (slot.Itemstack.Item.HasBehavior<ProjectileBehavior>() && WildcardUtil.Match(Stats.BoltWildcard, slot.Itemstack.Item.Code.ToString()))
-                {
-                    BoltSlot = slot;
-                    return false;
-                }
-
-                return true;
-            });
-        }
-
-        if (BoltSlot == null)
+        if (boltSlot == null)
         {
             Api.TriggerIngameError(this, "noBoltsAvailable", Lang.Get("maltiezcrossbows:requirement-ammo"));
             return false;
         }
 
-        Attachable.SetAttachment(player.EntityId, "bolt", BoltSlot.Itemstack, BoltTransform);
+        Attachable.SetAttachment(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
 
-        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadAnimationCallback(slot, mainHand, BoltSlot));
+        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadAnimationCallback(slot, mainHand, player));
         AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         state = (int)CrossbowState.Load;
@@ -201,22 +179,23 @@ public class CrossbowClient : RangeWeaponClient
                 state = (int)CrossbowState.Unloaded;
                 AnimationBehavior?.PlayReadyAnimation();
                 AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
-                return true;
+                return false;
 
             case CrossbowState.Load:
                 state = (int)CrossbowState.Drawn;
                 AnimationBehavior?.PlayReadyAnimation();
                 AnimationBehavior?.StopVanillaAnimation(Stats.LoadTpAnimation, mainHand);
                 Attachable.ClearAttachments(player.EntityId);
-                return true;
+                return false;
 
+            case CrossbowState.AimedEmpty:
             case CrossbowState.Aimed:
-                state = BoltSlot == null ? (int)CrossbowState.Unloaded : (int)CrossbowState.Loaded;
+                state = BoltLoaded ? (int)CrossbowState.Loaded : (int)CrossbowState.Unloaded;
                 AnimationBehavior?.PlayReadyAnimation();
                 AnimationBehavior?.StopVanillaAnimation(Stats.AimTpAnimation, mainHand);
                 AimingAnimationController?.Stop(mainHand);
                 AimingSystem.StopAiming();
-                return true;
+                return false;
 
             default:
                 return false;
@@ -226,7 +205,12 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Pressed)]
     protected virtual bool Shoot(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)CrossbowState.Aimed || eventData.AltPressed || BoltSlot == null) return false;
+        if (state != (int)CrossbowState.Aimed || eventData.AltPressed) return false;
+
+        ItemSlot? boltSlot = GetBoltSlot(player);
+        if (boltSlot == null) return false;
+
+        if (!BoltLoaded) return false;
 
         AnimationBehavior?.Stop("string");
         AnimationBehavior?.Play(
@@ -236,9 +220,30 @@ public class CrossbowClient : RangeWeaponClient
             callback: () => ReleaseAnimationCallback(slot, mainHand, player),
             callbackHandler: callbackCode => ReleaseAnimationCallbackHandler(callbackCode, slot, mainHand, player));
 
-        BoltSlot = null;
+        BoltLoaded = false;
+
+        state = (int)CrossbowState.Shooting;
 
         return true;
+    }
+
+    [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
+    protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
+    {
+        if (player.OnGround) return false;
+
+        switch ((CrossbowState)state)
+        {
+            case CrossbowState.Draw:
+                if (Stats.LoadSpeedPenalty > -0.9f) return false;
+                PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+                state = (int)CrossbowState.Unloaded;
+                AnimationBehavior?.PlayReadyAnimation();
+                AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
+                return false;
+            default:
+                return false;
+        }
     }
 
     protected virtual void DrawCallback(bool success)
@@ -273,8 +278,12 @@ public class CrossbowClient : RangeWeaponClient
             PlayerBehavior?.SetState((int)CrossbowState.Drawn, mainHand: true);
         }
     }
-    protected virtual bool LoadAnimationCallback(ItemSlot slot, bool mainHand, ItemSlot boltSlot)
+    protected virtual bool LoadAnimationCallback(ItemSlot slot, bool mainHand, EntityPlayer player)
     {
+        ItemSlot? boltSlot = GetBoltSlot(player);
+        if (boltSlot == null) return true;
+
+        BoltLoaded = true;
         RangedWeaponSystem.Reload(slot, boltSlot, 1, mainHand, LoadCallback);
         AnimationBehavior?.PlayReadyAnimation();
         AnimationBehavior?.StopVanillaAnimation(Stats.LoadTpAnimation, mainHand: true);
@@ -305,6 +314,11 @@ public class CrossbowClient : RangeWeaponClient
     }
     protected virtual bool ReleaseAnimationCallback(ItemSlot slot, bool mainHand, EntityPlayer player)
     {
+        CrossbowState state = (CrossbowState?)PlayerBehavior?.GetState(mainHand) ?? CrossbowState.Shooting;
+        if (state == CrossbowState.Shooting)
+        {
+            PlayerBehavior?.SetState((int)CrossbowState.AimedEmpty, mainHand);
+        }
         return true;
     }
     protected virtual bool CheckOffhandEmpty(EntityPlayer player)
@@ -341,6 +355,42 @@ public class CrossbowClient : RangeWeaponClient
         }
 
         return requirement != null;
+    }
+
+    protected virtual ItemSlot? GetBoltSlot(EntityPlayer player)
+    {
+        ItemSlot? boltSlot = null;
+        
+        player.WalkInventory(slot =>
+        {
+            if (slot?.Itemstack?.Item == null) return true;
+
+            if (slot.Itemstack.Item.HasBehavior<ProjectileBehavior>() && WildcardUtil.Match(AmmoSelector.SelectedAmmo, slot.Itemstack.Item.Code.ToString()))
+            {
+                boltSlot = slot;
+                return false;
+            }
+
+            return true;
+        });
+
+        if (boltSlot == null)
+        {
+            player.WalkInventory(slot =>
+            {
+                if (slot?.Itemstack?.Item == null) return true;
+
+                if (slot.Itemstack.Item.HasBehavior<ProjectileBehavior>() && WildcardUtil.Match(Stats.BoltWildcard, slot.Itemstack.Item.Code.ToString()))
+                {
+                    boltSlot = slot;
+                    return false;
+                }
+
+                return true;
+            });
+        }
+
+        return boltSlot;
     }
 }
 
