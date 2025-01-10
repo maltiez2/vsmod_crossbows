@@ -68,12 +68,14 @@ public class CrossbowClient : RangeWeaponClient
     public override void OnSelected(ItemSlot slot, EntityPlayer player, bool mainHand, ref int state)
     {
         Attachable.ClearAttachments(player.EntityId);
+        AttachmentSystem.SendClearPacket(player.EntityId);
 
         bool drawn = slot.Itemstack.Attributes.GetBool("crossbow-drawn", defaultValue: false);
         if (drawn)
         {
             state = (int)CrossbowState.Drawn;
             AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: "string", weight: 0.001f);
+            TpAnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: "string", weight: 0.001f);
         }
         else
         {
@@ -85,6 +87,9 @@ public class CrossbowClient : RangeWeaponClient
     public override void OnDeselected(EntityPlayer player, bool mainHand, ref int state)
     {
         Attachable.ClearAttachments(player.EntityId);
+        AttachmentSystem.SendSwitchModelPacket(player.EntityId, false);
+        Attachable.SetSwitchModels(player.EntityId, false);
+        AttachmentSystem.SendClearPacket(player.EntityId);
         AimingAnimationController?.Stop(mainHand);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         AimingSystem.StopAiming();
@@ -115,8 +120,11 @@ public class CrossbowClient : RangeWeaponClient
         if (!CheckOffhandEmpty(player)) return false;
         if (!CheckDrawRequirement(player)) return false;
 
-        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
-        AnimationBehavior?.PlayVanillaAnimation(Stats.DrawTpAnimation, mainHand);
+        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand, player), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        TpAnimationBehavior?.Play(mainHand, Stats.DrawAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        AttachmentSystem.SendSwitchModelPacket(player.EntityId, true);
+        Attachable.SetSwitchModels(player.EntityId, true);
+        if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.DrawTpAnimation, mainHand);
 
         state = (int)CrossbowState.Draw;
 
@@ -139,9 +147,11 @@ public class CrossbowClient : RangeWeaponClient
         }
 
         Attachable.SetAttachment(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
+        AttachmentSystem.SendAttachPacket(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
 
         AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadAnimationCallback(slot, mainHand, player));
-        AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         state = (int)CrossbowState.Load;
 
@@ -156,7 +166,8 @@ public class CrossbowClient : RangeWeaponClient
         if (state != (int)CrossbowState.Loaded || eventData.AltPressed) return false;
 
         AnimationBehavior?.Play(mainHand, Stats.AimAnimation);
-        AnimationBehavior?.PlayVanillaAnimation(Stats.AimTpAnimation, mainHand);
+        TpAnimationBehavior?.Play(mainHand, Stats.AimAnimation);
+        if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.AimTpAnimation, mainHand);
 
         state = (int)CrossbowState.Aimed;
 
@@ -177,21 +188,27 @@ public class CrossbowClient : RangeWeaponClient
         {
             case CrossbowState.Draw:
                 state = (int)CrossbowState.Unloaded;
-                AnimationBehavior?.PlayReadyAnimation();
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
                 AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
+                AttachmentSystem.SendSwitchModelPacket(player.EntityId, false);
+                Attachable.SetSwitchModels(player.EntityId, false);
                 return false;
 
             case CrossbowState.Load:
                 state = (int)CrossbowState.Drawn;
-                AnimationBehavior?.PlayReadyAnimation();
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
                 AnimationBehavior?.StopVanillaAnimation(Stats.LoadTpAnimation, mainHand);
                 Attachable.ClearAttachments(player.EntityId);
+                AttachmentSystem.SendClearPacket(player.EntityId);
                 return false;
 
             case CrossbowState.AimedEmpty:
             case CrossbowState.Aimed:
                 state = BoltLoaded ? (int)CrossbowState.Loaded : (int)CrossbowState.Unloaded;
-                AnimationBehavior?.PlayReadyAnimation();
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
                 AnimationBehavior?.StopVanillaAnimation(Stats.AimTpAnimation, mainHand);
                 AimingAnimationController?.Stop(mainHand);
                 AimingSystem.StopAiming();
@@ -213,12 +230,17 @@ public class CrossbowClient : RangeWeaponClient
         if (!BoltLoaded) return false;
 
         AnimationBehavior?.Stop("string");
+        TpAnimationBehavior?.Stop("string");
         AnimationBehavior?.Play(
             mainHand,
             Stats.ReleaseAnimation,
             weight: 1000,
             callback: () => ReleaseAnimationCallback(slot, mainHand, player),
             callbackHandler: callbackCode => ReleaseAnimationCallbackHandler(callbackCode, slot, mainHand, player));
+        TpAnimationBehavior?.Play(
+            mainHand,
+            Stats.ReleaseAnimation,
+            weight: 1000);
 
         BoltLoaded = false;
 
@@ -238,7 +260,8 @@ public class CrossbowClient : RangeWeaponClient
                 if (Stats.LoadSpeedPenalty > -0.9f) return false;
                 PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
                 state = (int)CrossbowState.Unloaded;
-                AnimationBehavior?.PlayReadyAnimation();
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
                 AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
                 return false;
             default:
@@ -257,14 +280,19 @@ public class CrossbowClient : RangeWeaponClient
             PlayerBehavior?.SetState((int)CrossbowState.Unloaded, mainHand: true);
         }
         AnimationBehavior?.PlayReadyAnimation();
+        TpAnimationBehavior?.PlayReadyAnimation();
     }
-    protected virtual bool DrawAnimationCallback(ItemSlot slot, bool mainHand)
+    protected virtual bool DrawAnimationCallback(ItemSlot slot, bool mainHand, EntityPlayer player)
     {
         RangedWeaponSystem.Load(slot, mainHand, DrawCallback);
-        AnimationBehavior?.PlayReadyAnimation();
+        AnimationBehavior?.PlayReadyAnimation(mainHand);
+        TpAnimationBehavior?.PlayReadyAnimation(mainHand);
         AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand: true);
         AnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: "string", weight: 0.001f);
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadedAnimation, category: "string", weight: 0.001f);
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+        AttachmentSystem.SendSwitchModelPacket(player.EntityId, false);
+        Attachable.SetSwitchModels(player.EntityId, false);
         return true;
     }
     protected virtual void LoadCallback(bool success)
@@ -285,7 +313,8 @@ public class CrossbowClient : RangeWeaponClient
 
         BoltLoaded = true;
         RangedWeaponSystem.Reload(slot, boltSlot, 1, mainHand, LoadCallback);
-        AnimationBehavior?.PlayReadyAnimation();
+        AnimationBehavior?.PlayReadyAnimation(mainHand);
+        TpAnimationBehavior?.PlayReadyAnimation(mainHand);
         AnimationBehavior?.StopVanillaAnimation(Stats.LoadTpAnimation, mainHand: true);
         PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         return true;
@@ -308,6 +337,7 @@ public class CrossbowClient : RangeWeaponClient
                     RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootCallback);
 
                     Attachable.ClearAttachments(player.EntityId);
+                    AttachmentSystem.SendClearPacket(player.EntityId);
                 }
                 break;
         }
@@ -360,7 +390,7 @@ public class CrossbowClient : RangeWeaponClient
     protected virtual ItemSlot? GetBoltSlot(EntityPlayer player)
     {
         ItemSlot? boltSlot = null;
-        
+
         player.WalkInventory(slot =>
         {
             if (slot?.Itemstack?.Item == null) return true;

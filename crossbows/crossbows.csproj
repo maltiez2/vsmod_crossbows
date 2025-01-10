@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Crossbows</ModName>
     <ModType>code</ModType>
-    <Version>0.5.11</Version>
+    <Version>0.5.17</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
@@ -22,6 +22,7 @@
     <ModInfoTranslators Include="RikeiR - Japanese" />
     <ModInfoTranslators Include="rodolfo_de_jesus_berthely_ - Spanish (Latin America)" />
     <ModInfoTranslators Include="DrLulu - French" />
+    <ModInfoTranslators Include="Nikolashka - Russian" />
   </ItemGroup>
 
   <!-- Dependencies -->

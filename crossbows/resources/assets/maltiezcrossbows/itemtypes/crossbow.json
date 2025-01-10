@@ -9,7 +9,7 @@
   "allowedVariants": ["*-simple-wood", "*-stirrup-*bronze", "*-latch-*iron", "*-goatsfoot-steel", "*-windlass-steel"],
   "maxstacksize": 1,
   "durabilityByType": {"*-simple-*": 450, "*-stirrup-*": 900, "*-latch-*": 900, "*-goatsfoot-*": 1600, "*-windlass-*": 1200},
-  "tool": "bow",
+  "tool": "crossbow",
   "rackable": true,
   "behaviors": [
     {

@@ -63,6 +63,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     public override void OnSelected(ItemSlot slot, EntityPlayer player, bool mainHand, ref int state)
     {
         Attachable.ClearAttachments(player.EntityId);
+        AttachmentSystem.SendClearPacket(player.EntityId);
 
         Inventory.Read(slot, InventoryId);
 
@@ -85,6 +86,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     public override void OnDeselected(EntityPlayer player, bool mainHand, ref int state)
     {
         Attachable.ClearAttachments(player.EntityId);
+        AttachmentSystem.SendClearPacket(player.EntityId);
         AimingAnimationController?.Stop(mainHand);
         AimingSystem.StopAiming();
     }
@@ -122,6 +124,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         state = (int)MagazineCrossbowState.OpenLid;
 
         AnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, callback: OpenLidCallback, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        TpAnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         AimingSystem.StopAiming();
 
         return true;
@@ -186,8 +189,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         }
 
         Attachable.SetAttachment(player.EntityId, "bolt", ammoSlot.Itemstack, BoltTransform);
+        AttachmentSystem.SendAttachPacket(player.EntityId, "bolt", ammoSlot.Itemstack, BoltTransform);
 
         AnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadBoltCallback(slot, ammoSlot, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         state = (int)MagazineCrossbowState.Load;
 
         return true;
@@ -196,6 +201,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     {
         RangedWeaponSystem.Reload(slot, ammoSlot, 1, true, LoadBoltServerCallback);
         Attachable.ClearAttachments(player.EntityId);
+        AttachmentSystem.SendClearPacket(player.EntityId);
         return true;
     }
     protected virtual void LoadBoltServerCallback(bool success)
@@ -215,6 +221,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         if (eventData.AltPressed) return false;
 
         AnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, callback: () => CloseLidCallback(slot), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        TpAnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         state = (int)MagazineCrossbowState.CloseLid;
 
         return true;
@@ -255,6 +262,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
 
         AnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => ShootCallback(slot, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         state = (int)MagazineCrossbowState.Shoot;
 
         return true;
@@ -279,6 +287,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         if (!CheckOffhandEmpty(player)) return false;
 
         AnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: ReturnCallback);
+        TpAnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
         state = (int)MagazineCrossbowState.Return;
 
         return true;
