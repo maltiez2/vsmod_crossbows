@@ -23,6 +23,7 @@
     <ModInfoTranslators Include="rodolfo_de_jesus_berthely_ - Spanish (Latin America)" />
     <ModInfoTranslators Include="DrLulu - French" />
     <ModInfoTranslators Include="Nikolashka - Russian" />
+    <ModInfoTranslators Include="Ouk - Czech" />
   </ItemGroup>
 
   <!-- Dependencies -->
