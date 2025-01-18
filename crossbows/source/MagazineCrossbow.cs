@@ -4,7 +4,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
-using System.Numerics;
+using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -359,11 +359,11 @@ public class MagazineCrossbowServer : RangeWeaponServer
             ProducerEntityId = player.Entity.EntityId,
             DamageMultiplier = _stats.BoltDamageMultiplier,
             DamageStrength = _stats.BoltDamageStrength,
-            Position = new Vector3(packet.Position[0], packet.Position[1], packet.Position[2]),
+            Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
             Velocity = GetDirectionWithDispersion(packet.Velocity, _stats.DispersionMOA) * _stats.BoltVelocity
         };
 
-        _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, ammo, shooter);
+        _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, ammo, slot.Itemstack, shooter);
 
         slot.Itemstack.Item.DamageItem(player.Entity.World, player.Entity, slot, 1 + stats.AdditionalDurabilityCost);
         slot.MarkDirty();

@@ -4,7 +4,7 @@ using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
-using System.Numerics;
+using OpenTK.Mathematics;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -12,7 +12,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
-using Vintagestory.GameContent;
 
 namespace Crossbows;
 
@@ -476,11 +475,11 @@ public class CrossbowServer : RangeWeaponServer
             ProducerEntityId = player.Entity.EntityId,
             DamageMultiplier = _stats.BoltDamageMultiplier,
             DamageStrength = _stats.BoltDamageStrength,
-            Position = new Vector3(packet.Position[0], packet.Position[1], packet.Position[2]),
+            Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
             Velocity = GetDirectionWithDispersion(packet.Velocity, _stats.DispersionMOA) * _stats.BoltVelocity
         };
 
-        _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, boltSlot.TakeOut(1), shooter);
+        _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, boltSlot.TakeOut(1), slot.Itemstack, shooter);
 
         boltSlot.MarkDirty();
 
