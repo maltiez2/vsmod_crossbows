@@ -68,6 +68,7 @@ public class CrossbowClient : RangeWeaponClient
     {
         Attachable.ClearAttachments(player.EntityId);
         AttachmentSystem.SendClearPacket(player.EntityId);
+        AttachmentSystem.SendSwitchModelPacket(player.EntityId, false);
 
         bool drawn = slot.Itemstack.Attributes.GetBool("crossbow-drawn", defaultValue: false);
         if (drawn)
@@ -92,6 +93,7 @@ public class CrossbowClient : RangeWeaponClient
         AimingAnimationController?.Stop(mainHand);
         AnimationBehavior?.StopAllVanillaAnimations(mainHand);
         AimingSystem.StopAiming();
+        PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
         BoltLoaded = false;
     }
     public override void OnRegistered(ActionsManagerPlayerBehavior behavior, ICoreClientAPI api)

@@ -50,7 +50,7 @@
     "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 2.5, "*-windlass-*": 4.3},
     "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-latch-*": 3, "*-goatsfoot-*": 6, "*-windlass-*": 7},
     "BoltVelocityByType": {"*-simple-*": 1, "*-stirrup-*": 1.8, "*-latch-*": 1.5, "*-goatsfoot-*": 2.5, "*-windlass-*": 3},
-    "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -1, "*-latch-*": -0.1, "*-goatsfoot-*": -0.2, "*-windlass-*": -1},
+    "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": -0.1, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
     "ProficiencyStat": "crossbowsProficiency",
     "IdleAnimation": "maltiezcrossbows:crossbow-idle",
     "ReadyAnimation": "maltiezcrossbows:crossbow-ready",

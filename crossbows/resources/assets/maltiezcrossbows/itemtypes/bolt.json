@@ -24,7 +24,7 @@
       "properties": {
         "layout": "Stacking",
         "placeRemoveSound": "game:sounds/block/ceramicplace",
-        "stackingModel": "pile-bolts",
+        "stackingModelByType": {"*-crude": "pile-crude-bolts", "*-copper": "pile-crude-bolts", "*": "pile-bolts"},
         "modelItemsToStackSizeRatio": 4.2,
         "stackingCapacity": 160,
         "upSolid": true,
