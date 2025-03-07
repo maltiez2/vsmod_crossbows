@@ -31,92 +31,24 @@
     "output": {"type": "item", "code": "maltiezcrossbows:parts-windlass-steel"}
   },
   {
-    "ingredient": {"type": "item", "code": "game:ingot-steel"},
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze", "steel"]},
     "pattern": [
       [
-        "_##########__",
-        "_#___________",
-        "_#_#_#_______",
-        "_#_#_#__###__",
-        "_#_#_#__###__",
-        "________###__"
+        "_##########",
+        "_#_________",
+        "_#_#_#_###_",
+        "_#_#_#_###_",
+        "_#_#_#_###_"
       ],
       [
-        "_____________",
-        "_____________",
-        "_____________",
-        "________###__",
-        "________###__",
-        "________###__"
+        "___________",
+        "___________",
+        "_______###_",
+        "_______###_",
+        "_______###_"
       ]
     ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-steel"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-tinbronze"},
-    "pattern": [
-      [
-        "_##########__",
-        "_#___________",
-        "_#_#_#_______",
-        "_#_#_#__###__",
-        "_#_#_#__###__",
-        "________###__"
-      ],
-      [
-        "_____________",
-        "_____________",
-        "_____________",
-        "________###__",
-        "________###__",
-        "________###__"
-      ]
-    ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-tinbronze"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-bismuthbronze"},
-    "pattern": [
-      [
-        "_##########__",
-        "_#___________",
-        "_#_#_#_______",
-        "_#_#_#__###__",
-        "_#_#_#__###__",
-        "________###__"
-      ],
-      [
-        "_____________",
-        "_____________",
-        "_____________",
-        "________###__",
-        "________###__",
-        "________###__"
-      ]
-    ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-bismuthbronze"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-blackbronze"},
-    "pattern": [
-      [
-        "_##########__",
-        "_#___________",
-        "_#_#_#_______",
-        "_#_#_#__###__",
-        "_#_#_#__###__",
-        "________###__"
-      ],
-      [
-        "_____________",
-        "_____________",
-        "_____________",
-        "________###__",
-        "________###__",
-        "________###__"
-      ]
-    ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-blackbronze"}
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-lock-{metal}"}
   },
   {
     "ingredient": {"type": "item", "code": "game:ingot-steel"},
@@ -133,7 +65,7 @@
     "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-steel"}
   },
   {
-    "ingredient": {"type": "item", "code": "game:ingot-tinbronze"},
+    "ingredient": {"type": "item", "code": "game:ingot-*", "name": "metal", "allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"]},
     "pattern": [
       [
         "__######__",
@@ -144,35 +76,7 @@
         "__######__"
       ]
     ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-tinbronze"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-bismuthbronze"},
-    "pattern": [
-      [
-        "__######__",
-        "__#____#__",
-        "_##____##_",
-        "_##____##_",
-        "__#____#__",
-        "__######__"
-      ]
-    ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-bismuthbronze"}
-  },
-  {
-    "ingredient": {"type": "item", "code": "game:ingot-blackbronze"},
-    "pattern": [
-      [
-        "__######__",
-        "__#____#__",
-        "_##____##_",
-        "_##____##_",
-        "__#____#__",
-        "__######__"
-      ]
-    ],
-    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-blackbronze"}
+    "output": {"type": "item", "code": "maltiezcrossbows:parts-stirrup-{metal}"}
   },
   {
     "ingredient": {"type": "item", "code": "game:ingot-iron"},

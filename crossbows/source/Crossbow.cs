@@ -387,7 +387,6 @@ public class CrossbowClient : RangeWeaponClient
 
         return requirement != null;
     }
-
     protected virtual ItemSlot? GetBoltSlot(EntityPlayer player)
     {
         ItemSlot? boltSlot = null;
