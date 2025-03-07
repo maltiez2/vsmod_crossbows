@@ -1,1 +1,1 @@
-# crossbows
+# Crossbows - Vintage Story mod
