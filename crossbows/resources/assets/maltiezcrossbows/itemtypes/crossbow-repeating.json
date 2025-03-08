@@ -2,7 +2,7 @@
   "code": "crossbow",
   "class": "Crossbows:MagazineCrossbow",
   "creativeinventoryByType": {"*-copper": {"maltiezcrossbows": ["*"]}, "*": {}},
-  "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "material", "states": ["plain", "copper"]}],
+  "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "material", "states": ["copper"]}],
   "maxstacksize": 1,
   "durability": 600,
   "tool": "crossbow",

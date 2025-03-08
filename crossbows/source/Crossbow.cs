@@ -349,7 +349,19 @@ public class CrossbowClient : RangeWeaponClient
         if (state == CrossbowState.Shooting)
         {
             PlayerBehavior?.SetState((int)CrossbowState.AimedEmpty, mainHand);
+
+            if (PlayerBehavior?.ActionListener.IsActive(EnumEntityAction.RightMouseDown) == false)
+            {
+                PlayerBehavior.SetState((int)CrossbowState.Unloaded, mainHand);
+                PlayerBehavior.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+                AnimationBehavior?.PlayReadyAnimation(mainHand);
+                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
+                AnimationBehavior?.StopVanillaAnimation(Stats.AimTpAnimation, mainHand);
+                AimingAnimationController?.Stop(mainHand);
+                AimingSystem.StopAiming();
+            }
         }
+        
         return true;
     }
     protected virtual bool CheckOffhandEmpty(EntityPlayer player)

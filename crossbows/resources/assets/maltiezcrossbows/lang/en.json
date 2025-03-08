@@ -1,12 +1,6 @@
 {
     "game:tabname-maltiezcrossbows": "Crossbows",
     
-    "item-crossbow-simple-plain": "Simple crossbow (OLD - craft it into new)",
-    "item-crossbow-repeating-plain": "Repeating crossbow (OLD - craft it into new)",
-    "item-crossbow-stirrup-plain": "Stirrup crossbow (OLD - craft it into new)",
-    "item-crossbow-latch-plain": "Latch crossbow (OLD - craft it into new)",
-    "item-crossbow-goatsfoot-plain": "Goat's foot crossbow (OLD - craft it into new)",
-    "item-crossbow-windlass-plain": "Windlass crossbow (OLD - craft it into new)",
     "item-crossbow-simple-*": "Simple crossbow",
     "item-crossbow-repeating-*": "Repeating crossbow",
     "item-crossbow-stirrup-*": "Stirrup crossbow",

@@ -13,7 +13,6 @@ using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
-
 namespace Crossbows;
 
 public enum MagazineCrossbowState

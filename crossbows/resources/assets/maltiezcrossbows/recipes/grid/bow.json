@@ -11,5 +11,5 @@
 		"height": 2,
 		"requiresTrait": "bowyer",
 		"output": { "type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1  }
-	},
+	}
 ]
