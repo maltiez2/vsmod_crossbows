@@ -131,6 +131,9 @@
       <ModIcon Include="$(ModIconFile)" />
       <AssetsFolder Include="$(AssetsDir)\**\*.*" />
     </ItemGroup>
+    <Message Text="Clearing assets folder in build directory" Importance="high" />
+    <RemoveDir Directories="$(OutputPath)assets" />
+    <Message Text="Copying assets to build directory" Importance="high" />
     <Copy SourceFiles="@(AssetsFolder)" DestinationFiles="@(AssetsFolder->'$(OutputPath)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('$(AssetsDir)')" />
     <Copy SourceFiles="@(ModIcon)" DestinationFolder="$(OutputPath)" Condition="Exists('$(ModIconFile)')" />
   </Target>
