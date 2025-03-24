@@ -3,8 +3,8 @@
   <PropertyGroup>
     <ModName>Crossbows</ModName>
     <ModType>code</ModType>
-    <Version>1.0.0</Version>
-    <ModId>maltiezcrossbows</ModId>
+    <Version>1.0.1</Version>
+    <ModId>maltiezcrossbowsbullseye</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
     <RequiredOnClient>true</RequiredOnClient>
@@ -28,7 +28,7 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="combatoverhaul">
+    <Dependencies Include="bullseyecontinued">
       <Version>*</Version>
     </Dependencies>
   </ItemGroup>
