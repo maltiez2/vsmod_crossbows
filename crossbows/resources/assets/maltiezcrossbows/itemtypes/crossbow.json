@@ -142,6 +142,7 @@
       }
     },
     "CancelReloadOnInAirByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
+    "CancelReloadMountedByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
     "ZeroingByType": {"*-simple-*": 1, "*-stirrup-*": 0.5, "*-latch-*": 1, "*-goatsfoot-*": 0, "*-windlass-*": 0},
     "DispersionMOAByType": {"*-simple-*": [50, 50], "*-stirrup-*": [15, 15], "*-latch-*": [30, 30], "*-goatsfoot-*": [5, 5], "*-windlass-*": [15, 15]}
   },

@@ -28,6 +28,14 @@
         "attributes/AimingByType/@@*/CursorType": "aiming_cursor_type"
       }
     },
+    "boolean": {
+      "maltiezcrossbows:itemtypes/crossbow.json": {
+        "attributes/CancelReloadOnInAirByType/*-stirrup-*": "cancel_reload_in_the_air",
+        "attributes/CancelReloadMountedByType/*-stirrup-*": "cancel_reload_while_mounted",
+        "attributes/CancelReloadOnInAirByType/*-windlass-*": "cancel_reload_in_the_air",
+        "attributes/CancelReloadMountedByType/*-windlass-*": "cancel_reload_while_mounted"
+      }
+    },
     "other": {
       "maltiezcrossbows:recipes/grid/bow.json": {
         "0/requiresTrait": "trait_requirement"
@@ -92,6 +100,18 @@
       "type": "integer",
       "ingui": "maltiezcrossbows:setting-magazine_size",
       "default": 5
+    },
+    {
+      "code": "cancel_reload_in_the_air",
+      "type": "boolean",
+      "ingui": "maltiezcrossbows:setting-cancel_reload_in_the_air",
+      "default": true
+    },
+    {
+      "code": "cancel_reload_while_mounted",
+      "type": "boolean",
+      "ingui": "maltiezcrossbows:setting-cancel_reload_while_mounted",
+      "default": true
     }
   ]
 }

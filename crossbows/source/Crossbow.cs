@@ -51,6 +51,7 @@ public class CrossbowStats : WeaponStats
     public float Zeroing { get; set; } = 1.5f;
     public float[] DispersionMOA { get; set; } = new float[] { 0, 0 };
     public bool CancelReloadOnInAir { get; set; } = true;
+    public bool CancelReloadMounted { get; set; } = true;
 }
 
 public class CrossbowClient : RangeWeaponClient
@@ -254,20 +255,41 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (player.MountedOn?.Entity != null || player.OnGround || !Stats.CancelReloadOnInAir) return false;
-
-        switch ((CrossbowState)state)
+        if (player.MountedOn?.Entity == null && !player.OnGround && Stats.CancelReloadOnInAir)
         {
-            case CrossbowState.Draw:
-                PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
-                state = (int)CrossbowState.Unloaded;
-                AnimationBehavior?.PlayReadyAnimation(mainHand);
-                TpAnimationBehavior?.PlayReadyAnimation(mainHand);
-                AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
-                return false;
-            default:
-                return false;
+            switch ((CrossbowState)state)
+            {
+                case CrossbowState.Draw:
+                    PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+                    state = (int)CrossbowState.Unloaded;
+                    AnimationBehavior?.PlayReadyAnimation(mainHand);
+                    TpAnimationBehavior?.PlayReadyAnimation(mainHand);
+                    AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
+                    Api.TriggerIngameError(this, "reloadInTheAir", Lang.Get("maltiezcrossbows:requirement-not-in-the-air"));
+                    return false;
+                default:
+                    return false;
+            }
         }
+
+        if (player.MountedOn?.Entity != null && Stats.CancelReloadMounted)
+        {
+            switch ((CrossbowState)state)
+            {
+                case CrossbowState.Draw:
+                    PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
+                    state = (int)CrossbowState.Unloaded;
+                    AnimationBehavior?.PlayReadyAnimation(mainHand);
+                    TpAnimationBehavior?.PlayReadyAnimation(mainHand);
+                    AnimationBehavior?.StopVanillaAnimation(Stats.DrawTpAnimation, mainHand);
+                    Api.TriggerIngameError(this, "reloadMounted", Lang.Get("maltiezcrossbows:requirement-not-mounted"));
+                    return false;
+                default:
+                    return false;
+            }
+        }
+
+        return false;
     }
 
     protected virtual void DrawCallback(bool success)

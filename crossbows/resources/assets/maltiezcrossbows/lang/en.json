@@ -68,10 +68,15 @@
     "setting-aiming_difficulty": "Aiming difficulty",
     "setting-dispersion": "Dispersion (MOA)",
     "setting-magazine_size": "Repeater magazine size",
+    "setting-cancel_reload_in_the_air": "Cancel reload while in the air",
+    "setting-cancel_reload_while_mounted": "Cancel reload while mounted",
 
     "requirement-empty-offhand": "Offhand should be empty",
     "requirement-spanning-tool": "Missing spanning tool",
+    "requirement-not-in-the-air": "Reload canceled due to player being in the air",
+    "requirement-not-mounted": "Reload canceled due to player being mounted",
     "requirement-ammo": "No bolts available",
+
     "interaction-load": "Hold to load crossbow",
     "interaction-load-and-aim": "Hold to reload or aim crossbow",
     "interaction-shoot": "Click to shoot crossbow while aimed",
