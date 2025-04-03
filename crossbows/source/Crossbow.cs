@@ -50,6 +50,7 @@ public class CrossbowStats : WeaponStats
     public string DrawRequirement { get; set; } = "";
     public float Zeroing { get; set; } = 1.5f;
     public float[] DispersionMOA { get; set; } = new float[] { 0, 0 };
+    public bool CancelReloadOnInAir { get; set; } = true;
 }
 
 public class CrossbowClient : RangeWeaponClient
@@ -253,12 +254,11 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Cancel(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (player.OnGround) return false;
+        if (player.MountedOn?.Entity != null || player.OnGround || !Stats.CancelReloadOnInAir) return false;
 
         switch ((CrossbowState)state)
         {
             case CrossbowState.Draw:
-                if (Stats.LoadSpeedPenalty > -0.9f) return false;
                 PlayerBehavior?.SetStat("walkspeed", mainHand ? PlayerStatsMainHandCategory : PlayerStatsOffHandCategory);
                 state = (int)CrossbowState.Unloaded;
                 AnimationBehavior?.PlayReadyAnimation(mainHand);

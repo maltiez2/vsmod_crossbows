@@ -50,7 +50,7 @@
     "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 2.5, "*-windlass-*": 4.3},
     "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-latch-*": 4, "*-goatsfoot-*": 6, "*-windlass-*": 7},
     "BoltVelocityByType": {"*-simple-*": 1, "*-stirrup-*": 1.8, "*-latch-*": 1.5, "*-goatsfoot-*": 2.5, "*-windlass-*": 3},
-    "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": 0.0, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
+    "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": 0, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
     "ProficiencyStat": "crossbowsProficiency",
     "IdleAnimation": "maltiezcrossbows:crossbow-idle",
     "ReadyAnimation": "maltiezcrossbows:crossbow-ready",
@@ -102,7 +102,7 @@
         "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
         "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
         "AllowSprint": true,
-        "MoveSpeedPenalty": 0.0,
+        "MoveSpeedPenalty": 0,
         "AimDrift": 80,
         "AimTwitch": 3,
         "AnimationFollowX": 5.5,
@@ -141,6 +141,7 @@
         "VerticalOffset": -0.05
       }
     },
+    "CancelReloadOnInAirByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
     "ZeroingByType": {"*-simple-*": 1, "*-stirrup-*": 0.5, "*-latch-*": 1, "*-goatsfoot-*": 0, "*-windlass-*": 0},
     "DispersionMOAByType": {"*-simple-*": [50, 50], "*-stirrup-*": [15, 15], "*-latch-*": [30, 30], "*-goatsfoot-*": [5, 5], "*-windlass-*": [15, 15]}
   },
