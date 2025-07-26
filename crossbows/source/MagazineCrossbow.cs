@@ -42,7 +42,7 @@ public class MagazineCrossbowStats : WeaponStats
     public float BoltVelocity { get; set; } = 1;
     public string BoltWildcard { get; set; } = "@.*(bolt-copper|bolt-crude)";
     public float Zeroing { get; set; } = 1.5f;
-    public float[] DispersionMOA { get; set; } = new float[] { 0, 0 };
+    public float[] DispersionMOA { get; set; } = [0, 0];
 
     public int MagazineSize { get; set; } = 5;
 }
@@ -190,8 +190,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         Attachable.SetAttachment(player.EntityId, "bolt", ammoSlot.Itemstack, BoltTransform);
         AttachmentSystem.SendAttachPacket(player.EntityId, "bolt", ammoSlot.Itemstack, BoltTransform);
 
-        AnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadBoltCallback(slot, ammoSlot, player));
-        TpAnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => LoadBoltCallback(slot, ammoSlot, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         state = (int)MagazineCrossbowState.Load;
 
         return true;
@@ -260,8 +262,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         Inventory.Clear();
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
 
-        AnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => ShootCallback(slot, player));
-        TpAnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => ShootCallback(slot, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.ShootAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         state = (int)MagazineCrossbowState.Shoot;
 
         return true;
@@ -285,8 +289,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         if (state != (int)MagazineCrossbowState.Shot || eventData.AltPressed) return false;
         if (!CheckOffhandEmpty(player)) return false;
 
-        AnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: ReturnCallback);
-        TpAnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: ReturnCallback);
+        TpAnimationBehavior?.Play(mainHand, Stats.ReturnAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         state = (int)MagazineCrossbowState.Return;
 
         return true;
@@ -346,20 +352,22 @@ public class MagazineCrossbowServer : RangeWeaponServer
         _inventory.Write(slot);
         _inventory.Clear();
 
-        ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
+        ProjectileStats? stats = ammo.Item?.GetCollectibleBehavior<ProjectileBehavior>(true)?.GetStats(ammo);
 
         if (stats == null)
         {
             return false;
         }
 
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
         ProjectileSpawnStats spawnStats = new()
         {
             ProducerEntityId = player.Entity.EntityId,
-            DamageMultiplier = _stats.BoltDamageMultiplier,
-            DamageStrength = _stats.BoltDamageStrength,
+            DamageMultiplier = _stats.BoltDamageMultiplier * stackStats.DamageMultiplier,
+            DamageStrength = _stats.BoltDamageStrength + stackStats.DamageTierBonus,
             Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
-            Velocity = GetDirectionWithDispersion(packet.Velocity, _stats.DispersionMOA) * _stats.BoltVelocity
+            Velocity = GetDirectionWithDispersion(packet.Velocity, [_stats.DispersionMOA[0] * stackStats.DispersionMultiplier, _stats.DispersionMOA[1] * stackStats.DispersionMultiplier]) * _stats.BoltVelocity * stackStats.ProjectileSpeed,
         };
 
         _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, ammo, slot.Itemstack, shooter);
@@ -445,7 +453,7 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
             return _ammoSelector?.GetToolModes(slot, forPlayer, blockSel) ?? Array.Empty<SkillItem>();
         }
 
-        return Array.Empty<SkillItem>();
+        return [];
     }
     public override void SetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection, int toolMode)
     {

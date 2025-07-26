@@ -49,7 +49,7 @@ public class CrossbowStats : WeaponStats
     public string BoltWildcard { get; set; } = "*bolt-*";
     public string DrawRequirement { get; set; } = "";
     public float Zeroing { get; set; } = 1.5f;
-    public float[] DispersionMOA { get; set; } = new float[] { 0, 0 };
+    public float[] DispersionMOA { get; set; } = [0, 0];
     public bool CancelReloadOnInAir { get; set; } = true;
     public bool CancelReloadMounted { get; set; } = true;
 }
@@ -123,8 +123,10 @@ public class CrossbowClient : RangeWeaponClient
         if (!CheckOffhandEmpty(player)) return false;
         if (!CheckDrawRequirement(player)) return false;
 
-        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand, player), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
-        TpAnimationBehavior?.Play(mainHand, Stats.DrawAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand, player), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        TpAnimationBehavior?.Play(mainHand, Stats.DrawAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         AttachmentSystem.SendSwitchModelPacket(player.EntityId, true);
         Attachable.SetSwitchModels(player.EntityId, true);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.DrawTpAnimation, mainHand);
@@ -149,11 +151,13 @@ public class CrossbowClient : RangeWeaponClient
             return false;
         }
 
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
         Attachable.SetAttachment(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
         AttachmentSystem.SendAttachPacket(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
 
-        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat), callback: () => LoadAnimationCallback(slot, mainHand, player));
-        TpAnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => LoadAnimationCallback(slot, mainHand, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         state = (int)CrossbowState.Load;
@@ -174,7 +178,11 @@ public class CrossbowClient : RangeWeaponClient
 
         state = (int)CrossbowState.Aimed;
 
-        AimingSystem.StartAiming(AimingStats);
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+        AimingStats aimingStats = AimingStats.Clone();
+        aimingStats.AimDifficulty *= stackStats.AimingDifficulty;
+
+        AimingSystem.StartAiming(aimingStats);
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
 
         AimingAnimationController?.Play(mainHand);
@@ -383,7 +391,7 @@ public class CrossbowClient : RangeWeaponClient
                 AimingSystem.StopAiming();
             }
         }
-        
+
         return true;
     }
     protected virtual bool CheckOffhandEmpty(EntityPlayer player)
@@ -497,7 +505,7 @@ public class CrossbowServer : RangeWeaponServer
 
         if (boltSlot?.Itemstack == null || boltSlot.Itemstack.StackSize < 1) return false;
 
-        ProjectileStats? stats = boltSlot.Itemstack.Item.GetCollectibleBehavior<ProjectileBehavior>(true)?.Stats;
+        ProjectileStats? stats = boltSlot.Itemstack.Item.GetCollectibleBehavior<ProjectileBehavior>(true)?.GetStats(boltSlot.Itemstack);
 
         if (stats == null)
         {
@@ -505,13 +513,15 @@ public class CrossbowServer : RangeWeaponServer
             return false;
         }
 
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
         ProjectileSpawnStats spawnStats = new()
         {
             ProducerEntityId = player.Entity.EntityId,
-            DamageMultiplier = _stats.BoltDamageMultiplier,
-            DamageStrength = _stats.BoltDamageStrength,
+            DamageMultiplier = _stats.BoltDamageMultiplier * stackStats.DamageMultiplier,
+            DamageStrength = _stats.BoltDamageStrength + stackStats.DamageTierBonus,
             Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
-            Velocity = GetDirectionWithDispersion(packet.Velocity, _stats.DispersionMOA) * _stats.BoltVelocity
+            Velocity = GetDirectionWithDispersion(packet.Velocity, [_stats.DispersionMOA[0] * stackStats.DispersionMultiplier, _stats.DispersionMOA[1] * stackStats.DispersionMultiplier]) * _stats.BoltVelocity * stackStats.ProjectileSpeed,
         };
 
         _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, boltSlot.TakeOut(1), slot.Itemstack, shooter);
@@ -524,7 +534,7 @@ public class CrossbowServer : RangeWeaponServer
         return true;
     }
 
-    private readonly Dictionary<long, (InventoryBase, int)> _boltSlots = new();
+    private readonly Dictionary<long, (InventoryBase, int)> _boltSlots = [];
     private readonly ProjectileSystemServer _projectileSystem;
     private readonly CrossbowStats _stats;
 }
@@ -565,7 +575,9 @@ public class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasId
     {
         if (_stats != null)
         {
-            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", _stats.BoltDamageMultiplier, _stats.BoltDamageStrength));
+            ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(inSlot.Itemstack);
+
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", _stats.BoltDamageMultiplier * stackStats.DamageMultiplier, _stats.BoltDamageStrength + stackStats.DamageTierBonus));
             dsc.AppendLine("");
         }
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
@@ -598,7 +610,7 @@ public class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasId
             return _ammoSelector?.GetToolModes(slot, forPlayer, blockSel) ?? Array.Empty<SkillItem>();
         }
 
-        return Array.Empty<SkillItem>();
+        return [];
     }
     public override void SetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection, int toolMode)
     {
