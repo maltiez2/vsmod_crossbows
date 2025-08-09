@@ -15,8 +15,8 @@
       "*": {"base": "bolt-insert"}
     },
     "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
-    "behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "interpolateposition"}]
+    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "interpolateposition"}]
   },
-  "server": {"behaviors": [{"code": "passivephysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "despawn", "minSeconds": 600}]},
+  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }
