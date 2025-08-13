@@ -17,6 +17,6 @@
     "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
     "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "interpolateposition"}]
   },
-  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "despawn", "minSeconds": 600}]},
+  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, {"code": "despawn", "minSeconds": 600}]},
   "sounds": {}
 }

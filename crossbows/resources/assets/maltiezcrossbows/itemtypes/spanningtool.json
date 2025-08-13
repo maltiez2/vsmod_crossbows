@@ -1,6 +1,7 @@
 ﻿{
   "code": "spanningtool",
   "class": "Item",
+  "tags": ["crossbow-equipment"],
   "storageFlags": 257,
   "maxstacksize": 1,
   "variantgroups": [{"code": "type", "states": ["goatsfoot", "windlass"]}],

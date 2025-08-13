@@ -45,7 +45,7 @@
     "itemdesc-bolt-crude": "Crude bolt without fletching made of flint<br>",
     "itemdesc-bolt-copper": "Crude bolt without fletching made of copper<br>",
     "itemdesc-bolt-*": "Wooden fletching is less efficient and more prone to cracking, but it is sturdier in storage and easier to handle.<br>",
-    "itemdesc-quiver-waist-plain": "Can hold bolts, also has hook for spanning tools (like goat's foot or windlass).'",
+    "itemdesc-quiver-waist-plain": "Can hold bolts, also has hook for spanning tools (like goat's foot or windlass).",
 
     "itemdesc-spanningtool-goatsfoot": "Lever for drawing crossbow with appropriate mounting point. Provides mechanical advantage in average around 5 to 1.<br>",
     "itemdesc-spanningtool-windlass": "System of pulleys for drawing crossbow with appropriate mounting point. Provides more than 50 to 1 mechanical advantage.",
@@ -70,6 +70,9 @@
     "setting-magazine_size": "Repeater magazine size",
     "setting-cancel_reload_in_the_air": "Cancel reload while in the air",
     "setting-cancel_reload_while_mounted": "Cancel reload while mounted",
+    "setting-reload_speed": "Reload speed",
+
+    "setting-comment-cursortype": "Applied immideatly, does not require world reload",
 
     "requirement-empty-offhand": "Offhand should be empty",
     "requirement-spanning-tool": "Missing spanning tool",

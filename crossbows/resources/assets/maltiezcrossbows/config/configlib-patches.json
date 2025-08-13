@@ -6,26 +6,20 @@
         "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier",
         "attributes/AimingByType/@@*/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOAByType/@@*/0": "dispersion * value",
-        "attributes/DispersionMOAByType/@@*/1": "dispersion * value"
+        "attributes/DispersionMOAByType/@@*/1": "dispersion * value",
+        "attributes/ReloadAnimationSpeed": "reload_speed"
       },
       "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
         "attributes/BoltDamageMultiplierByType/@@*": "value * damage_multiplier",
         "attributes/AimingByType/@@*/AimDifficulty": "aiming_difficulty",
         "attributes/DispersionMOA/0": "dispersion * value",
-        "attributes/DispersionMOA/1": "dispersion * value"
+        "attributes/DispersionMOA/1": "dispersion * value",
+        "attributes/ReloadAnimationSpeed": "reload_speed"
       }
     },
     "integer": {
       "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
         "attributes/MagazineSize": "magazine_size"
-      }
-    },
-    "string": {
-      "maltiezcrossbows:itemtypes/crossbow.json": {
-        "attributes/AimingByType/@@*/CursorType": "aiming_cursor_type"
-      },
-      "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
-        "attributes/AimingByType/@@*/CursorType": "aiming_cursor_type"
       }
     },
     "boolean": {
@@ -43,6 +37,40 @@
     }
   },
   "settings": [
+    {
+      "code": "aiming_cursor_type",
+      "type": "string",
+      "ingui": "maltiezcrossbows:setting-cursortype",
+      "comment": "maltiezcrossbows:setting-comment-cursortype",
+      "default": "Fixed",
+      "clientSide": true,
+      "values": [
+        "None",
+        "Vanilla",
+        "Fixed",
+        "Moving"
+      ]
+    },
+    {
+      "code": "aiming_difficulty",
+      "type": "float",
+      "ingui": "maltiezcrossbows:setting-aiming_difficulty",
+      "default": 1.0,
+      "range": {
+        "min": 0.0,
+        "max": 2.0
+      }
+    },
+    {
+      "code": "reload_speed",
+      "type": "float",
+      "ingui": "maltiezcrossbows:setting-reload_speed",
+      "default": 1.0,
+      "range": {
+        "min": 0.3,
+        "max": 3.0
+      }
+    },
     {
       "code": "damage_multiplier",
       "type": "float",
@@ -63,28 +91,7 @@
         "Not Required": null
       }
     },
-    {
-      "code": "aiming_cursor_type",
-      "type": "string",
-      "ingui": "maltiezcrossbows:setting-cursortype",
-      "default": "Fixed",
-      "values": [
-        "None",
-        "Vanilla",
-        "Fixed",
-        "Moving"
-      ]
-    },
-    {
-      "code": "aiming_difficulty",
-      "type": "float",
-      "ingui": "maltiezcrossbows:setting-aiming_difficulty",
-      "default": 1.0,
-      "range": {
-        "min": 0.0,
-        "max": 2.0
-      }
-    },
+    
     {
       "code": "dispersion",
       "type": "float",

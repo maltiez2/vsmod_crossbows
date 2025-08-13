@@ -5,7 +5,12 @@
   "shape": {"base": "quiver-waist-plain"},
   "texturesByType": {"*": {"seraph": {"base": "game:block/transparent"}}},
   "storageFlags": 128,
-  "behaviors": [{"name": "CombatOverhaul:GearEquipableBag", "properties": {"canHoldWildcards": ["*bolt-*", "*spanningtool-*"], "color": "#cfbd59", "slotsNumber": 3}}],
+  "behaviors": [
+    {
+      "name": "CombatOverhaul:GearEquipableBag",
+      "properties": {"canHoldWildcards": ["*bolt-*", "*spanningtool-*"], "canHoldItemTags": ["bolt", "crossbow-equipment"], "color": "#cfbd59", "slotsNumber": 3}
+    }
+  ],
   "attributes": {"wearableAttachment": true, "clothescategory": "waist", "warmthByType": {"*": 0}},
   "creativeinventory": {"maltiezcrossbows": ["*"]},
   "renderAlphaTest": 0.25,

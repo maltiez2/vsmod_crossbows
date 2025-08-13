@@ -1,6 +1,7 @@
 ﻿{
   "code": "bolt",
   "class": "Item",
+  "tags": ["projectile", "bolt"],
   "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
   "maxstacksize": 64,
   "storageFlags": 513,

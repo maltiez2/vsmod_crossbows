@@ -45,6 +45,8 @@ public class MagazineCrossbowStats : WeaponStats
     public float[] DispersionMOA { get; set; } = [0, 0];
 
     public int MagazineSize { get; set; } = 5;
+
+    public float ReloadAnimationSpeed { get; set; } = 1;
 }
 
 public class MagazineCrossbowClient : RangeWeaponClient
@@ -54,6 +56,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         Attachable = item.GetCollectibleBehavior<AnimatableAttachable>(withInheritance: true) ?? throw new Exception("Crossbow should have AnimatableAttachable behavior.");
         BoltTransform = new(item.Attributes["BoltTransform"].AsObject<ModelTransformNoDefaults>(), ModelTransform.BlockDefaultTp());
         AimingSystem = api.ModLoader.GetModSystem<CombatOverhaulSystem>().AimingSystem ?? throw new Exception();
+        Settings = api.ModLoader.GetModSystem<CrossbowsModSystem>().Settings ?? throw new Exception();
         Stats = item.Attributes.AsObject<MagazineCrossbowStats>();
         AimingStats = Stats.Aiming.ToStats();
         AmmoSelector = ammoSelector;
@@ -77,6 +80,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
             AimingSystem.AimingState = WeaponAimingState.Blocked;
         }
 
+        AimingStats.CursorType = Enum.Parse<AimingCursorType>(Settings.AimingCursorType);
         AimingSystem.StartAiming(AimingStats);
         AimingAnimationController?.Play(mainHand);
 
@@ -103,6 +107,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected readonly AimingStats AimingStats;
     protected readonly AmmoSelector AmmoSelector;
     protected readonly ItemInventoryBuffer Inventory = new();
+    protected readonly CrossbowsSettings Settings;
     protected const string InventoryId = "magazine";
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
@@ -122,8 +127,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
 
         state = (int)MagazineCrossbowState.OpenLid;
 
-        AnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, callback: OpenLidCallback, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
-        TpAnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, callback: OpenLidCallback, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
+        TpAnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         AimingSystem.StopAiming();
 
         return true;
@@ -192,8 +199,8 @@ public class MagazineCrossbowClient : RangeWeaponClient
 
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
 
-        AnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => LoadBoltCallback(slot, ammoSlot, player));
-        TpAnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        AnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed, callback: () => LoadBoltCallback(slot, ammoSlot, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadBoltAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         state = (int)MagazineCrossbowState.Load;
 
         return true;
@@ -221,8 +228,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         if (!CheckState(state, MagazineCrossbowState.ReadyToLoad, MagazineCrossbowState.Load, MagazineCrossbowState.OpenLid)) return false;
         if (eventData.AltPressed) return false;
 
-        AnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, callback: () => CloseLidCallback(slot), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
-        TpAnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat));
+        ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
+
+        AnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, callback: () => CloseLidCallback(slot), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
+        TpAnimationBehavior?.Play(mainHand, Stats.CloseLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         state = (int)MagazineCrossbowState.CloseLid;
 
         return true;

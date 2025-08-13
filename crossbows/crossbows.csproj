@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Crossbows</ModName>
     <ModType>code</ModType>
-    <Version>1.4.0</Version>
+    <Version>1.4.1</Version>
     <ModId>maltiezcrossbows</ModId>
     <Description>Medieval crossbows</Description>
     <Side>Universal</Side>
@@ -52,6 +52,7 @@
     <ReleasesDir>$(ProjectDir)\Releases</ReleasesDir>
     <ReleaseFile>$(ModId)_$(Version).zip</ReleaseFile>
     <ReleasePath>$(ReleasesDir)\$(ReleaseFile)</ReleasePath>
+    <ExternalLibs>$(ProjectDir)\external</ExternalLibs>
   </PropertyGroup>
 
   <!-- Formatting JSON files -->
@@ -84,6 +85,7 @@
   <ItemGroup>
     <PackageReference Include="VSImGui" Version="0.0.6" />
     <Reference Include="$(GameDirectory)/**/*.dll" Private="false" />
+    <Reference Include="$(ExternalLibs)/**/*.dll" Private="false" />
     <Reference Include="$(ProjectDir)/../../Overhaullib/bin/Release/Mods/overhaullib/Overhaullib.dll" Private="false" />
   </ItemGroup>
 

@@ -12,6 +12,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+using YamlDotNet.Serialization;
 
 namespace Crossbows;
 
@@ -52,6 +53,8 @@ public class CrossbowStats : WeaponStats
     public float[] DispersionMOA { get; set; } = [0, 0];
     public bool CancelReloadOnInAir { get; set; } = true;
     public bool CancelReloadMounted { get; set; } = true;
+
+    public float ReloadAnimationSpeed { get; set; } = 1;
 }
 
 public class CrossbowClient : RangeWeaponClient
@@ -61,6 +64,7 @@ public class CrossbowClient : RangeWeaponClient
         Attachable = item.GetCollectibleBehavior<AnimatableAttachable>(withInheritance: true) ?? throw new Exception("Crossbow should have AnimatableAttachable behavior.");
         BoltTransform = new(item.Attributes["BoltTransform"].AsObject<ModelTransformNoDefaults>(), ModelTransform.BlockDefaultTp());
         AimingSystem = api.ModLoader.GetModSystem<CombatOverhaulSystem>().AimingSystem ?? throw new Exception();
+        Settings = api.ModLoader.GetModSystem<CrossbowsModSystem>().Settings ?? throw new Exception();
         Stats = item.Attributes.AsObject<CrossbowStats>();
         AimingStats = Stats.Aiming.ToStats();
         AmmoSelector = selector;
@@ -111,6 +115,7 @@ public class CrossbowClient : RangeWeaponClient
     protected readonly CrossbowStats Stats;
     protected readonly AimingStats AimingStats;
     protected readonly AmmoSelector AmmoSelector;
+    protected readonly CrossbowsSettings Settings;
     protected bool BoltLoaded = false;
 
     protected const string PlayerStatsMainHandCategory = "CombatOverhaul:held-item-mainhand";
@@ -125,8 +130,8 @@ public class CrossbowClient : RangeWeaponClient
 
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
 
-        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand, player), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
-        TpAnimationBehavior?.Play(mainHand, Stats.DrawAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        AnimationBehavior?.Play(mainHand, Stats.DrawAnimation, callback: () => DrawAnimationCallback(slot, mainHand, player), animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
+        TpAnimationBehavior?.Play(mainHand, Stats.DrawAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         AttachmentSystem.SendSwitchModelPacket(player.EntityId, true);
         Attachable.SetSwitchModels(player.EntityId, true);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.DrawTpAnimation, mainHand);
@@ -156,8 +161,8 @@ public class CrossbowClient : RangeWeaponClient
         Attachable.SetAttachment(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
         AttachmentSystem.SendAttachPacket(player.EntityId, "bolt", boltSlot.Itemstack, BoltTransform);
 
-        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed, callback: () => LoadAnimationCallback(slot, mainHand, player));
-        TpAnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed);
+        AnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed, callback: () => LoadAnimationCallback(slot, mainHand, player));
+        TpAnimationBehavior?.Play(mainHand, Stats.LoadAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         if (TpAnimationBehavior == null) AnimationBehavior?.PlayVanillaAnimation(Stats.LoadTpAnimation, mainHand);
 
         state = (int)CrossbowState.Load;
@@ -181,6 +186,7 @@ public class CrossbowClient : RangeWeaponClient
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
         AimingStats aimingStats = AimingStats.Clone();
         aimingStats.AimDifficulty *= stackStats.AimingDifficulty;
+        aimingStats.CursorType = Enum.Parse<AimingCursorType>(Settings.AimingCursorType);
 
         AimingSystem.StartAiming(aimingStats);
         AimingSystem.AimingState = WeaponAimingState.FullCharge;
