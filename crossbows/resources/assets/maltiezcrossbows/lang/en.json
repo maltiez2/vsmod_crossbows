@@ -17,7 +17,6 @@
     "item-bolt-meteoriciron": "Meteoric iron bolt",
     "item-bolt-steel": "Steel bolt",
 
-    "item-quiver-waist-plain": "Crossbow quiver",
     "item-spanningtool-goatsfoot": "Goat's foot",
     "item-spanningtool-windlass": "Windlass",
 
@@ -45,7 +44,6 @@
     "itemdesc-bolt-crude": "Crude bolt without fletching made of flint<br>",
     "itemdesc-bolt-copper": "Crude bolt without fletching made of copper<br>",
     "itemdesc-bolt-*": "Wooden fletching is less efficient and more prone to cracking, but it is sturdier in storage and easier to handle.<br>",
-    "itemdesc-quiver-waist-plain": "Can hold bolts, also has hook for spanning tools (like goat's foot or windlass).",
 
     "itemdesc-spanningtool-goatsfoot": "Lever for drawing crossbow with appropriate mounting point. Provides mechanical advantage in average around 5 to 1.<br>",
     "itemdesc-spanningtool-windlass": "System of pulleys for drawing crossbow with appropriate mounting point. Provides more than 50 to 1 mechanical advantage.",
