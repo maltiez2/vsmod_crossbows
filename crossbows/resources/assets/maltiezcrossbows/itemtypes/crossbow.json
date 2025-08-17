@@ -1,7 +1,7 @@
 ﻿{
   "code": "crossbow",
   "class": "Crossbows:Crossbow",
-  "creativeinventory": {"maltiezcrossbows": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
   "variantgroups": [
     {"code": "drawtype", "states": ["simple", "stirrup", "latch", "goatsfoot", "windlass"]},
     {"code": "material", "states": ["wood", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}

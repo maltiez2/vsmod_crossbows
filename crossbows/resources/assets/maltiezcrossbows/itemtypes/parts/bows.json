@@ -24,7 +24,7 @@
       }
     }
   ],
-  "creativeinventory": {"maltiezcrossbows": ["*"]},
+  "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
   "guiTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 148, "y": 71, "z": 15}, "origin": {"x": -1, "y": -0.26, "z": 0.31}, "scale": 2.78},
   "tpHandTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1},
   "groundTransform": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": 0, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 5}
