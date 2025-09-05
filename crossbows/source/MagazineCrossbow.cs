@@ -429,6 +429,12 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
 
     public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
+        if (_stats != null && _stats.ProficiencyStat != "")
+        {
+            string description = Lang.Get("combatoverhaul:iteminfo-proficiency", Lang.Get($"combatoverhaul:proficiency-{_stats.ProficiencyStat}"));
+            dsc.AppendLine(description);
+        }
+
         if (_stats != null)
         {
             dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", _stats.BoltDamageMultiplier, _stats.BoltDamageStrength));

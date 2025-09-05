@@ -91,7 +91,6 @@
         "Not Required": null
       }
     },
-    
     {
       "code": "dispersion",
       "type": "float",

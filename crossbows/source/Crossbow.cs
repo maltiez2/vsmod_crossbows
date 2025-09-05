@@ -581,6 +581,12 @@ public class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasId
 
     public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
+        if (_stats != null && _stats.ProficiencyStat != "")
+        {
+            string description = Lang.Get("combatoverhaul:iteminfo-proficiency", Lang.Get($"combatoverhaul:proficiency-{_stats.ProficiencyStat}"));
+            dsc.AppendLine(description);
+        }
+
         if (_stats != null)
         {
             ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(inSlot.Itemstack);

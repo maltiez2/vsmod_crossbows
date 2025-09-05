@@ -9,7 +9,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"metal": "gameblock/metal/corroded/normal1"
+		"metal": "game:block/metal/corroded/normal1"
 	},
 	"elements": [
 		{
