@@ -31,16 +31,16 @@
     "item-parts-stirrup-*bronze": "Bronze crossbow stirrup",
     "item-parts-latch-*iron": "Iron latch parts",
 
-    "block-wallmount-rusty-*": "Crossbow wallmount (rusty)",
-    "block-wallmount-tarnished-*": "Crossbow wallmount (tarnished)",
-    "block-wallmount-*": "Crossbow wallmount",
+    "block-wallmount-rusty-*": "Crossbow wall mount (rusty)",
+    "block-wallmount-tarnished-*": "Crossbow wall mount (tarnished)",
+    "block-wallmount-*": "Crossbow wall mount",
 
-    "itemdesc-crossbow-simple-*": "Crude crossbow made from simple bow. Stock is carved out of some firewood. Trigger mechanism is made from bone.<br>",
+    "itemdesc-crossbow-simple-*": "Crude crossbow made from simple bow. Stock is carved out of some firewood. The trigger mechanism is made from bone.<br>",
     "itemdesc-crossbow-repeating-*": "Crossbow with magazine for 5 bolts and lever that is used to cycle it and shoot. Can only use bolts without fletching (crude and copper).<br>",
     "itemdesc-crossbow-stirrup-*": "Crossbow with composite prod and stirrup to help draw it. The stirrup doubles the weight you can draw with your hands, but requires putting the foot into the stirrup and stay still.<br>",
     "itemdesc-crossbow-latch-*": "Crossbow with composite prod and lever with latch mechanism. It has shorter power stroke compared to stirrup crossbow, hense bolts having lower speed when shot. In return lever with latch makes reload much faster.<br>",
     "itemdesc-crossbow-goatsfoot-*": "Crossbow with steel prod and mounting points for goat's foot lever that doubles draw weight compared to stirrup by providing mechanical advantage around 5 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so a significant part of energy spend on just moving limbs themselves.<br>",
-    "itemdesc-crossbow-windlass-*": "Crossbow with steel prod and mounting point for windlass. It can triple available draw weight compared to goat's foot by providing mechanical advantage of more than 50 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so significant part of energy spend on just moving limbs themselves.<br>",
+    "itemdesc-crossbow-windlass-*": "Crossbow with steel prod and mounting point for windlass. It can triple available draw weight compared to goat's foot by providing mechanical advantage of more than 50 to 1.<br><br>Steel crossbows are quite inefficient. High draw weights are applied across short distance and limbs are quite heavy, so a significant part of energy spend on just moving limbs themselves.<br>",
     "itemdesc-bolt-crude": "Crude bolt without fletching made of flint<br>",
     "itemdesc-bolt-copper": "Crude bolt without fletching made of copper<br>",
     "itemdesc-bolt-*": "Wooden fletching is less efficient and more prone to cracking, but it is sturdier in storage and easier to handle.<br>",
@@ -55,7 +55,7 @@
     "itemdesc-parts-windlass-steel": "Handle and pulley holders for windlass.<br>",
     "itemdesc-parts-lock-*": "Lever, rotating nut and shafts for crossbow lock.<br>",
     "itemdesc-parts-latch-iron": "Lever and latch parts for latch crossbow lock and drawing mechanism.<br>",
-    "itemdesc-parts-stirrup-*": "Stirrup attached to the front of a crossbow for holding it with foot while drawing.<br>",
+    "itemdesc-parts-stirrup-*": "Stirrup attached to the front of a crossbow for holding it with the foot while drawing.<br>",
 
     "item-creature-bolt-*": "Bolt",
     "prefixandcreature-bolt-*": "Bolt",
@@ -70,7 +70,7 @@
     "setting-cancel_reload_while_mounted": "Cancel reload while mounted",
     "setting-reload_speed": "Reload speed",
 
-    "setting-comment-cursortype": "Applied immideatly, does not require world reload",
+    "setting-comment-cursortype": "Applied immediately, does not require world reload",
 
     "requirement-empty-offhand": "Offhand should be empty",
     "requirement-spanning-tool": "Missing spanning tool",

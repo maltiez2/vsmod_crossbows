@@ -124,7 +124,8 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Draw(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)CrossbowState.Unloaded || eventData.AltPressed) return false;
+        if (state != (int)CrossbowState.Unloaded) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (!CheckOffhandEmpty(player)) return false;
         if (!CheckDrawRequirement(player)) return false;
 
@@ -146,7 +147,8 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Load(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)CrossbowState.Drawn || eventData.AltPressed) return false;
+        if (state != (int)CrossbowState.Drawn) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         ItemSlot? boltSlot = GetBoltSlot(player);
 
@@ -175,7 +177,8 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool Aim(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)CrossbowState.Loaded || eventData.AltPressed) return false;
+        if (state != (int)CrossbowState.Loaded) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         AnimationBehavior?.Play(mainHand, Stats.AimAnimation);
         TpAnimationBehavior?.Play(mainHand, Stats.AimAnimation);
@@ -239,7 +242,8 @@ public class CrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Pressed)]
     protected virtual bool Shoot(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)CrossbowState.Aimed || eventData.AltPressed) return false;
+        if (state != (int)CrossbowState.Aimed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         ItemSlot? boltSlot = GetBoltSlot(player);
         if (boltSlot == null) return false;
@@ -547,13 +551,17 @@ public class CrossbowServer : RangeWeaponServer
     private readonly CrossbowStats _stats;
 }
 
-public class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdleAnimations
+public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasMoveAnimations
 {
     public CrossbowClient? ClientLogic { get; private set; }
     public CrossbowServer? ServerLogic { get; private set; }
 
     public AnimationRequestByCode IdleAnimation { get; private set; }
     public AnimationRequestByCode ReadyAnimation { get; private set; }
+    public AnimationRequestByCode WalkAnimation { get; private set; }
+    public AnimationRequestByCode RunAnimation { get; private set; }
+    public AnimationRequestByCode SwimAnimation { get; private set; }
+    public AnimationRequestByCode SwimIdleAnimation { get; private set; }
 
     IClientWeaponLogic? IHasWeaponLogic.ClientLogic => ClientLogic;
     IServerRangedWeaponLogic? IHasRangedWeaponLogic.ServerWeaponLogic => ServerLogic;
@@ -567,6 +575,11 @@ public class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasId
             _stats = Attributes.AsObject<CrossbowStats>();
             IdleAnimation = new(_stats.IdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
             ReadyAnimation = new(_stats.ReadyAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            WalkAnimation = new(_stats.WalkAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            RunAnimation = new(_stats.RunAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            SwimAnimation = new(_stats.SwimAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            SwimIdleAnimation = new(_stats.SwimIdleAnimation, 1, 1, "main", TimeSpan.FromSeconds(0.2), TimeSpan.FromSeconds(0.2), false);
+            
             _clientApi = clientAPI;
             _ammoSelector = new(clientAPI, _stats.BoltWildcard);
 

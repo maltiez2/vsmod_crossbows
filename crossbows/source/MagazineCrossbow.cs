@@ -115,7 +115,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     {
         if (!CheckState(state, MagazineCrossbowState.Unloaded, MagazineCrossbowState.Ready)) return false;
         if (!CheckOffhandEmpty(player)) return false;
-        if (eventData.AltPressed) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
 
         Inventory.Read(slot, InventoryId);
         if (Inventory.Items.Count >= Stats.MagazineSize)
@@ -258,7 +258,8 @@ public class MagazineCrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Active)]
     protected virtual bool Shoot(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)MagazineCrossbowState.Ready || eventData.AltPressed) return false;
+        if (state != (int)MagazineCrossbowState.Ready) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (!CheckOffhandEmpty(player)) return false;
 
         Inventory.Read(slot, InventoryId);
@@ -295,7 +296,8 @@ public class MagazineCrossbowClient : RangeWeaponClient
     [ActionEventHandler(EnumEntityAction.LeftMouseDown, ActionState.Active)]
     protected virtual bool Return(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
     {
-        if (state != (int)MagazineCrossbowState.Shot || eventData.AltPressed) return false;
+        if (state != (int)MagazineCrossbowState.Shot) return false;
+        if (InteractionsTester.PlayerTriesToInteract(player, mainHand, eventData)) return false;
         if (!CheckOffhandEmpty(player)) return false;
 
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
