@@ -60,6 +60,7 @@
     "item-creature-bolt-*": "Bolt",
     "prefixandcreature-bolt-*": "Bolt",
 
+    "setting-title-durabilities": "Crossbows durability settings",
     "setting-damage": "Damage multiplier",
     "setting-trait": "Recipes trait requirement",
     "setting-cursortype": "Aiming type",
@@ -69,6 +70,12 @@
     "setting-cancel_reload_in_the_air": "Cancel reload while in the air",
     "setting-cancel_reload_while_mounted": "Cancel reload while mounted",
     "setting-reload_speed": "Reload speed",
+    "setting-durability-simple": "Simple",
+    "setting-durability-repeating": "Repeating",
+    "setting-durability-stirrup": "Stirrup",
+    "setting-durability-latch": "Latch",
+    "setting-durability-goatsfoot": "Goatsfoot",
+    "setting-durability-windlass": "Windlass",
 
     "setting-comment-cursortype": "Applied immediately, does not require world reload",
 

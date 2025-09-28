@@ -4,7 +4,7 @@
   "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
   "variantgroups": [{"code": "drawtype", "states": ["repeating"]}, {"code": "material", "states": ["copper"]}],
   "maxstacksize": 1,
-  "durability": 600,
+  "durability": 400,
   "tool": "crossbow",
   "rackable": true,
   "behaviors": [

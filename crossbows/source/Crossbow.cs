@@ -647,6 +647,17 @@ public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic,
         }
     }
 
+    public override int GetRemainingDurability(ItemStack itemstack)
+    {
+        int durability = base.GetRemainingDurability(itemstack);
+        int maxDurability = GetMaxDurability(itemstack);
+        if (durability > maxDurability)
+        {
+            SetDurability(itemstack, maxDurability);
+        }
+        return maxDurability;
+    }
+
     private AmmoSelector? _ammoSelector;
     private ICoreClientAPI? _clientApi;
     private CrossbowStats? _stats;

@@ -19,7 +19,15 @@
     },
     "integer": {
       "maltiezcrossbows:itemtypes/crossbow-repeating.json": {
-        "attributes/MagazineSize": "magazine_size"
+        "attributes/MagazineSize": "magazine_size",
+        "durability": "value * durability_repeating / 400"
+      },
+      "maltiezcrossbows:itemtypes/crossbow.json": {
+        "durabilityByType/*-simple-*": "value * durability_simple / 240",
+        "durabilityByType/*-stirrup-*": "value * durability_stirrup / 750",
+        "durabilityByType/*-latch-*": "value * durability_latch / 750",
+        "durabilityByType/*-goatsfoot-*": "value * durability_goatsfoot / 900",
+        "durabilityByType/*-windlass-*": "value * durability_simwindlassple / 600"
       }
     },
     "boolean": {
@@ -118,6 +126,65 @@
       "type": "boolean",
       "ingui": "maltiezcrossbows:setting-cancel_reload_while_mounted",
       "default": true
+    },
+    {
+      "type": "separator",
+      "title": "maltiezcrossbows:setting-title-durabilities",
+      "collapsible": true
+    },
+    {
+      "code": "durability_simple",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-simple",
+      "default": 240,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_repeating",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-repeating",
+      "default": 400,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_stirrup",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-stirrup",
+      "default": 750,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_latch",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-latch",
+      "default": 750,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_goatsfoot",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-goatsfoot",
+      "default": 900,
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "code": "durability_windlass",
+      "type": "integer",
+      "ingui": "maltiezcrossbows:setting-durability-windlass",
+      "default": 600,
+      "range": {
+        "min": 1
+      }
     }
   ]
 }
