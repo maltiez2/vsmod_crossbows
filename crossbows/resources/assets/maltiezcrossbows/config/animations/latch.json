@@ -1,560 +1,2982 @@
 ﻿{
   "crossbow-latch-draw": {
-    "Hold": false,
-    "PlayerKeyFrames": [
-      {
-        "EasingTime": 300,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": false,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -86],
-          "UpperArmR": [0, 0, 0, 0, 16, -34],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 500,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -133],
-          "UpperArmR": [0, 0, 0, 36, 20, 8],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 675,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -123],
-          "UpperArmR": [0, 0, 0, 36, -5, -35],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 850,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -99],
-          "UpperArmR": [0, 0, 0, 36, -19, -71],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 1254,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -28],
-          "UpperArmR": [1.5, 0, 0, 31, -9, -122],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 1443,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -28],
-          "UpperArmR": [1.5, 0, 0, 31, -9, -122],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 1800,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -72],
-          "UpperArmR": [1.5, 0, 0, 31, -23, -96],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 2000,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -105],
-          "UpperArmR": [1.5, 0, 0, 65, -24, -48],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 2386,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -119],
-          "UpperArmR": [1.5, 0, 0, 65, 18, -12],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
-      },
-      {
-        "EasingTime": 2500,
-        "EasingFunction": "Linear",
-        "DetachedAnchor": false,
-        "SwitchArms": true,
-        "PitchFollow": false,
-        "PitchDontFollow": false,
-        "FOVMultiplier": 1,
-        "BobbingAmplitude": 1,
-        "Elements": {
-          "ItemAnchor": [0.6, 1.2, 1.6, -17, -10, 106],
-          "LowerArmR": [0, 0, 0, 0, 0, -86],
-          "UpperArmR": [0, 0, 0, 0, 16, -34],
-          "ItemAnchorL": [3.7, 1.7, -0.6, -47, -16, 100],
-          "LowerArmL": [0, 0, 0, 0, 0, -77],
-          "UpperArmL": [0, 0, 0, 0, -6, -39]
-        }
+  "Hold": false,
+  "PlayerKeyFrames": [
+    {
+      "EasingTime": 200.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": false,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -86.0
+        ],
+        "UpperArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          16.0,
+          -34.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
       }
-    ],
-    "ItemKeyFrames": [
-      {
-        "DurationFraction": 0,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 12, 0, 0],
-          "Latch": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, -78, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, -24, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.01886792,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0.1, 5, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 11.933333, 0, 0],
-          "Latch": [0, 0, 0, -5.466667, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, -78, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, -24, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 3.0333335, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.11320755,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 11.6, 0, 0],
-          "Latch": [0, 0, 0, -32.8, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, -78, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, -24, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 18.2, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.28301886,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 11, 0, 0],
-          "Latch": [0, 0, 0, -82, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, -78, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, -24, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 45.5, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.37735853,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -95, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 53.5, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.4716981,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, 0, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, 0, 0],
-          "String": [0, 0, 0, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, 0, 0],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, 0, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -95, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, 0, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, 0, 0],
-          "String_2": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_9": [0, 0, 0, 0, 0, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 53.5, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, 0, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.5660377,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -0.6, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -0.4, 0],
-          "String": [0, 0.5, 0.8, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -4, -3],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -0.4, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -0.4, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -75.8, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -0.4, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -0.4, 0],
-          "String_2": [0, 0, 0, 0, 4, -3],
-          "Bow_right_limb_9": [0, 0, 0, 0, -0.4, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 42.6, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0.4, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -0.4, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -0.4, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.6603774,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -1.2, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -0.8, 0],
-          "String": [0, 1, 1.7, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -9, -6.5],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -0.8, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -0.8, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -56.6, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -0.8, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -0.8, 0],
-          "String_2": [0, 0, 0, 0, 9, -6.5],
-          "Bow_right_limb_9": [0, 0, 0, 0, -0.8, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 31.699999, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 0.8, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -0.8, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -0.8, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.754717,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -1.8000001, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -1.2, 0],
-          "String": [0, 1, 2.6, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -13, -6],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -1.2, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -1.2, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -37.399998, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -1.2, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -1.2, 0],
-          "String_2": [0, 0, 0, 0, 13, -6],
-          "Bow_right_limb_9": [0, 0, 0, 0, -1.2, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 20.8, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 1.2, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -1.2, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -1.2, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.84905666,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -2.4, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -1.6, 0],
-          "String": [0, 0.7, 3.4, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -17, -4],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -1.6, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -1.6, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -18.199997, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -1.6, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -1.6, 0],
-          "String_2": [0, 0, 0, 0, 16.5, -3.75],
-          "Bow_right_limb_9": [0, 0, 0, 0, -1.6, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 9.899998, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 1.6, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -1.6, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -1.6, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.9245283,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -2.8799999, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -1.92, 0],
-          "String": [0, 0.38, 3.88, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -19.4, -2],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -1.92, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -1.92, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, -2.840004, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -1.92, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -1.92, 0],
-          "String_2": [0, 0, 0, 0, 19.3, -1.9500003],
-          "Bow_right_limb_9": [0, 0, 0, 0, -1.92, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 1.1800003, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 1.92, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -1.92, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -1.92, 0]
-        }
-      },
-      {
-        "DurationFraction": 0.9433962,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -3, 0],
-          "Stock_front_22": [0, 0, 0, -36, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -2, 0],
-          "String": [0, 0.3, 4, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -20, -1.5],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -2, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -2, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, 1, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -2, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -2, 0],
-          "String_2": [0, 0, 0, 0, 20, -1.5],
-          "Bow_right_limb_9": [0, 0, 0, 0, -2, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, -1, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 2, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -2, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -2, 0]
-        }
-      },
-      {
-        "DurationFraction": 1,
-        "EasingFunction": "Linear",
-        "Elements": {
-          "Bow_right_limb_5": [0, 0, 0, 0, -3, 0],
-          "Stock_front_22": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_4": [0, 0, 0, 0, -2, 0],
-          "String": [0, 0.3, 4, 0, 0, 0],
-          "String_6": [0, 0, 0, 0, -20, -1.5],
-          "Attachment_bolt": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_8": [0, 0, 0, 0, -2, 0],
-          "Bow_right_limb_3": [0, 0, 0, 0, -2, 0],
-          "Trigger": [0, 0, 0, 0, 0, 0],
-          "Latch": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_10": [0, 0, 0, 0, -2, 0],
-          "Wheel": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_13": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_11": [0, 0, 0, 0, -2, 0],
-          "String_2": [0, 0, 0, 0, 20, -1.5],
-          "Bow_right_limb_9": [0, 0, 0, 0, -2, 0],
-          "latch_16": [0, 0, 0, 0, 0, 0],
-          "Trigger_mechanism": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_14": [0, 0, 0, 0, 0, 0],
-          "Bow_right_limb_7": [0, 0, 0, 0, 2, 0],
-          "Bow_right_limb_1": [0, 0, 0, 0, -2, 0],
-          "Bow_right_limb_2": [0, 0, 0, 0, -2, 0]
-        }
+    },
+    {
+      "EasingTime": 300.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -133.0
+        ],
+        "UpperArmR": [
+          0.0,
+          0.0,
+          0.0,
+          36.0,
+          20.0,
+          8.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
       }
-    ],
-    "SoundFrames": [],
-    "ParticlesFrames": [],
-    "CallbackFrames": [],
-    "ItemAnimationStart": 500,
-    "ItemAnimationEnd": 2500
-  },
+    },
+    {
+      "EasingTime": 492.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -123.0
+        ],
+        "UpperArmR": [
+          0.0,
+          0.0,
+          0.0,
+          36.0,
+          -5.0,
+          -35.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 607.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -99.0
+        ],
+        "UpperArmR": [
+          0.0,
+          0.0,
+          0.0,
+          36.0,
+          -19.0,
+          -71.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 941.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -28.0
+        ],
+        "UpperArmR": [
+          1.5,
+          0.0,
+          0.0,
+          31.0,
+          -9.0,
+          -122.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 1102.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -28.0
+        ],
+        "UpperArmR": [
+          1.5,
+          0.0,
+          0.0,
+          31.0,
+          -9.0,
+          -122.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 1387.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -72.0
+        ],
+        "UpperArmR": [
+          1.5,
+          0.0,
+          0.0,
+          31.0,
+          -23.0,
+          -96.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 1599.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -105.0
+        ],
+        "UpperArmR": [
+          1.5,
+          0.0,
+          0.0,
+          65.0,
+          -24.0,
+          -48.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 1903.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -119.0
+        ],
+        "UpperArmR": [
+          1.5,
+          0.0,
+          0.0,
+          65.0,
+          18.0,
+          -12.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    },
+    {
+      "EasingTime": 2000.0,
+      "EasingFunction": "Linear",
+      "DetachedAnchor": false,
+      "SwitchArms": true,
+      "PitchFollow": false,
+      "PitchDontFollow": false,
+      "FOVMultiplier": 1.0,
+      "BobbingAmplitude": 1.0,
+      "Elements": {
+        "ItemAnchor": [
+          0.6,
+          1.2,
+          1.6,
+          -17.0,
+          -10.0,
+          106.0
+        ],
+        "LowerArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -86.0
+        ],
+        "UpperArmR": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          16.0,
+          -34.0
+        ],
+        "ItemAnchorL": [
+          3.7,
+          1.7,
+          -0.6,
+          -47.0,
+          -16.0,
+          100.0
+        ],
+        "LowerArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -77.0
+        ],
+        "UpperArmL": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -6.0,
+          -39.0
+        ]
+      }
+    }
+  ],
+  "ItemKeyFrames": [
+    {
+      "DurationFraction": 0.0,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          12.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          -78.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          -24.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.018867923,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.1,
+          5.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          11.933333,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -5.466667,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          -78.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          -24.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          3.0333335,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.11320754,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          11.6,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -32.8,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          -78.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          -24.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          18.2,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.28301886,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          11.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -82.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          -78.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          -24.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          45.5,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.37735856,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -95.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          53.5,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.47169808,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -95.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          53.5,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.5660377,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.6,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.5,
+          0.8,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.0,
+          -3.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -75.8,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          4.0,
+          -3.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          42.6,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.4,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.4,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.6603774,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "String": [
+          0.0,
+          1.0,
+          1.7,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -9.0,
+          -6.5
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -56.6,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          9.0,
+          -6.5
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          31.699999,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.8,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.754717,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.8000001,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "String": [
+          0.0,
+          1.0,
+          2.6,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -13.0,
+          -6.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -37.399998,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          13.0,
+          -6.0
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          20.8,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.2,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.2,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.84905666,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.4,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.7,
+          3.4,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -17.0,
+          -4.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -18.199997,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          16.5,
+          -3.75
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          9.899998,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.6,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.6,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.9245283,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.8799999,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.38,
+          3.88,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -19.4,
+          -2.0
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          -2.840004,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          19.3,
+          -1.9500003
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          1.1800003,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.92,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.92,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 0.9433962,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -3.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          -36.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.3,
+          4.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -20.0,
+          -1.5
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          20.0,
+          -1.5
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "DurationFraction": 1.0,
+      "EasingFunction": "Linear",
+      "Elements": {
+        "Bow_right_limb_5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -3.0,
+          0.0
+        ],
+        "Stock_front_22": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "String": [
+          0.0,
+          0.3,
+          4.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "String_6": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -20.0,
+          -1.5
+        ],
+        "Attachment_bolt": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_8": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Bow_right_limb_3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Trigger": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Latch": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_10": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Wheel": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_11": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "String_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          20.0,
+          -1.5
+        ],
+        "Bow_right_limb_9": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "latch_16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Trigger_mechanism": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_14": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Bow_right_limb_7": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0
+        ],
+        "Bow_right_limb_1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "Bow_right_limb_2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "SoundFrames": [],
+  "ParticlesFrames": [],
+  "CallbackFrames": [],
+  "ItemAnimationStart": 300,
+  "ItemAnimationEnd": 2000
+},
   "crossbow-latch-drawn": {
     "Hold": false,
     "PlayerKeyFrames": [

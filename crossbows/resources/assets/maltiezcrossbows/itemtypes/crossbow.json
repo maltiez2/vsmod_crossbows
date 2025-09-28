@@ -47,8 +47,8 @@
       "*-windlass-*": {"translation": {"x": 0, "y": -0.5, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     },
     "BoltTransform": {"translation": {"x": -5.65, "y": 0.2, "z": -1}, "rotation": {"x": 0, "y": 0, "z": 1}, "scale": 0.75},
-    "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 2.5, "*-windlass-*": 4.3},
-    "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-latch-*": 4, "*-goatsfoot-*": 6, "*-windlass-*": 7},
+    "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 3, "*-windlass-*": 4.3},
+    "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-latch-*": 4, "*-goatsfoot-*": 5, "*-windlass-*": 6},
     "BoltVelocityByType": {"*-simple-*": 1.5, "*-stirrup-*": 2.7, "*-latch-*": 2.25, "*-goatsfoot-*": 3.75, "*-windlass-*": 4.5},
     "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": 0, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
     "ProficiencyStat": "crossbowsProficiency",

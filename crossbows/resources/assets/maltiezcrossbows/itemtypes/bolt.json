@@ -52,11 +52,12 @@
             "*-meteoriciron": {"DamageType": "PiercingAttack", "Damage": 7},
             "*-steel": {"DamageType": "PiercingAttack", "Damage": 9}
           },
+          "DamageTierBonusByType": {"*-steel": 2, "*-meteoriciron": 1, "*": 0},
           "SpeedThreshold": 0.3,
           "Knockback": 0.2,
           "EntityCode": "maltiezcrossbows:bolt-{material}",
           "DurabilityDamage": 0,
-          "DropChanceByType": {"*-crude": 0.75, "*-copper": 0.9, "*-tinbronze": 0.95, "*-bismuthbronze": 0.95, "*-blackbronze": 0.95, "*-iron": 0.98, "*-meteoriciron": 0.98, "*-steel": 0.995}
+          "DropChanceByType": {"*-crude": 0.7, "*-copper": 0.8, "*-tinbronze": 0.9, "*-bismuthbronze": 0.9, "*-blackbronze": 0.95, "*-iron": 0.98, "*-meteoriciron": 0.99, "*-steel": 0.995}
         }
       }
     }

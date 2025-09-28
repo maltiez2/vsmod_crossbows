@@ -5,6 +5,7 @@ using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
 using CombatOverhaul.RangedSystems.Aiming;
 using OpenTK.Mathematics;
+using System.Diagnostics;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -109,6 +110,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected readonly ItemInventoryBuffer Inventory = new();
     protected readonly CrossbowsSettings Settings;
     protected const string InventoryId = "magazine";
+    protected int NumberOfBoltsInMagazine = 0;
 
     [ActionEventHandler(EnumEntityAction.RightMouseDown, ActionState.Active)]
     protected virtual bool OpenLid(ItemSlot slot, EntityPlayer player, ref int state, ActionEventData eventData, bool mainHand, AttackDirection direction)
@@ -123,6 +125,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
             Inventory.Clear();
             return false;
         }
+        NumberOfBoltsInMagazine = Inventory.Items.Count;
         Inventory.Clear();
 
         state = (int)MagazineCrossbowState.OpenLid;
@@ -132,6 +135,8 @@ public class MagazineCrossbowClient : RangeWeaponClient
         AnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, callback: OpenLidCallback, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         TpAnimationBehavior?.Play(mainHand, Stats.OpenLidAnimation, animationSpeed: GetAnimationSpeed(player, Stats.ProficiencyStat) * stackStats.ReloadSpeed * Stats.ReloadAnimationSpeed);
         AimingSystem.StopAiming();
+
+        
 
         return true;
     }
@@ -147,8 +152,10 @@ public class MagazineCrossbowClient : RangeWeaponClient
         if (state != (int)MagazineCrossbowState.ReadyToLoad || eventData.AltPressed) return false;
         if (!CheckOffhandEmpty(player)) return false;
 
+        Debug.WriteLine(NumberOfBoltsInMagazine);
+
         Inventory.Read(slot, InventoryId);
-        if (Inventory.Items.Count >= Stats.MagazineSize)
+        if (Inventory.Items.Count >= Stats.MagazineSize || NumberOfBoltsInMagazine >= Stats.MagazineSize)
         {
             Inventory.Clear();
 
@@ -208,6 +215,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
     protected virtual bool LoadBoltCallback(ItemSlot slot, ItemSlot ammoSlot, EntityPlayer player)
     {
         RangedWeaponSystem.Reload(slot, ammoSlot, 1, true, LoadBoltServerCallback);
+        NumberOfBoltsInMagazine++;
         Attachable.ClearAttachments(player.EntityId);
         AttachmentSystem.SendClearPacket(player.EntityId);
         return true;
