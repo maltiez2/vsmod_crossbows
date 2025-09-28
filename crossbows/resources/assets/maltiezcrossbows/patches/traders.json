@@ -2,13 +2,37 @@
   {
     "op": "add",
     "path": "/selling/list/-",
-    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 1.5, "var": 0.5}, "price": {"avg": 8, "var": 0}},
+    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 1.5, "var": 0.5}, "price": {"avg": 10, "var": 2}},
     "file": "game:config/tradelists/trader-survivalgoods.json"
   },
   {
     "op": "add",
     "path": "/selling/list/-",
-    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 0.8, "var": 0.5}, "price": {"avg": 10, "var": 3}},
+    "value": {"code": "maltiezcrossbows:crossbow-simple-wood", "type": "item", "stacksize": 1, "stock": {"avg": 1, "var": 0.5}, "price": {"avg": 4, "var": 1}},
+    "file": "game:config/tradelists/trader-survivalgoods.json"
+  },
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bolt-tinbronze", "type": "item", "stacksize": 8, "stock": {"avg": 8, "var": 2}, "price": {"avg": 2, "var": 0.5}},
+    "file": "game:config/tradelists/trader-survivalgoods.json"
+  },
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bolt-bismuthbronze", "type": "item", "stacksize": 8, "stock": {"avg": 8, "var": 2}, "price": {"avg": 2, "var": 0.5}},
+    "file": "game:config/tradelists/trader-survivalgoods.json"
+  },
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bolt-blackbronze", "type": "item", "stacksize": 8, "stock": {"avg": 8, "var": 2}, "price": {"avg": 3, "var": 1}},
+    "file": "game:config/tradelists/trader-survivalgoods.json"
+  },
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 0.8, "var": 0.5}, "price": {"avg": 12, "var": 3}},
     "file": "game:config/tradelists/trader-artisan.json"
   }
 ]
