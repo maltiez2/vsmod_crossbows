@@ -47,9 +47,9 @@
       "*-windlass-*": {"translation": {"x": 0, "y": -0.5, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
     },
     "BoltTransform": {"translation": {"x": -5.65, "y": 0.2, "z": -1}, "rotation": {"x": 0, "y": 0, "z": 1}, "scale": 0.75},
-    "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 3, "*-windlass-*": 4.3},
+    "BoltDamageMultiplierByType": {"*-simple-*": 1, "*-stirrup-*": 2, "*-latch-*": 1.5, "*-goatsfoot-*": 2.6, "*-windlass-*": 4.3},
     "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 4, "*-latch-*": 4, "*-goatsfoot-*": 5, "*-windlass-*": 6},
-    "BoltVelocityByType": {"*-simple-*": 1.5, "*-stirrup-*": 2.7, "*-latch-*": 2.25, "*-goatsfoot-*": 3.75, "*-windlass-*": 4.5},
+    "BoltVelocityByType": {"*-simple-*": 1.5, "*-stirrup-*": 2.7, "*-latch-*": 2.25, "*-goatsfoot-*": 3.75, "*-windlass-*": 5},
     "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": 0, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
     "ProficiencyStat": "crossbowsProficiency",
     "IdleAnimation": "maltiezcrossbows:crossbow-idle",
@@ -144,7 +144,7 @@
     "CancelReloadOnInAirByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
     "CancelReloadMountedByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
     "ZeroingByType": {"*-simple-*": 1, "*-stirrup-*": 0.5, "*-latch-*": 1, "*-goatsfoot-*": 0, "*-windlass-*": 0},
-    "DispersionMOAByType": {"*-simple-*": [50, 50], "*-stirrup-*": [15, 15], "*-latch-*": [30, 30], "*-goatsfoot-*": [5, 5], "*-windlass-*": [15, 15]}
+    "DispersionMOAByType": {"*-simple-*": [50, 50], "*-stirrup-*": [5, 5], "*-latch-*": [30, 30], "*-goatsfoot-*": [15, 15], "*-windlass-*": [5, 5]}
   },
   "heldLeftTpIdleAnimation": "crossbow-idle",
   "heldLeftReadyAnimation": "crossbow-idle",

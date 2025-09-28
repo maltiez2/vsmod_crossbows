@@ -85,7 +85,7 @@
       "code": "trait_requirement",
       "type": "other",
       "ingui": "maltiezcrossbows:setting-trait",
-      "default": "Not Required",
+      "default": "Required",
       "mapping": {
         "Required": "bowyer",
         "Not Required": null

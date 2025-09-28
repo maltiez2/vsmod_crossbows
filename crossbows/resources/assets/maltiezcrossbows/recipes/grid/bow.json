@@ -9,7 +9,7 @@
 		},
 		"width": 3,
 		"height": 2,
-		"requiresTrait": null,
+		"requiresTrait": "bowyer",
 		"output": { "type": "item", "code": "maltiezcrossbows:bow-composite-heavy", "quantity": 1  }
 	}
 ]

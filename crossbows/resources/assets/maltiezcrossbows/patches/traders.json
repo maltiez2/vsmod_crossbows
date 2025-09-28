@@ -1,0 +1,14 @@
+﻿[
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 1.5, "var": 0.5}, "price": {"avg": 8, "var": 0}},
+    "file": "game:config/tradelists/trader-survivalgoods.json"
+  },
+  {
+    "op": "add",
+    "path": "/selling/list/-",
+    "value": {"code": "maltiezcrossbows:bow-composite-heavy", "type": "item", "stacksize": 1, "stock": {"avg": 0.8, "var": 0.5}, "price": {"avg": 10, "var": 3}},
+    "file": "game:config/tradelists/trader-artisan.json"
+  }
+]
