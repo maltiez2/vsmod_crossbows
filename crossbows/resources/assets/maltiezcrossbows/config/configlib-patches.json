@@ -27,7 +27,7 @@
         "durabilityByType/*-stirrup-*": "value * durability_stirrup / 750",
         "durabilityByType/*-latch-*": "value * durability_latch / 750",
         "durabilityByType/*-goatsfoot-*": "value * durability_goatsfoot / 900",
-        "durabilityByType/*-windlass-*": "value * durability_simwindlassple / 600"
+        "durabilityByType/*-windlass-*": "value * durability_windlass / 600"
       }
     },
     "boolean": {
