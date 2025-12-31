@@ -526,14 +526,16 @@ public class CrossbowServer : RangeWeaponServer
         ItemStackRangedStats stackStats = ItemStackRangedStats.FromItemStack(slot.Itemstack);
 
         Vector3d playerVelocity = new(player.Entity.ServerPos.Motion.X, player.Entity.ServerPos.Motion.Y, player.Entity.ServerPos.Motion.Z);
+        Vector3d projectileDirection = GetDirectionWithDispersion(packet.Velocity, [_stats.DispersionMOA[0] * stackStats.DispersionMultiplier, _stats.DispersionMOA[1] * stackStats.DispersionMultiplier]);
+        Vector3d projectileVelocity = projectileDirection * _stats.BoltVelocity * stackStats.ProjectileSpeed + playerVelocity;
 
         ProjectileSpawnStats spawnStats = new()
         {
             ProducerEntityId = player.Entity.EntityId,
             DamageMultiplier = _stats.BoltDamageMultiplier * stackStats.DamageMultiplier,
-            DamageStrength = _stats.BoltDamageStrength + stackStats.DamageTierBonus,
+            DamageTier = (int)_stats.BoltDamageStrength + stackStats.DamageTierBonus,
             Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
-            Velocity = GetDirectionWithDispersion(packet.Velocity, [_stats.DispersionMOA[0] * stackStats.DispersionMultiplier, _stats.DispersionMOA[1] * stackStats.DispersionMultiplier]) * _stats.BoltVelocity * stackStats.ProjectileSpeed + playerVelocity,
+            Velocity = projectileVelocity,
         };
 
         _projectileSystem.Spawn(packet.ProjectileId[0], stats, spawnStats, boltSlot.TakeOut(1), slot.Itemstack, shooter);
