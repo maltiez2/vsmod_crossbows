@@ -1,5 +1,5 @@
 ﻿using CombatOverhaul;
-using CombatOverhaul.Animations;
+using AnimationsLib;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
@@ -13,7 +13,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
-using YamlDotNet.Serialization;
 
 namespace Crossbows;
 
@@ -407,7 +406,7 @@ public class CrossbowClient : RangeWeaponClient
 
                     RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.SpawnedProjectile, mainHand);
 
-                    RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootCallback);
+                    RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new Vector3d(targetDirection.X, targetDirection.Y, targetDirection.Z), mainHand, ShootCallback);
 
                     Attachable.ClearAttachments(player.EntityId);
                     AttachmentSystem.SendClearPacket(player.EntityId);
@@ -585,7 +584,7 @@ public class CrossbowServer : RangeWeaponServer
     private readonly CrossbowStats _stats;
 }
 
-public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasMoveAnimations
+public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic, IHasIdleAnimations
 {
     public CrossbowClient? ClientLogic { get; private set; }
     public CrossbowServer? ServerLogic { get; private set; }
@@ -681,9 +680,9 @@ public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic,
         }
     }
 
-    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    public override void OnCreatedByCrafting(ItemSlot[] allInputSlots, ItemSlot outputSlot, IRecipeBase byRecipe)
     {
-        base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+        base.OnCreatedByCrafting(allInputSlots, outputSlot, byRecipe);
 
         GeneralUtils.MarkItemStack(outputSlot);
         outputSlot.MarkDirty();
@@ -699,6 +698,20 @@ public sealed class CrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic,
             return maxDurability;
         }
         return durability;
+    }
+
+    public AnimationRequestByCode? GetIdleAnimation(EntityPlayer player, ItemSlot slot, ItemSlotType slotType, IdleAnimationType animationType)
+    {
+        return animationType switch
+        {
+            IdleAnimationType.Idle => IdleAnimation,
+            IdleAnimationType.Ready => ReadyAnimation,
+            IdleAnimationType.Walk => WalkAnimation,
+            IdleAnimationType.Run => RunAnimation,
+            IdleAnimationType.Swim => SwimAnimation,
+            IdleAnimationType.SwimIdle => SwimIdleAnimation,
+            _ => null,
+        };
     }
 
     private AmmoSelector? _ammoSelector;

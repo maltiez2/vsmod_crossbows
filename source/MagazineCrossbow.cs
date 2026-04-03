@@ -1,5 +1,6 @@
-﻿using CombatOverhaul;
-using CombatOverhaul.Animations;
+﻿using AnimationsLib;
+using CombatOverhaul;
+using AnimationsLib;
 using CombatOverhaul.Implementations;
 using CombatOverhaul.Inputs;
 using CombatOverhaul.RangedSystems;
@@ -40,7 +41,7 @@ public class MagazineCrossbowStats : WeaponStats
 
     public AimingStatsJson Aiming { get; set; } = new();
     public float BoltDamageMultiplier { get; set; } = 1;
-    public float BoltDamageStrength { get; set; } = 1;
+    public int BoltDamageTier { get; set; } = 1;
     public float BoltVelocity { get; set; } = 1;
     public string BoltWildcard { get; set; } = "@.*(bolt-copper|bolt-crude)";
     public float Zeroing { get; set; } = 1.5f;
@@ -320,7 +321,7 @@ public class MagazineCrossbowClient : RangeWeaponClient
         targetDirection = ClientAimingSystem.Zeroing(targetDirection, Stats.Zeroing);
 
         RangedWeaponSystem.SendStatusChange(player, RangedWeaponStatus.SpawnedProjectile, mainHand);
-        RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new(targetDirection.X, targetDirection.Y, targetDirection.Z), true, _ => { });
+        RangedWeaponSystem.Shoot(slot, 1, new((float)position.X, (float)position.Y, (float)position.Z), new Vector3d(targetDirection.X, targetDirection.Y, targetDirection.Z), true, _ => { });
 
         PlayerBehavior?.SetState((int)MagazineCrossbowState.Shot, mainHand: true);
 
@@ -412,7 +413,7 @@ public class MagazineCrossbowServer : RangeWeaponServer
         {
             ProducerEntityId = player.Entity.EntityId,
             DamageMultiplier = _stats.BoltDamageMultiplier * stackStats.DamageMultiplier,
-            DamageStrength = _stats.BoltDamageStrength + stackStats.DamageTierBonus,
+            DamageTier = _stats.BoltDamageTier + stackStats.DamageTierBonus,
             Position = new Vector3d(packet.Position[0], packet.Position[1], packet.Position[2]),
             Velocity = GetDirectionWithDispersion(packet.Velocity, [_stats.DispersionMOA[0] * stackStats.DispersionMultiplier, _stats.DispersionMOA[1] * stackStats.DispersionMultiplier]) * _stats.BoltVelocity * stackStats.ProjectileSpeed + playerVelocity,
         };
@@ -473,7 +474,7 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
 
         if (_stats != null)
         {
-            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", _stats.BoltDamageMultiplier, _stats.BoltDamageStrength));
+            dsc.AppendLine(Lang.Get("combatoverhaul:iteminfo-range-weapon-damage", _stats.BoltDamageMultiplier, _stats.BoltDamageTier));
             dsc.AppendLine("");
         }
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
@@ -516,7 +517,7 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
         }
     }
 
-    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+    public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, IRecipeBase byRecipe)
     {
         base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
 
@@ -534,6 +535,16 @@ public class MagazineCrossbowItem : Item, IHasWeaponLogic, IHasRangedWeaponLogic
             return maxDurability;
         }
         return durability;
+    }
+
+    public AnimationRequestByCode? GetIdleAnimation(EntityPlayer player, ItemSlot slot, ItemSlotType slotType, IdleAnimationType animationType)
+    {
+        return animationType switch
+        {
+            IdleAnimationType.Idle => IdleAnimation,
+            IdleAnimationType.Ready => ReadyAnimation,
+            _ => null,
+        };
     }
 
     private AmmoSelector? _ammoSelector;

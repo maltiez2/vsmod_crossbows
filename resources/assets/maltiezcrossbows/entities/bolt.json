@@ -1,22 +1,28 @@
 ﻿{
   "code": "bolt",
   "class": "CombatOverhaul:Projectile",
-  "hitboxSize": {"x": 0.125, "y": 0.125},
-  "variantgroups": [{"code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}],
+  "hitboxSize": { "x": "0.125", "y": "0.125" },
+  "variantgroups": [{ "code": "material", "states": ["crude", "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"] }],
   "client": {
     "size": 1,
     "renderer": "Shape",
     "shapeByType": {
-      "*-crude": {"base": "bolt-crude"},
-      "*-copper": {"base": "bolt-crude"},
-      "*-meteoriciron": {"base": "bolt-envelop"},
-      "*-steel": {"base": "bolt-envelop"},
-      "*-iron": {"base": "bolt-envelop"},
-      "*": {"base": "bolt-insert"}
+      "*-crude": { "base": "bolt-crude" },
+      "*-copper": { "base": "bolt-crude" },
+      "*-meteoriciron": { "base": "bolt-envelop" },
+      "*-steel": { "base": "bolt-envelop" },
+      "*-iron": { "base": "bolt-envelop" },
+      "*": { "base": "bolt-insert" }
     },
-    "texturesByType": {"*-crude": {"head": {"base": "game:block/stone/flint"}}, "*": {"head": {"base": "game:block/metal/ingot/{material}"}}},
-    "behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 0.3, "gravityFactor": 0.5}, {"code": "interpolateposition"}]
+    "texturesByType": { "*-crude": { "head": { "base": "game:block/stone/flint" } }, "*": { "head": { "base": "game:block/metal/ingot/{material}" } } },
+    "behaviors": [{ "code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1 }, { "code": "interpolateposition" }]
   },
-  "server": {"behaviors": [{"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, {"code": "despawn", "minSeconds": 600}]},
-  "sounds": {}
+  "server": {
+    "behaviors": [
+      { "code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1 },
+      { "code": "despawn", "minSeconds": 600 },
+      { "code": "CollidersLib:ProjectileColliderServer", "radius": "0.05" }
+    ]
+  },
+  "sounds": {  }
 }

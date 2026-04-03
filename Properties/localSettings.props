@@ -2,7 +2,7 @@
   <PropertyGroup>
     <RunFormatter>true</RunFormatter>
     <DataFolderName>VintagestoryDataDev</DataFolderName>
-    <GameDirectory></GameDirectory>
+    <GameDirectory>D:\Projects\VintageStory\game_22</GameDirectory>
     <PackageDevBuild>false</PackageDevBuild>
     <EnterWorldOnStartup>true</EnterWorldOnStartup>
   </PropertyGroup>

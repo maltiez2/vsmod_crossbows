@@ -1,21 +1,21 @@
 ﻿{
   "code": "crossbow",
   "class": "Crossbows:Crossbow",
-  "creativeinventory": {"general": ["*"], "maltiezcrossbows": ["*"]},
+  "creativeinventory": { "general": ["*"], "maltiezcrossbows": ["*"] },
   "variantgroups": [
-    {"code": "drawtype", "states": ["simple", "stirrup", "latch", "goatsfoot", "windlass"]},
-    {"code": "material", "states": ["wood", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]}
+    { "code": "drawtype", "states": ["simple", "stirrup", "latch", "goatsfoot", "windlass"] },
+    { "code": "material", "states": ["wood", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"] }
   ],
   "allowedVariants": ["*-simple-wood", "*-stirrup-*bronze", "*-latch-*iron", "*-goatsfoot-steel", "*-windlass-steel"],
   "maxstacksize": 1,
-  "durabilityByType": {"*-simple-*": 240, "*-stirrup-*": 750, "*-latch-*": 750, "*-goatsfoot-*": 900, "*-windlass-*": 600},
+  "durabilityByType": { "*-simple-*": 240, "*-stirrup-*": 750, "*-latch-*": 750, "*-goatsfoot-*": 900, "*-windlass-*": 600 },
   "tool": "crossbow",
   "rackable": true,
   "behaviors": [
     {
-      "name": "CombatOverhaul:AnimatableAttachable",
+      "name": "AnimationsLib:AnimatableAttachable",
       "properties": {
-        "animated-shapeByType": {"*-goatsfoot-*": "maltiezcrossbows:crossbows/{drawtype}-tp", "*-windlass-*": "maltiezcrossbows:crossbows/{drawtype}-tp", "*": "maltiezcrossbows:crossbows/{drawtype}"},
+        "animated-shapeByType": { "*-goatsfoot-*": "maltiezcrossbows:crossbows/{drawtype}-tp", "*-windlass-*": "maltiezcrossbows:crossbows/{drawtype}-tp", "*": "maltiezcrossbows:crossbows/{drawtype}" },
         "animated-shape-fp": "maltiezcrossbows:crossbows/{drawtype}"
       }
     },
@@ -25,33 +25,33 @@
         "layout": "WallHalves",
         "wallOffY": 2,
         "sprintKey": true,
-        "selectionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1},
-        "collisionBox": {"x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0}
+        "selectionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": "0.1", "z2": 1 },
+        "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0 }
       }
     }
   ],
   "attributes": {
-    "handbook": {"groupBy": ["crossbow-{drawtype}-*"]},
-    "toolrackTransform": {"translation": {"x": 0, "y": 0.6, "z": 0.5}, "rotation": {"x": 173, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 1.34},
+    "handbook": { "groupBy": ["crossbow-{drawtype}-*"] },
+    "toolrackTransform": { "translation": { "x": 0, "y": "0.6", "z": "0.5" }, "rotation": { "x": 173, "y": -90, "z": 0 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "1.34" },
     "groundStorageTransformByType": {
-      "*-simple-*": {"translation": {"x": 0.5, "y": 0.76, "z": 0.74}, "rotation": {"x": 104, "y": -180, "z": -155}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-      "*-latch-*": {"translation": {"x": 0.5, "y": 0.55, "z": 0.8}, "rotation": {"x": 110, "y": -180, "z": -155}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-      "*-stirrup-*": {"translation": {"x": 0.5, "y": 0.7, "z": 0.74}, "rotation": {"x": 110, "y": -180, "z": -155}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-      "*-goatsfoot-*": {"translation": {"x": 0.5, "y": 0.54, "z": 0.74}, "rotation": {"x": 110, "y": -180, "z": -155}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81},
-      "*-windlass-*": {"translation": {"x": 0.5, "y": 0.69, "z": 0.74}, "rotation": {"x": 105, "y": -180, "z": -155}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.81}
+      "*-simple-*": { "translation": { "x": "0.5", "y": "0.76", "z": "0.74" }, "rotation": { "x": 104, "y": -180, "z": -155 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.81" },
+      "*-latch-*": { "translation": { "x": "0.5", "y": "0.55", "z": "0.8" }, "rotation": { "x": 110, "y": -180, "z": -155 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.81" },
+      "*-stirrup-*": { "translation": { "x": "0.5", "y": "0.7", "z": "0.74" }, "rotation": { "x": 110, "y": -180, "z": -155 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.81" },
+      "*-goatsfoot-*": { "translation": { "x": "0.5", "y": "0.54", "z": "0.74" }, "rotation": { "x": 110, "y": -180, "z": -155 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.81" },
+      "*-windlass-*": { "translation": { "x": "0.5", "y": "0.69", "z": "0.74" }, "rotation": { "x": 105, "y": -180, "z": -155 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.81" }
     },
     "inCrossbowWallmountTransformByType": {
-      "*-simple-*": {"translation": {"x": 0, "y": -0.68, "z": -0.02}, "rotation": {"x": 90, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-      "*-latch-*": {"translation": {"x": 0, "y": -0.52, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-      "*-stirrup-*": {"translation": {"x": 0, "y": -0.52, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-      "*-goatsfoot-*": {"translation": {"x": 0, "y": -0.53, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-      "*-windlass-*": {"translation": {"x": 0, "y": -0.5, "z": 0}, "rotation": {"x": 90, "y": 0, "z": 180}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8}
+      "*-simple-*": { "translation": { "x": 0, "y": "-0.68", "z": "-0.02" }, "rotation": { "x": 90, "y": 0, "z": 0 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" },
+      "*-latch-*": { "translation": { "x": 0, "y": "-0.52", "z": 0 }, "rotation": { "x": 90, "y": 0, "z": 180 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" },
+      "*-stirrup-*": { "translation": { "x": 0, "y": "-0.52", "z": 0 }, "rotation": { "x": 90, "y": 0, "z": 180 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" },
+      "*-goatsfoot-*": { "translation": { "x": 0, "y": "-0.53", "z": 0 }, "rotation": { "x": 90, "y": 0, "z": 180 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" },
+      "*-windlass-*": { "translation": { "x": 0, "y": "-0.5", "z": 0 }, "rotation": { "x": 90, "y": 0, "z": 180 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" }
     },
-    "BoltTransform": {"translation": {"x": -5.65, "y": 0.2, "z": -1}, "rotation": {"x": 0, "y": 0, "z": 1}, "scale": 0.75},
-    "BoltDamageMultiplierByType": {"*-simple-*": 1.5, "*-stirrup-*": 5, "*-latch-*": 2.5, "*-goatsfoot-*": 7, "*-windlass-*": 10},
-    "BoltDamageStrengthByType": {"*-simple-*": 2, "*-stirrup-*": 3, "*-latch-*": 3, "*-goatsfoot-*": 4, "*-windlass-*": 5},
-    "BoltVelocityByType": {"*-simple-*": 1.5, "*-stirrup-*": 2.7, "*-latch-*": 2.25, "*-goatsfoot-*": 3.75, "*-windlass-*": 5},
-    "DrawSpeedPenaltyByType": {"*-simple-*": -0.1, "*-stirrup-*": -2, "*-latch-*": 0, "*-goatsfoot-*": -0.2, "*-windlass-*": -2},
+    "BoltTransform": { "translation": { "x": "-5.65", "y": "0.2", "z": -1 }, "rotation": { "x": 0, "y": 0, "z": 1 }, "scale": "0.75" },
+    "BoltDamageMultiplierByType": { "*-simple-*": "1.5", "*-stirrup-*": 5, "*-latch-*": "2.5", "*-goatsfoot-*": 7, "*-windlass-*": 10 },
+    "BoltDamageStrengthByType": { "*-simple-*": 2, "*-stirrup-*": 3, "*-latch-*": 3, "*-goatsfoot-*": 4, "*-windlass-*": 5 },
+    "BoltVelocityByType": { "*-simple-*": "1.5", "*-stirrup-*": "2.7", "*-latch-*": "2.25", "*-goatsfoot-*": "3.75", "*-windlass-*": 5 },
+    "DrawSpeedPenaltyByType": { "*-simple-*": "-0.1", "*-stirrup-*": -2, "*-latch-*": 0, "*-goatsfoot-*": "-0.2", "*-windlass-*": -2 },
     "ProficiencyStat": "crossbowsProficiency",
     "IdleAnimation": "maltiezcrossbows:crossbow-idle",
     "ReadyAnimation": "maltiezcrossbows:crossbow-ready",
@@ -69,7 +69,7 @@
     "DrawTpAnimation": "crossbow-reload-1",
     "LoadTpAnimation": "crossbow-reload-0",
     "AimTpAnimation": "crossbow-aim",
-    "DrawRequirementByType": {"*-goatsfoot-*": "*spanningtool-goatsfoot", "*-windlass-*": "*spanningtool-windlass", "*": ""},
+    "DrawRequirementByType": { "*-goatsfoot-*": "*spanningtool-goatsfoot", "*-windlass-*": "*spanningtool-windlass", "*": "" },
     "AimingByType": {
       "*-simple-*": {
         "AimDifficulty": 1,
@@ -77,13 +77,13 @@
         "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
         "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
         "AllowSprint": true,
-        "MoveSpeedPenalty": 0.1,
+        "MoveSpeedPenalty": "0.1",
         "AimDrift": 60,
         "AimTwitch": 2,
-        "AnimationFollowX": 5.5,
-        "AnimationFollowY": 5.5,
-        "VerticalLimit": 0.25,
-        "VerticalOffset": -0.05
+        "AnimationFollowX": "5.5",
+        "AnimationFollowY": "5.5",
+        "VerticalLimit": "0.25",
+        "VerticalOffset": "-0.05"
       },
       "*-stirrup-*": {
         "AimDifficulty": 1,
@@ -91,13 +91,13 @@
         "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
         "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
         "AllowSprint": true,
-        "MoveSpeedPenalty": 0.1,
+        "MoveSpeedPenalty": "0.1",
         "AimDrift": 80,
         "AimTwitch": 3,
-        "AnimationFollowX": 5.5,
-        "AnimationFollowY": 5.5,
-        "VerticalLimit": 0.25,
-        "VerticalOffset": -0.05
+        "AnimationFollowX": "5.5",
+        "AnimationFollowY": "5.5",
+        "VerticalLimit": "0.25",
+        "VerticalOffset": "-0.05"
       },
       "*-latch-*": {
         "AimDifficulty": 1,
@@ -108,10 +108,10 @@
         "MoveSpeedPenalty": 0,
         "AimDrift": 80,
         "AimTwitch": 3,
-        "AnimationFollowX": 5.5,
-        "AnimationFollowY": 5.5,
-        "VerticalLimit": 0.25,
-        "VerticalOffset": -0.05
+        "AnimationFollowX": "5.5",
+        "AnimationFollowY": "5.5",
+        "VerticalLimit": "0.25",
+        "VerticalOffset": "-0.05"
       },
       "*-goatsfoot-*": {
         "AimDifficulty": 1,
@@ -119,13 +119,13 @@
         "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
         "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
         "AllowSprint": true,
-        "MoveSpeedPenalty": 0.1,
+        "MoveSpeedPenalty": "0.1",
         "AimDrift": 90,
         "AimTwitch": 4,
-        "AnimationFollowX": 5.5,
-        "AnimationFollowY": 5.5,
-        "VerticalLimit": 0.25,
-        "VerticalOffset": -0.05
+        "AnimationFollowX": "5.5",
+        "AnimationFollowY": "5.5",
+        "VerticalLimit": "0.25",
+        "VerticalOffset": "-0.05"
       },
       "*-windlass-*": {
         "AimDifficulty": 1,
@@ -133,19 +133,19 @@
         "CursorTextureReady": "combatoverhaul:gui/aiming/arrow-full.png",
         "CursorTextureNotReady": "combatoverhaul:gui/aiming/arrow-part.png",
         "AllowSprint": true,
-        "MoveSpeedPenalty": 0.1,
+        "MoveSpeedPenalty": "0.1",
         "AimDrift": 90,
         "AimTwitch": 4,
-        "AnimationFollowX": 5.5,
-        "AnimationFollowY": 5.5,
-        "VerticalLimit": 0.25,
-        "VerticalOffset": -0.05
+        "AnimationFollowX": "5.5",
+        "AnimationFollowY": "5.5",
+        "VerticalLimit": "0.25",
+        "VerticalOffset": "-0.05"
       }
     },
-    "CancelReloadOnInAirByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
-    "CancelReloadMountedByType": {"*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true},
-    "ZeroingByType": {"*-simple-*": 1, "*-stirrup-*": 0.5, "*-latch-*": 1, "*-goatsfoot-*": 0, "*-windlass-*": 0},
-    "DispersionMOAByType": {"*-simple-*": [50, 50], "*-stirrup-*": [5, 5], "*-latch-*": [30, 30], "*-goatsfoot-*": [15, 15], "*-windlass-*": [5, 5]}
+    "CancelReloadOnInAirByType": { "*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true },
+    "CancelReloadMountedByType": { "*-simple-*": false, "*-stirrup-*": true, "*-latch-*": false, "*-goatsfoot-*": false, "*-windlass-*": true },
+    "ZeroingByType": { "*-simple-*": 1, "*-stirrup-*": "0.5", "*-latch-*": 1, "*-goatsfoot-*": 0, "*-windlass-*": 0 },
+    "DispersionMOAByType": { "*-simple-*": [50, 50], "*-stirrup-*": [5, 5], "*-latch-*": [30, 30], "*-goatsfoot-*": [15, 15], "*-windlass-*": [5, 5] }
   },
   "heldLeftTpIdleAnimation": "crossbow-idle",
   "heldLeftReadyAnimation": "crossbow-idle",
@@ -153,15 +153,15 @@
   "heldOldTpIdleAnimation": "crossbow-idle",
   "heldTpUseAnimation": "crossbow-idle",
   "shapeByType": {
-    "*-goatsfoot-*": {"base": "maltiezcrossbows:crossbows/{drawtype}-tp"},
-    "*-windlass-*": {"base": "maltiezcrossbows:crossbows/{drawtype}-tp"},
-    "*": {"base": "maltiezcrossbows:crossbows/{drawtype}"}
+    "*-goatsfoot-*": { "base": "maltiezcrossbows:crossbows/{drawtype}-tp" },
+    "*-windlass-*": { "base": "maltiezcrossbows:crossbows/{drawtype}-tp" },
+    "*": { "base": "maltiezcrossbows:crossbows/{drawtype}" }
   },
-  "texturesByType": {"*-wood": {}, "*": {"metal": {"base": "game:block/metal/plate/{material}"}}},
+  "texturesByType": { "*-wood": {  }, "*": { "metal": { "base": "game:block/metal/plate/{material}" } } },
   "guiTransformByType": {
-    "*-simple-*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -52, "y": -39, "z": 180}, "origin": {"x": 0.45, "y": -1, "z": -0.85}, "scale": 0.9},
-    "*": {"translation": {"x": 0, "y": 0, "z": 0}, "rotation": {"x": -52, "y": -41, "z": 180}, "origin": {"x": -0.05, "y": 0.1, "z": 0.05}, "scale": 0.95}
+    "*-simple-*": { "translation": { "x": 0, "y": 0, "z": 0 }, "rotation": { "x": -52, "y": -39, "z": 180 }, "origin": { "x": "0.45", "y": -1, "z": "-0.85" }, "scale": "0.9" },
+    "*": { "translation": { "x": 0, "y": 0, "z": 0 }, "rotation": { "x": -52, "y": -41, "z": 180 }, "origin": { "x": "-0.05", "y": "0.1", "z": "0.05" }, "scale": "0.95" }
   },
-  "tpHandTransform": {"translation": {"x": -0.2, "y": 0, "z": 0.02}, "rotation": {"x": 0, "y": -90, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 0.8},
-  "groundTransform": {"translation": {"x": 0, "y": 0.13, "z": 0}, "rotation": {"x": 1, "y": 0, "z": 0}, "origin": {"x": 0, "y": 0, "z": 0}, "scale": 4.8}
+  "tpHandTransform": { "translation": { "x": "-0.2", "y": 0, "z": "0.02" }, "rotation": { "x": 0, "y": -90, "z": 0 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "0.8" },
+  "groundTransform": { "translation": { "x": 0, "y": "0.13", "z": 0 }, "rotation": { "x": 1, "y": 0, "z": 0 }, "origin": { "x": 0, "y": 0, "z": 0 }, "scale": "4.8" }
 }
